@@ -8,3 +8,15 @@ C:\Users\nicos\source\repos\clean comment\clean comment\obj\Debug\clean comment.
 C:\Users\nicos\source\repos\clean comment\clean comment\obj\Debug\clean comment.csproj.CoreCompileInputs.cache
 C:\Users\nicos\source\repos\clean comment\clean comment\obj\Debug\clean comment.exe
 C:\Users\nicos\source\repos\clean comment\clean comment\obj\Debug\clean comment.pdb
+D:\Users\n.sandoval\Documents\Cnicos92\clean comment\bin\Debug\clean comment.exe.config
+D:\Users\n.sandoval\Documents\Cnicos92\clean comment\bin\Debug\clean comment.exe
+D:\Users\n.sandoval\Documents\Cnicos92\clean comment\bin\Debug\clean comment.pdb
+D:\Users\n.sandoval\Documents\Cnicos92\clean comment\obj\Debug\clean comment.csproj.AssemblyReference.cache
+D:\Users\n.sandoval\Documents\Cnicos92\clean comment\obj\Debug\clean_comment.Form1.resources
+D:\Users\n.sandoval\Documents\Cnicos92\clean comment\obj\Debug\clean_comment.Properties.Resources.resources
+D:\Users\n.sandoval\Documents\Cnicos92\clean comment\obj\Debug\clean comment.csproj.GenerateResource.cache
+D:\Users\n.sandoval\Documents\Cnicos92\clean comment\obj\Debug\clean comment.csproj.CoreCompileInputs.cache
+D:\Users\n.sandoval\Documents\Cnicos92\clean comment\obj\Debug\clean comment.exe
+D:\Users\n.sandoval\Documents\Cnicos92\clean comment\obj\Debug\clean comment.pdb
+D:\Users\n.sandoval\Documents\Cnicos92\clean comment\bin\Debug\Control.Draggable.dll
+D:\Users\n.sandoval\Documents\Cnicos92\clean comment\obj\Debug\clean co.964C91B9.Up2Date
