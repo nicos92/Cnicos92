@@ -1,0 +1,10 @@
+C:\Users\nicos\source\repos\clean comment\clean comment\bin\Debug\clean comment.exe.config
+C:\Users\nicos\source\repos\clean comment\clean comment\bin\Debug\clean comment.exe
+C:\Users\nicos\source\repos\clean comment\clean comment\bin\Debug\clean comment.pdb
+C:\Users\nicos\source\repos\clean comment\clean comment\obj\Debug\clean comment.csproj.AssemblyReference.cache
+C:\Users\nicos\source\repos\clean comment\clean comment\obj\Debug\clean_comment.Form1.resources
+C:\Users\nicos\source\repos\clean comment\clean comment\obj\Debug\clean_comment.Properties.Resources.resources
+C:\Users\nicos\source\repos\clean comment\clean comment\obj\Debug\clean comment.csproj.GenerateResource.cache
+C:\Users\nicos\source\repos\clean comment\clean comment\obj\Debug\clean comment.csproj.CoreCompileInputs.cache
+C:\Users\nicos\source\repos\clean comment\clean comment\obj\Debug\clean comment.exe
+C:\Users\nicos\source\repos\clean comment\clean comment\obj\Debug\clean comment.pdb
