@@ -25,6 +25,8 @@ namespace clean_comment
 
         [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
+
+
         [DllImport("User32.DLL", EntryPoint ="SendMessage")]
         private extern static void SendMessage(IntPtr hWnd, int wMsg, int WParam, int LPARAM);
 
@@ -38,10 +40,7 @@ namespace clean_comment
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void panelTop_MouseDown(object sender, MouseEventArgs e)
         {
@@ -49,20 +48,11 @@ namespace clean_comment
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
 
-        }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
 
-        }
 
-        private void label6_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void button1_DragEnter(object sender, DragEventArgs e)
         {
@@ -71,7 +61,7 @@ namespace clean_comment
 
         private void selectFile_DragDrop(object sender, DragEventArgs e)
         {
-            txtContenido.Text = "";
+            
             txtEncoding.Text = "";
             string[] archivos = (string[])e.Data.GetData(DataFormats.FileDrop, false);
             nameFile.Text = new FileInfo(archivos[0]).Name;
@@ -93,7 +83,7 @@ namespace clean_comment
 
 
 
-                string clean = " Clean " + DateTime.Now.ToString("yyyy-MM-dd HH mm` ss``") + ".txt";
+                string clean = " Clean " + DateTime.Now.ToString("yyyy-MM-dd HH mm´ ss``") + ".txt";
 
                 string archivoCreado = path.Replace(".txt", clean);
 
@@ -110,12 +100,13 @@ namespace clean_comment
                         while ((line = sr.ReadLine()) != null)
                         {
                             // Procesar cada línea del archivo
+
                             writer.WriteLine(line);
                         }
                     }
 
                 
-                    
+                
                 }
 
 
@@ -160,16 +151,14 @@ namespace clean_comment
 
 
 
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
+   
 
  
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            //ControlExtension.Draggable(selectFile, true);
-        }
+ 
+
+
+
+
     }
 }
