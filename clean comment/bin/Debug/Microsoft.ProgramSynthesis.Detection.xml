@@ -1,0 +1,1933 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.ProgramSynthesis.Detection</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.ProgramSynthesis.Detection.IColumnInfo">
+            <summary>
+                An interface that represents a column of data.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.IColumnInfo.ColumnName">
+            <summary>
+                The name of the column.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.IColumnInfo.UseColumnForLearning">
+            <summary>
+                Should we use this column for learning data types.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.IColumnInfo.Data">
+            <summary>
+                The data associated with this column.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.IColumnInfo.TrueLength">
+            <summary>
+                The true number of values in this column. This can be different from the length of <see cref="P:Microsoft.ProgramSynthesis.Detection.IColumnInfo.Data"/>,
+                in the event where <see cref="P:Microsoft.ProgramSynthesis.Detection.IColumnInfo.Data"/> is a sample of the column. If <c>null</c>, then it indicates that
+                <see cref="P:Microsoft.ProgramSynthesis.Detection.IColumnInfo.Data"/> is the full column and that the length of <see cref="P:Microsoft.ProgramSynthesis.Detection.IColumnInfo.Data"/> is the true length of this
+                column.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.IColumnInfo.ResetDataStream">
+            <summary>
+                Resets the stream from where data is pulled.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Detection.IColumnInfo`1">
+            <summary>
+                A helper interface the extends <see cref="T:Microsoft.ProgramSynthesis.Detection.IColumnInfo"/> with an <see cref="T:System.IEquatable`1"/> constraint.
+            </summary>
+            <typeparam name="TImplementor">The type of the implementor of this interface.</typeparam>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Detection.DataType.DataTypeIdentifier">
+            <summary>
+                A data type identifier. The public API is to use the static methods
+                defined in this class. Clients should never have to instantiate this
+                class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.DataType.DataTypeIdentifier.Identify(System.String[])">
+            <summary>
+                Identify the data type for <paramref name="values" /> using the current <see cref="T:System.Globalization.CultureInfo" />.
+            </summary>
+            <param name="values">The values to identify the type for.</param>
+            <returns>The detected data type.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.DataType.DataTypeIdentifier.Identify(System.Collections.Generic.IEnumerable{System.String},System.Globalization.CultureInfo)">
+            <summary>
+                Identify the data type for <paramref name="values" />.
+            </summary>
+            <param name="values">The values to identify the type for.</param>
+            <param name="cultureInfo">The culture.</param>
+            <returns>The detected data type.</returns>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Detection.DataType.DataTypes.BitType">
+            <summary>
+                Represents bit type.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.DataType.DataTypes.BitType.#ctor">
+            <summary>
+                Constructs a Boolean type.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.DataType.DataTypes.BitType.Instance">
+            <summary>
+                The singleton instance.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Detection.DataType.DataTypes.BoolType">
+            <summary>
+                Represents boolean type.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.DataType.DataTypes.BoolType.#ctor">
+            <summary>
+                Constructs a Boolean type.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.DataType.DataTypes.BoolType.Instance">
+            <summary>
+                The singleton instance.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Detection.DataType.DataTypes.DataType">
+            <summary>
+                Base class for holding result of data type detection.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.DataType.DataTypes.DataType.#ctor(Microsoft.ProgramSynthesis.Detection.DataType.Type,System.Type)">
+            <summary>
+                Constructs a type of type <paramref name="type" /> and system type <paramref name="sysType" />.
+            </summary>
+            <param name="type">The type enum.</param>
+            <param name="sysType">The system type.</param>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.DataType.DataTypes.DataType.Type">
+            <summary>
+                The enum describes the type.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.DataType.DataTypes.DataType.SystemType">
+            <summary>
+                The underlying system type.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.DataType.DataTypes.DataType.GetHashCode">
+            <summary>Serves as a hash function for a particular type. </summary>
+            <returns>A hash code for the current <see cref="T:System.Object" />.</returns>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Detection.DataType.DataTypes.DateTimeType">
+            <summary>
+                Represents DateTime type.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.DataType.DataTypes.DateTimeType.#ctor">
+            <summary>
+                Constructs a DateTime type.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.DataType.DataTypes.DateTimeType.Instance">
+            <summary>
+                The singleton instance.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Detection.DataType.DataTypes.DoubleType">
+            <summary>
+                Represents double type.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.DataType.DataTypes.DoubleType.#ctor">
+            <summary>
+                Constructs a double type.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.DataType.DataTypes.DoubleType.Instance">
+            <summary>
+                The singleton instance.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Detection.DataType.DataTypes.IntegerType">
+            <summary>
+                Represents integer type.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.DataType.DataTypes.IntegerType.#ctor">
+            <summary>
+                Constructs an integer type.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.DataType.DataTypes.IntegerType.Instance">
+            <summary>
+                The singleton instance.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Detection.DataType.DataTypes.StringType">
+            <summary>
+                Represents String type.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.DataType.DataTypes.StringType.#ctor">
+            <summary>
+                Constructs a string type.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.DataType.DataTypes.StringType.Instance">
+            <summary>
+                The singleton instance.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Detection.DataType.Type">
+            <summary>
+                An enumeration for data type identification.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Detection.DomainTypes.Builders.DomainTypeProfileBuilder">
+            <summary>
+                A <see cref="!:Builder"/> class for profiling a column (or a set of columns)
+                based on the dominant domain type in the column.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.DomainTypes.Builders.DomainTypeProfileBuilder.ColumnInfos">
+            <summary>
+                The <see cref="T:Microsoft.ProgramSynthesis.Detection.IColumnInfo"/> objects to profile.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.DomainTypes.Builders.DomainTypeProfileBuilder.SessionType">
+            <summary>
+                A string describing the session type that constructed this builder.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.DomainTypes.Builders.DomainTypeProfileBuilder.Logger">
+            <summary>
+                The <see cref="T:Microsoft.ProgramSynthesis.Wrangling.Logging.ILogger"/> instance to record telemetry events to.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Detection.DomainTypes.Builders.DomainTypeProfileBuilder.GeographicCoordinateName">
+            <summary>
+                Standard name for geographic coordinates.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Detection.DomainTypes.Builders.DomainTypeProfileBuilder.IpV6AddressName">
+            <summary>
+                Standard name for IPV6 addresses.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Detection.DomainTypes.Builders.DomainTypeProfileBuilder.IpV4AddressName">
+            <summary>
+                Standard name for IPV4 addresses.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Detection.DomainTypes.Builders.DomainTypeProfileBuilder.EmailAddressName">
+            <summary>
+                Standard name for Email addresses.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Detection.DomainTypes.Builders.DomainTypeProfileBuilder.USPhoneNumberName">
+            <summary>
+                Standard name for US Phone numbers.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Detection.DomainTypes.Builders.DomainTypeProfileBuilder.USZipCodeName">
+            <summary>
+                Standard name for US Zip codes.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.DomainTypes.Builders.DomainTypeProfileBuilder.#ctor(System.Collections.Generic.IEnumerable{Microsoft.ProgramSynthesis.Detection.IColumnInfo},Microsoft.ProgramSynthesis.Wrangling.Logging.ILogger,System.String)">
+            <summary>
+                Constructor.
+            </summary>
+            <param name="columnInfos">The set of columns to profile.</param>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.DomainTypes.Builders.DomainTypeProfileBuilder.Learn(Microsoft.ProgramSynthesis.Wrangling.Logging.ILogger,System.Collections.Generic.IEnumerable{System.String},System.Nullable{System.Guid})">
+            <summary>
+                Perform the profiling on <see cref="P:Microsoft.ProgramSynthesis.Detection.DomainTypes.Builders.DomainTypeProfileBuilder.ColumnInfos"/>.
+            </summary>
+            <param name="logger">An <see cref="T:Microsoft.ProgramSynthesis.Wrangling.Logging.ILogger"/> to log telemetry events to.</param>
+            <param name="namesOfDomainTypesToDetect">The names of domain types to detect.</param>
+            <param name="correlationIdOption">An optional correlation ID to log with telemetry data.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Detection.DomainTypes.Builders.DomainTypeProfileResult">
+            <summary>
+                The result of a call to <see cref="!:DomainTypeProfileBuilder.Learn()"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.DomainTypes.Builders.DomainTypeProfileResult.TargetColumn">
+            <summary>
+                The <see cref="T:Microsoft.ProgramSynthesis.Detection.IColumnInfo"/> for which this profile has been constructed.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.DomainTypes.Builders.DomainTypeProfileResult.DominantDomainTypeName">
+            <summary>
+                The domain type name of the dominant type detected in <see cref="P:Microsoft.ProgramSynthesis.Detection.DomainTypes.Builders.DomainTypeProfileResult.TargetColumn"/>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.DomainTypes.Builders.DomainTypeProfileResult.DominantDomainTypeCount">
+            <summary>
+                The number of values in <see cref="P:Microsoft.ProgramSynthesis.Detection.DomainTypes.Builders.DomainTypeProfileResult.TargetColumn"/> that belong to <see cref="P:Microsoft.ProgramSynthesis.Detection.DomainTypes.Builders.DomainTypeProfileResult.DominantDomainTypeName"/>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.DomainTypes.Builders.DomainTypeProfileResult.NullStringCount">
+            <summary>
+                The number of <c>null</c> strings in <see cref="P:Microsoft.ProgramSynthesis.Detection.DomainTypes.Builders.DomainTypeProfileResult.TargetColumn"/>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.DomainTypes.Builders.DomainTypeProfileResult.EmptyStringCount">
+            <summary>
+                The number of empty strings in <see cref="P:Microsoft.ProgramSynthesis.Detection.DomainTypes.Builders.DomainTypeProfileResult.TargetColumn"/>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.DomainTypes.Builders.DomainTypeProfileResult.SampleCount">
+            <summary>
+                The total number of strings in <see cref="P:Microsoft.ProgramSynthesis.Detection.DomainTypes.Builders.DomainTypeProfileResult.TargetColumn"/>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.DomainTypes.Builders.DomainTypeProfileResult.ColumnName">
+            <summary>
+                The name of <see cref="P:Microsoft.ProgramSynthesis.Detection.DomainTypes.Builders.DomainTypeProfileResult.TargetColumn"/>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.DomainTypes.Builders.DomainTypeProfileResult.#ctor(Microsoft.ProgramSynthesis.Detection.IColumnInfo,System.String,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+                Constructor.
+            </summary>
+            <param name="targetColumn">See <see cref="P:Microsoft.ProgramSynthesis.Detection.DomainTypes.Builders.DomainTypeProfileResult.TargetColumn"/>.</param>
+            <param name="dominantDomainTypeName">See <see cref="P:Microsoft.ProgramSynthesis.Detection.DomainTypes.Builders.DomainTypeProfileResult.DominantDomainTypeName"/>.</param>
+            <param name="dominantDomainTypeCount">See <see cref="P:Microsoft.ProgramSynthesis.Detection.DomainTypes.Builders.DomainTypeProfileResult.DominantDomainTypeCount"/>.</param>
+            <param name="nullStringCount">See <see cref="P:Microsoft.ProgramSynthesis.Detection.DomainTypes.Builders.DomainTypeProfileResult.NullStringCount"/>.</param>
+            <param name="emptyStringCount">See <see cref="P:Microsoft.ProgramSynthesis.Detection.DomainTypes.Builders.DomainTypeProfileResult.EmptyStringCount"/>.</param>
+            <param name="sampleCount">See <see cref="P:Microsoft.ProgramSynthesis.Detection.DomainTypes.Builders.DomainTypeProfileResult.SampleCount"/>.</param>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.DomainTypes.EmailAddressValidator.TrySplit(System.String,System.Nullable{System.Int32}@,System.Nullable{System.Int32}@,System.Int32@,System.Int32@,System.Int32@,System.Int32@)">
+            <summary>
+                Validates an email address for conformance with RFC 5322 and splits
+                it into its components  (modulo whitespace around the ends).
+            </summary>
+            <param name="v">The string containing the email address to be validated.</param>
+            <param name="displayNameStart">
+                An out parameter that contains the index of the start of the display name portion of the
+                email address, if one was detected. <c>null</c> otherwise.
+            </param>
+            <param name="displayNameEnd">
+                An out parameter that contains the index of the end of the display name portion of the
+                email address, if one was detected. <c>null</c> otherwise.
+            </param>
+            <param name="localPartStart">
+                An out parameter that contains the index of the start of the local part of the email
+                address, if one was detected.
+            </param>
+            <param name="localPartEnd">
+                An out parameter that contains the index of the end of the local part of the email address,
+                if one was detected.
+            </param>
+            <param name="domainStart">
+                An out parameter that contains the index of the start of the domain part of the email
+                address, if one was detected.
+            </param>
+            <param name="domainEnd">
+                An out parameter that contains the index of the end of the domain part of the email address, if
+                one was detected.
+            </param>
+            <returns><c>true</c> if <paramref name="v" /> consists of a valid email address, <c>false</c> otherwise.</returns>
+            <remarks>This method is allocation-free.</remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.DomainTypes.EmailAddressValidator.TrySplit(System.String,System.String@,System.String@,System.String@)">
+            <summary>
+                Validates an email address for conformance with RFC 5322 and splits
+                it into its components  (modulo whitespace around the ends).
+            </summary>
+            <param name="v">The string containing the email address to be validated.</param>
+            <param name="displayName">The extracted display name part of the email address if any.</param>
+            <param name="localPart">The extracted local part of the email address if any.</param>
+            <param name="domain">The extracted domain part of the email address if any.</param>
+            <returns><c>true</c> if <paramref name="v" /> consists of a valid email address, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.DomainTypes.EmailAddressValidator.IsValid(System.String)">
+            <summary>
+                Validates if a string contains an RFC 5322 compliant email address.
+            </summary>
+            <param name="v">The string to be validated.</param>
+            <returns><c>true</c> if <paramref name="v" /> contains a valid email address, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Detection.DomainTypes.EmailParsingExtensions">
+            <summary>
+                RFC 5322 compliant recursive descent parsing routines.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Detection.DomainTypes.GeographicCoordinateValidator">
+            <summary>
+                A class for validating strings containing geographic coordinates.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.DomainTypes.GeographicCoordinateValidator.Instance">
+            <summary>
+                The singleton instance of <see cref="T:Microsoft.ProgramSynthesis.Detection.DomainTypes.GeographicCoordinateValidator" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.DomainTypes.GeographicCoordinateValidator.IsValid(System.String)">
+            <summary>
+                Validates a string containing a geographical coordinate  (modulo whitespace around the ends).
+            </summary>
+            <param name="v">The string to be validated.</param>
+            <returns><c>true</c> if <paramref name="v" /> contains a valid geographical coordinate. <c>false</c> otherwise.</returns>
+            <remarks>This method is allocation-free.</remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.DomainTypes.GeographicCoordinateValidator.TrySplit(System.String,System.Double@,System.Double@)">
+            <summary>
+                Validates a string containing a geographical coordinate, and returns
+                the parsed coordinate  (modulo whitespace around the ends).
+            </summary>
+            <param name="v">The string to be validated.</param>
+            <param name="latitude">An out parameter that will be initialized to the parsed latitude (if any).</param>
+            <param name="longitude">An out parameter that will be initialized to the parsed longitude (if any).</param>
+            <returns><c>true</c> if <paramref name="v" /> contains a valid geographic coordinate, <c>false</c> otherwise</returns>
+            <remarks>
+                This method is allocation-free. If <paramref name="v" /> consists of only a latitude (respectively longitude),
+                then only <paramref name="latitude" /> (respectively, <paramref name="longitude" />) will be initialized with the
+                parsed value. In such a case, <paramref name="longitude" /> (respectively <paramref name="latitude" />) will be
+                initialized with <see cref="F:System.Double.NaN" />.
+            </remarks>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Detection.DomainTypes.Ipv4AddressValidator">
+            <summary>
+                A class that validates IPv4 addresses.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.DomainTypes.Ipv4AddressValidator.IsValid(System.String)">
+            <summary>
+                Validates an IPv4 address (modulo whitespace around the ends).
+            </summary>
+            <param name="v">The string to tested.</param>
+            <returns><c>true</c> if and only if <paramref name="v"/> contains an IPv4 address.</returns>
+            <remarks>This method is allocation free.</remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.DomainTypes.Ipv4AddressValidator.TrySplit(System.String,System.Byte[])">
+            <summary>
+                Validates an IPv4 address and splits into octets (modulo whitespace around the ends).
+            </summary>
+            <param name="v">The string to be tested.</param>
+            <param name="octets">
+                An array of <see cref="T:System.Byte"/>s to hold the octets in the parsed IPv4 address. This array must be allocated
+                by the caller, and must have room for at least 4 elements. The array is populated with the most significant
+                bits of the parsed address in index 0, i.e, for an address: 192.168.1.100, we will have octets[0] = 192,
+                octets[1] = 168, octets[2] = 1, octets[3] = 100.
+            </param>
+            <returns>
+                <c>true</c> iff <paramref name="v" /> contains an IPv4 address. If the return value is <c>true</c> then the
+                octets contained in the parsed IPv4 address will be returned in the first 4 positions of
+                <paramref name="octets" />. Otherwise, the contents of <paramref name="octets" /> are undefined.
+            </returns>
+            <remarks>This method is allocation free.</remarks>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.DomainTypes.Ipv4AddressValidator.Instance">
+            <summary>
+                The single instance of <see cref="T:Microsoft.ProgramSynthesis.Detection.DomainTypes.Ipv4AddressValidator"/>.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Detection.DomainTypes.Ipv6AddressValidator">
+            <summary>
+                A class that validates IPv6 addresses.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.DomainTypes.Ipv6AddressValidator.TrySplit(System.String,System.Byte[])">
+            <summary>
+                Validates an IPv6 address and splits into octets (modulo whitespace around the ends).
+            </summary>
+            <param name="v">The string to be tested.</param>
+            <param name="octets">
+                An array of <see cref="T:System.Byte"/>s to hold the hextets in the parsed IPv6 address. This array must be allocated
+                by the caller, and must have room for at least 16 elements.
+                The <paramref name="octets"/> array is populated with the most-significant bit at index 0.
+                For example, for the address "1234:5678:9ABC:DEF0:0123:4567:89AB:CDEF, octets[0] = 12,
+                octets[1] = 34, octets[2] = 56, and so on.
+            </param>
+            <returns>
+                <c>true</c> iff <paramref name="v" /> contains an IPv6 address. If the return value is <c>true</c> then the
+                hextets contained in the parsed IPv6 address will be returned in the first 16 positions of
+                <paramref name="octets" />. Otherwise, the contents of <paramref name="octets" /> are undefined.
+            </returns>
+            <remarks>This method is allocation free.</remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.DomainTypes.Ipv6AddressValidator.IsValid(System.String)">
+            <summary>
+                Validates an IPv6 address.
+            </summary>
+            <param name="v">The string to tested.</param>
+            <returns><c>true</c> if and only if <paramref name="v"/> contains an IPv6 address.</returns>
+            <remarks>This method is allocation free.</remarks>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.DomainTypes.Ipv6AddressValidator.Instance">
+            <summary>
+                The single instance of <see cref="T:Microsoft.ProgramSynthesis.Detection.DomainTypes.Ipv6AddressValidator"/>.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Detection.DomainTypes.UsPhoneNumberValidator">
+            <summary>
+                A validator for US Phone numbers.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.DomainTypes.UsPhoneNumberValidator.Instance">
+            <summary>
+                The singleton instance of <see cref="T:Microsoft.ProgramSynthesis.Detection.DomainTypes.UsZipCodeValidator" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.DomainTypes.UsPhoneNumberValidator.IsValid(System.String)">
+            <summary>
+                Validates a US Phone number  (modulo whitespace around the ends).
+            </summary>
+            <param name="v">The string to be validated.</param>
+            <returns><c>true</c> if <paramref name="v" /> contains a valid US Phone number, <c>false</c> otherwise.</returns>
+            <remarks>This method is allocation-free.</remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.DomainTypes.UsPhoneNumberValidator.TrySplit(System.String,System.Int32@,System.Int32@,System.Int32@,System.Int32@,System.Int32@,System.Int32@)">
+            <summary>
+                Validates a US Phone number  (modulo whitespace around the ends).
+            </summary>
+            <param name="v">The string to be validated.</param>
+            <param name="npaStart">The start index in <paramref name="v" /> of the detected NPA code.</param>
+            <param name="npaEnd">The end index in <paramref name="v" /> of the detected NPA code.</param>
+            <param name="nxxStart">The start index in <paramref name="v" /> of the detected NXX code.</param>
+            <param name="nxxEnd">The end index in <paramref name="v" /> of the detected NXX code.</param>
+            <param name="xxxxStart">The start index in <paramref name="v" /> of the detected XXXX code.</param>
+            <param name="xxxxEnd">The end index in <paramref name="v" /> of the detected XXXX code.</param>
+            <returns><c>true</c> if <paramref name="v" /> contains a valid US Phone number, <c>false</c> otherwise.</returns>
+            <remarks>This method is allocation-free.</remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.DomainTypes.UsPhoneNumberValidator.TrySplit(System.String,System.String@,System.String@,System.String@)">
+            <summary>
+                Validates the US Phone number (modulo whitespace around the ends).
+            </summary>
+            <param name="v">The string to be validated.</param>
+            <param name="npa">An out parameter containing the detected NPA code.</param>
+            <param name="nxx">An out parameter containing the detected NXX code.</param>
+            <param name="xxxx">An out parameter containing the detected XXXX code.</param>
+            <returns><c>true</c> if <paramref name="v" /> contains a valid US Phone number, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Detection.DomainTypes.PhoneNumberParsingExtensions.AllowedSeparatorsLazy">
+            <summary>
+                Select characters from the unicode "punctuation dash" category.
+                See: http://www.fileformat.info/info/unicode/category/Pd/list.htm
+            </summary>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Detection.DomainTypes.UsZipCodeValidator">
+            <summary>
+                A US ZIP code validator.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.DomainTypes.UsZipCodeValidator.Instance">
+            <summary>
+                The singleton instance of <see cref="T:Microsoft.ProgramSynthesis.Detection.DomainTypes.UsZipCodeValidator" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.DomainTypes.UsZipCodeValidator.IsValid(System.String)">
+            <summary>
+                Validates a US ZIP code  (modulo whitespace around the ends).
+            </summary>
+            <param name="v">The string to be validated.</param>
+            <returns><c>true</c> if <paramref name="v" /> contains a ZIP code, <c>false</c> otherwise.</returns>
+            <remarks>This method is allocation-free.</remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.DomainTypes.UsZipCodeValidator.TrySplit(System.String,System.String@,System.String@)">
+            <summary>
+                Validates a US ZIP code and splits it into the ZIP code and the +4 code  (modulo whitespace around the ends).
+            </summary>
+            <param name="v">The string to be validated.</param>
+            <param name="zip">An out parameter that is set to the ZIP code detected.</param>
+            <param name="plusFour">An out parameter that is set to the detected +4 code.</param>
+            <returns><c>true</c> if <paramref name="v" /> contains a valid US ZIP code, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.DomainTypes.UsZipCodeValidator.TrySplit(System.String,System.Int32@,System.Int32@,System.Nullable{System.Int32}@,System.Nullable{System.Int32}@)">
+            <summary>
+                Validates a US ZIP code and splits it into the ZIP code and the +4 code (modulo whitespace around the ends).
+            </summary>
+            <param name="v">The string to be validated.</param>
+            <param name="zipStart">The starting index in <paramref name="v" /> of the ZIP code.</param>
+            <param name="zipEnd">The ending index in <paramref name="v" /> of the ZIP code.</param>
+            <param name="plusFourStart">The starting index in <paramref name="v" /> of the +4 code, if detected.</param>
+            <param name="plusFourEnd">The ending index in <paramref name="v" /> of the +4 code, if detected.</param>
+            <returns><c>true</c> if <paramref name="v" /> contains a valid US ZIP code, <c>false</c> otherwise.</returns>
+            <remarks>This method is allocation-free.</remarks>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Detection.Encoding.BomUtils">
+            <summary>
+                A collection of utility extension functions to make
+                handling BOMs easier.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.Encoding.BomUtils.BomPatterns">
+            <summary>
+                A mapping from <see cref="T:Microsoft.ProgramSynthesis.Detection.Encoding.EncodingType" /> to the BOM pattern associated with it.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.Encoding.BomUtils.GetBomPattern(System.Text.Encoding)">
+            <summary>
+                Retrieves the BOM pattern for <paramref name="encoding" />.
+            </summary>
+            <param name="encoding">The <see cref="T:System.Text.Encoding" /> for which the BOM needs to be retrieved.</param>
+            <returns>
+                A <see cref="T:System.Byte" /> array that contains the BOM pattern for <paramref name="encoding" />, <c>null</c> if the
+                <paramref name="encoding" /> does not define a BOM.
+            </returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.Encoding.BomUtils.GetStringWithoutBom(System.Text.Encoding,System.Byte[],System.Boolean@)">
+            <summary>
+                Decodes a <see cref="T:System.Byte" /> array into a string, suppressing the BOM if any.
+            </summary>
+            <param name="encoding">The <see cref="N:Microsoft.ProgramSynthesis.Detection.Encoding" /> used to encode <paramref name="encodedBytes" />.</param>
+            <param name="encodedBytes">The encoded representation of the string.</param>
+            <param name="bomDetected">
+                An output parameter that is set to <c>true</c> if and only if a BOM was detected in
+                <paramref name="encodedBytes" />
+            </param>
+            <returns>A string that correponds to <paramref name="encodedBytes" />, with no BOM.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.Encoding.BomUtils.GetBytes(System.Text.Encoding,System.String,System.Boolean)">
+            <summary>
+                Encodes the string <paramref name="s" /> into a sequence of <see cref="T:System.Byte" />s according to the
+                <see cref="T:System.Text.Encoding" /> object <paramref name="encoding" />, with or without a BOM, depending on the
+                value of <paramref name="includeBom" />.
+            </summary>
+            <param name="encoding">The <see cref="T:System.Text.Encoding" /> object to use.</param>
+            <param name="s">The input string.</param>
+            <param name="includeBom">Set this to <c>true</c> if the return value needs to include a BOM, else set to false.</param>
+            <returns>
+                A <see cref="T:System.Byte" /> array that represents the encoding of the string <paramref name="s" />, according to
+                <paramref name="encoding" />.
+            </returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.Encoding.Detectors.DecodeBasedDetector.ApplyHeuristics(System.Byte[])">
+            <summary>
+                Adjust the confidence computation by applying any encoding specific updates.
+                The default implementation does nothing.
+            </summary>
+            <param name="buffer">The buffer passed to <see cref="M:Microsoft.ProgramSynthesis.Detection.Encoding.Detectors.DecodeBasedDetector.ConsumeHeader(System.Byte[])" />.</param>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.Encoding.Detectors.DecodeFailureCounterFallbackBuffer.Fallback(System.Byte[],System.Int32)">
+            <summary>When overridden in a derived class, prepares the fallback buffer to handle the specified input byte sequence.</summary>
+            <returns>
+                true if the fallback buffer can process <paramref name="bytesUnknown" />; false if the fallback buffer ignores
+                <paramref name="bytesUnknown" />.
+            </returns>
+            <param name="bytesUnknown">An input array of bytes.</param>
+            <param name="index">The index position of a byte in <paramref name="bytesUnknown" />.</param>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.Encoding.Detectors.DecodeFailureCounterFallbackBuffer.GetNextChar">
+            <summary>When overridden in a derived class, retrieves the next character in the fallback buffer.</summary>
+            <returns>The next character in the fallback buffer.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.Encoding.Detectors.DecodeFailureCounterFallbackBuffer.MovePrevious">
+            <summary>
+                When overridden in a derived class, causes the next call to the
+                <see cref="M:System.Text.DecoderFallbackBuffer.GetNextChar" /> method to access the data buffer character position
+                that is prior to the current character position.
+            </summary>
+            <returns>
+                true if the <see cref="M:System.Text.DecoderFallbackBuffer.MovePrevious" /> operation was successful;
+                otherwise, false.
+            </returns>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.Encoding.Detectors.DecodeFailureCounterFallbackBuffer.Remaining">
+            <summary>
+                When overridden in a derived class, gets the number of characters in the current
+                <see cref="T:System.Text.DecoderFallbackBuffer" /> object that remain to be processed.
+            </summary>
+            <returns>The number of characters in the current fallback buffer that have not yet been processed.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.Encoding.Detectors.DecodeFailureCounterFallbackBuffer.Reset">
+            <summary>Initializes all data and state information pertaining to this fallback buffer.</summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.Encoding.Detectors.Utf16DecodeBasedDetector.ApplyHeuristics(System.Byte[])">
+            <summary>
+                Adjust the confidence computation by applying any encoding specific updates.
+                The default implementation does nothing.
+            </summary>
+            <param name="buffer">The buffer passed to <see cref="M:Microsoft.ProgramSynthesis.Detection.Encoding.Detectors.DecodeBasedDetector.ConsumeHeader(System.Byte[])" />.</param>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.Encoding.Detectors.Utf8DecodeBasedDetector.ApplyHeuristics(System.Byte[])">
+            <summary>
+                Adjust the confidence computation by applying any encoding specific updates.
+                The default implementation does nothing.
+            </summary>
+            <param name="buffer">The buffer passed to <see cref="M:Microsoft.ProgramSynthesis.Detection.Encoding.Detectors.DecodeBasedDetector.ConsumeHeader(System.Byte[])" />.</param>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Detection.Encoding.EncodingIdentifier">
+            <summary>
+                A static class used to identify encodings from streams or byte arrays.
+                See the <see cref="!:IdentifyEncoding(byte[])" /> and
+                <see cref="!:IdentifyEncoding(Stream)" /> methods for usage
+                information.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.Encoding.EncodingIdentifier.IdentifyEncoding(System.IO.Stream,System.Boolean)">
+            <summary>
+                Identifies the encoding used in a textual stream.
+            </summary>
+            <param name="stream">
+                The textual stream whose encoding is to be determined.
+            </param>
+            <param name="enableAsciiDetector">
+                The ascii detector will identify a stream as using ascii encoding if it matches no other encoding and 
+                has fewer than 5% of characters that are non-ascii.  This is a statistically reasonable identification
+                for data that might be slightly corrupted, but it is not useful for scenarios like parsing a CSV
+                file where corrupted data is going to fail anyway.  So we disable this detector by default.
+            </param>
+            <returns>
+                An instance of the <see cref="T:Microsoft.ProgramSynthesis.Detection.Encoding.EncodingType" /> enumerated type,
+                indicating the autodetected encoding type.
+            </returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.Encoding.EncodingIdentifier.IdentifyEncoding(System.Byte[],System.Boolean)">
+            <summary>
+                Identifies the encoding used in byte array representing a string.
+            </summary>
+            <param name="buffer">
+                The byte array intended to represent a string, whose encoding is to be determined.
+            </param>
+            <param name="enableAsciiDetector">
+                The ascii detector will identify a stream as using ascii encoding if it matches no other encoding and 
+                has fewer than 5% of characters that are non-ascii.  This is a statistically reasonable identification
+                for data that might be slightly corrupted, but it is not useful for scenarios like parsing a CSV
+                file where corrupted data is going to fail anyway.  So we disable this detector by default.
+            </param>
+            <returns>
+                An instance of the <see cref="T:Microsoft.ProgramSynthesis.Detection.Encoding.EncodingType" /> enumerated type,
+                indicating the autodetected encoding type.
+            </returns>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Detection.Encoding.EncodingType">
+            <summary>
+                An enumerated type indicating the encoding type.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Detection.Encoding.EncodingType.Ascii">
+            <summary>
+                Represents the encoding "us-ascii", code page 20127.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Detection.Encoding.EncodingType.Iso88591">
+            <summary>
+                Represents the encoding "iso-8859-1", code page 28591.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Detection.Encoding.EncodingType.Windows1252">
+            <summary>
+                Represents the encoding "Windows-1252", code page 1252.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Detection.Encoding.EncodingType.Utf8">
+            <summary>
+                Represents the encoding "utf-8", code page 65001.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Detection.Encoding.EncodingType.Utf16Le">
+            <summary>
+                Represents the encoding "utf-16", code page 1200.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Detection.Encoding.EncodingType.Utf16Be">
+            <summary>
+                Represents the encoding "unicodeFFFE", code page 1201.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Detection.Encoding.EncodingType.Utf32Le">
+            <summary>
+                Represents the encoding "utf-32", code page 12000.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Detection.Encoding.EncodingType.Utf32Be">
+            <summary>
+                Represents the encoding "utf-32BE", code page 12001.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Detection.Encoding.EncodingType.Unknown">
+            <summary>
+                Represents an unknown encoding.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Detection.Encoding.EncodingTypeUtils">
+            <summary>
+                Utility functions for converting <see cref="T:Microsoft.ProgramSynthesis.Detection.Encoding.EncodingType" /> values to strings understood by the
+                .NET framework.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.Encoding.EncodingTypeUtils.GetEncodingTypeForDotNetName(System.String)">
+            <summary>
+                Retrieves the <see cref="T:Microsoft.ProgramSynthesis.Detection.Encoding.EncodingType" /> value for a .NET encoding name.
+            </summary>
+            <param name="name">The .NET encoding name.</param>
+            <returns>
+                An <see cref="T:Microsoft.ProgramSynthesis.Detection.Encoding.EncodingType" /> value if <paramref name="name" /> corresponds to a supported encoding type,
+                <code>null</code> otherwise.
+            </returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.Encoding.EncodingTypeUtils.GetDotNetName(Microsoft.ProgramSynthesis.Detection.Encoding.EncodingType)">
+            <summary>
+                Retrieves the .NET encoding name for a given <see cref="T:Microsoft.ProgramSynthesis.Detection.Encoding.EncodingType" /> value.
+            </summary>
+            <param name="type">The <see cref="T:Microsoft.ProgramSynthesis.Detection.Encoding.EncodingType" /> value.</param>
+            <returns>A string representing the .NET name for a given <see cref="T:Microsoft.ProgramSynthesis.Detection.Encoding.EncodingType" /> value.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.Encoding.EncodingTypeUtils.GetEncoding(Microsoft.ProgramSynthesis.Detection.Encoding.EncodingType)">
+            <summary>
+                Retrieves the .NET encoding object for a given <see cref="T:Microsoft.ProgramSynthesis.Detection.Encoding.EncodingType" /> value.
+            </summary>
+            <param name="type">The <see cref="T:Microsoft.ProgramSynthesis.Detection.Encoding.EncodingType" /> value.</param>
+            <returns>
+                The .NET encoding object for a given <see cref="T:Microsoft.ProgramSynthesis.Detection.Encoding.EncodingType" /> value or null if the value is 
+                EncodingType.Unknown.
+            </returns>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Detection.FileType.FileType">
+            <summary>
+                An enumeration for file type identification.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Detection.FileType.FileType.PlainText">
+            <summary>
+                Plain text file.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Detection.FileType.FileType.Avro">
+            <summary>
+                Avro file.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Detection.FileType.FileType.Json">
+            <summary>
+                JSON file.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Detection.FileType.FileType.Orc">
+            <summary>
+                ORC file.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Detection.FileType.FileType.JsonLines">
+            <summary>
+                Newline separated JSON file. See http://jsonlines.org/ for details.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Detection.FileType.FileType.Parquet">
+            <summary>
+                Parquet file.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Detection.FileType.FileType.XML">
+            <summary>
+                XML file.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Detection.FileType.FileType.Excel">
+            <summary>
+                Excel (xls, xlsx) file.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Detection.FileType.FileType.Csv">
+            <summary>
+                Delimiter Separated Values file.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Detection.FileType.FileType.FixedWidth">
+            <summary>
+                Fixed-width file.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Detection.FileType.FileType.BZip2">
+            <summary>
+                BZip2 compressed file.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Detection.FileType.FileType.GZip">
+            <summary>
+                GZip compressed file.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Detection.FileType.FileType.ZipDeflateCompression">
+            <summary>
+                Zip file with DEFLATE compression
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Detection.FileType.FileType.ZipOtherCompression">
+            <summary>
+                Zip file with compression method other than DEFLATE,
+                placeholder for when more compression methods are
+                required/supported.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Detection.FileType.FileType.ZLibDeflate">
+            <summary>
+                A deflate stream, wrapped in a ZLib container.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Detection.FileType.FileType.Unknown">
+            <summary>
+                Unknown file type.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Detection.FileType.FileTypeIdentifier">
+            <summary>
+                A file type identifier. The public API is to use the static methods
+                defined in this class. Clients should never have to instantiate this
+                class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.FileType.FileTypeIdentifier.InputStream">
+            <summary>
+                The input stream to read from.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.FileType.FileTypeIdentifier.InputStreamEncoding">
+            <summary>
+                Encoding of the input stream to read the data as string.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.FileType.FileTypeIdentifier.DataAsBinary">
+            <summary>
+                The input data as an array of bytes.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.FileType.FileTypeIdentifier.DataAsString">
+            <summary>
+                The input data interpreted as a string (in <see cref="P:Microsoft.ProgramSynthesis.Detection.FileType.FileTypeIdentifier.InputStreamEncoding" />).
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.FileType.FileTypeIdentifier.DetectEncoding">
+            <summary>
+                Whether to detect the input stream encoding if none was provided.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.FileType.FileTypeIdentifier.TypesToDetect">
+            <summary>
+                The set of types for which to perform file type detection.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.FileType.FileTypeIdentifier.GetFileTypeInfo(System.String,System.Collections.Generic.IEnumerable{Microsoft.ProgramSynthesis.Detection.FileType.FileType})">
+            <summary>
+                Detects information about a file, given the path to it.
+            </summary>
+            <param name="path">The (absolute or relative) path to the file whose format is to be identified.</param>
+            <param name="typesToDetect">
+                The sequence of <see cref="T:Microsoft.ProgramSynthesis.Detection.FileType.FileType"/>s to consider for detection. If the value is <c>null</c> or
+                unspecified, all types are considered.
+            </param>
+            <returns>A FileTypeIdentifier object containing encoding and file type information.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.FileType.FileTypeIdentifier.GetFileTypeInfo(System.IO.Stream,System.String,System.Collections.Generic.IEnumerable{Microsoft.ProgramSynthesis.Detection.FileType.FileType})">
+            <summary>
+                Detects information about the contents of a stream.
+            </summary>
+            <param name="stream">
+                The data stream whose format is to be identified. The accuracy for some file formats can be greater if a seekable
+                stream is provided. Detection algorithms will still work if a non-seekable stream is provided, but the accuracy
+                might be lower. Also, if a non-seekable stream is provided, some part of the stream will be consumed and could be
+                lost.
+            </param>
+            <param name="fileExtension">The (optional) file extension.</param>
+            <param name="typesToDetect">
+                The sequence of <see cref="T:Microsoft.ProgramSynthesis.Detection.FileType.FileType"/>s to consider for detection. If the value is <c>null</c> or
+                unspecified, all types are considered.
+            </param>
+            <returns>A FileTypeIdentifier object containing encoding and file type information.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.FileType.FileTypeIdentifier.IdentifyFormat(System.String,System.Text.Encoding,System.Boolean,System.Collections.Generic.IEnumerable{Microsoft.ProgramSynthesis.Detection.FileType.FileType})">
+            <summary>
+                Identifies the format of the file, given the path to it.
+            </summary>
+            <param name="path">The (absolute or relative) path to the file whose format is to be identified.</param>
+            <param name="encoding">
+                The encoding of the file, if the file pointed to by <paramref name="path" /> is a text file. If an encoding other
+                than <code>null</code> is specified, then the file will be interpreted as a text file with the given encoding, and
+                only the textual format detectors will be run on the file. If <paramref name="encoding" /> is not specified or set
+                to null, then both textual and binary detectors will be run on the file. If the <paramref name="encoding" /> is not
+                specified, the textual format detectors will assume a UTF-8 encoding.
+            </param>
+            <param name="detectEncoding">Whether to perform encoding detection when <paramref name="encoding"/> is not provided.</param>
+            <param name="typesToDetect">
+                The sequence of <see cref="T:Microsoft.ProgramSynthesis.Detection.FileType.FileType"/>s to consider for detection. If the value is <c>null</c> or
+                unspecified, all types are considered.
+            </param>
+            <returns>The file type identified as a member of the <see cref="T:Microsoft.ProgramSynthesis.Detection.FileType.FileType" /> enumerated type.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.FileType.FileTypeIdentifier.IdentifyFormat(System.IO.Stream,System.String,System.Text.Encoding,System.Boolean,System.Collections.Generic.IEnumerable{Microsoft.ProgramSynthesis.Detection.FileType.FileType})">
+            <summary>
+                Identifies the format of the contents of a stream.
+            </summary>
+            <param name="stream">
+                The data stream whose format is to be identified. The accuracy for some file formats can be greater if a seekable
+                stream is provided. Detection algorithms will still work if a non-seekable stream is provided, but the accuracy
+                might be lower. Also, if a non-seekable stream is provided, some part of the stream will be consumed and could be
+                lost.
+            </param>
+            <param name="fileExtension">The (optional) file extension.</param>
+            <param name="encoding">
+                The encoding of the <paramref name="stream" />, if the <paramref name="stream" /> is to be interpreted as a text
+                stream. If an encoding other than <code>null</code> is specified, then the stream will be interpreted as a text
+                stream with the given encoding, and only the textual format detectors will be run on the stream. If
+                <paramref name="encoding" /> is not specified or set to null, then both textual and binary detectors will be run on
+                the stream. If the <paramref name="encoding" /> is not specified, the textual format detectors will assume a UTF-8
+                encoding.
+            </param>
+            <param name="detectEncoding">Whether to perform encoding detection when <paramref name="encoding"/> is not provided.</param>
+            <param name="typesToDetect">
+                The sequence of <see cref="T:Microsoft.ProgramSynthesis.Detection.FileType.FileType"/>s to consider for detection. If the value is <c>null</c> or
+                unspecified, all types are considered.
+            </param>
+            <returns>The file type identified as a member of the <see cref="T:Microsoft.ProgramSynthesis.Detection.FileType.FileType" /> enumerated type.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.FileType.FileTypeIdentifier.IdentifyFormatFromContents(System.String,System.String,System.Collections.Generic.IEnumerable{Microsoft.ProgramSynthesis.Detection.FileType.FileType})">
+            <summary>
+                Identifies the format of a file whose contents are passed as a <code>string</code>.
+            </summary>
+            <param name="contents">The string whose format is to be determined.</param>
+            <param name="fileExtension">The (optional) file extension.</param>
+            <param name="typesToDetect">
+                The sequence of <see cref="T:Microsoft.ProgramSynthesis.Detection.FileType.FileType"/>s to consider for detection. If the value is <c>null</c> or
+                unspecified, all types are considered.
+            </param>
+            <returns>
+                The file type identified as a member of the <see cref="T:Microsoft.ProgramSynthesis.Detection.FileType.FileType" /> enumerated type.
+            </returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.FileType.FileTypeIdentifier.IdentifyFormatFromContents(System.Byte[],System.String,System.Text.Encoding,System.Boolean,System.Collections.Generic.IEnumerable{Microsoft.ProgramSynthesis.Detection.FileType.FileType})">
+            <summary>
+                Identifies the format from a <code>byte</code> array.
+            </summary>
+            <param name="contents">The byte array (likely sampled from a file) whose format is to be determined.</param>
+            <param name="fileExtension">The (optional) file extension.</param>
+            <param name="encoding">
+                The encoding of the bytes in <paramref name="contents" />, if the <paramref name="contents" /> is to be interpreted
+                as text data. If an encoding other than <code>null</code> is specified, then the <paramref name="contents" /> will
+                be interpreted as a text data with the given encoding, and only the textual format detectors will be run on the
+                <paramref name="contents" />. If <paramref name="encoding" /> is not specified or set to null, then both textual
+                and binary detectors will be run on the <paramref name="contents" />. If the <paramref name="encoding" /> is not
+                specified, the textual format detectors will assume a UTF-8 encoding.
+            </param>
+            <param name="detectEncoding">Whether to perform encoding detection when <paramref name="encoding"/> is not provided.</param>
+            <param name="typesToDetect">
+                The sequence of <see cref="T:Microsoft.ProgramSynthesis.Detection.FileType.FileType"/>s to consider for detection. If the value is <c>null</c> or
+                unspecified, all types are considered.
+            </param>
+            <returns>The file type identified as a member of the <see cref="T:Microsoft.ProgramSynthesis.Detection.FileType.FileType" /> enumerated type.</returns>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Detection.FileType.FileTypeInfo">
+            <summary>
+                A container for information about a file referenced either by a path or a stream.  This is created by the 
+                file type detector and contains the encoding type (if the file is a text file), the file type, and either the
+                path to the file's location on disk or a reference to the stream.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.FileType.FileTypeInfo.CreateTextReader">
+            <summary>
+                Creates a TextReader with the appropriate encoding for reading strings from the data source.  The caller
+                is expected to dispose of the reader when done using it.
+            </summary>
+            <returns>
+                A TextReader ready for reading strings from the data source.
+            </returns>
+            <exception cref="T:System.InvalidOperationException">
+                InvalidOperationException is thrown if the EncodingType is unknown.
+            </exception>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.FileType.FileTypeInfoUtils.AddInput(Microsoft.ProgramSynthesis.Wrangling.Session.ITextReaderInput,Microsoft.ProgramSynthesis.Detection.FileType.FileTypeInfo,System.Int32)">
+            <summary>
+                Creates a reader from <paramref name="info" /> and adds it as input.
+                Reads only <paramref name="linesToLearn" /> lines.
+            </summary>
+            <param name="info">FileTypeInfo of the input file</param>
+            <param name="linesToLearn">
+                The number of lines to read.
+            </param>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichBooleanType.Equals(Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType)">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichBooleanType.ExampleTrueValues">
+            <summary>
+                Examples of <c>true</c> values that are part of this datatype.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichBooleanType.ExampleFalseValues">
+            <summary>
+                Examples of <c>false</c> values that are part of this datatype.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichBooleanType.Canonicalize(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichBooleanType.MaybeCastAsType(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichBooleanType.SingleNonWhitespaceNaValue">
+            <summary>
+                If non-null, then the single NA value that's allowed, apart from whitespace.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichBooleanType.BaseKind">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichBooleanType.Kind">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichBooleanType.EmptyStringsExpectedInData">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichBooleanType.NormalizableStringsExpectedInData">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichBooleanType.NullsExpectedInData">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichBooleanType.IsValueOfType(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichBooleanType.AddSample(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichBooleanType.Finish(System.Int64)">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichBooleanType.RejectionCount">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichBooleanType.SampleCount">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichBooleanType.AcceptanceCount">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichBooleanType.NaValueCount">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichBooleanType.SuccessOnFinish">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichBooleanType.EarlyFailure">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichBooleanType.IsFinalized">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichBooleanType.MinRequiredSamplesForSuccess">
+            <inheritdoc/>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichCategoricalType.#ctor(System.Int32,System.Int32,System.Double)">
+            <summary>
+                Constructor.
+            </summary>
+            <param name="maxCategories">The maximum number of categories permitted.</param>
+            <param name="minSamplesForCategorical">The minimum number of samples required to classify a column as categorical.</param>
+            <param name="sampleCountMultiplier">The maximum permitted ratio of number of categories to number of samples.</param>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichCategoricalType.Categories">
+            <summary>
+                The detected categorical values.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichCategoricalType.Equals(Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichCategoricalType.Canonicalize(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichCategoricalType.MaybeCastAsType(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichCategoricalType.BaseKind">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichCategoricalType.Kind">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichCategoricalType.IsValueOfType(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichCategoricalType.AddSample(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichCategoricalType.Finish(System.Int64)">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichCategoricalType.RejectionCount">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichCategoricalType.SampleCount">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichCategoricalType.AcceptanceCount">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichCategoricalType.NaValueCount">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichCategoricalType.SuccessOnFinish">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichCategoricalType.EarlyFailure">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichCategoricalType.IsFinalized">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichCategoricalType.EmptyStringsExpectedInData">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichCategoricalType.NormalizableStringsExpectedInData">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichCategoricalType.NullsExpectedInData">
+            <inheritdoc />
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichCategoricalType.DefaultMaxCategories">
+            <summary>
+                The default number of categories permitted, default minimum number of samples required, 
+                and default maximum permitted ratio of number of categories to number of samples.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichCategoricalType.MaxCategories">
+            <summary>
+                The maximum number of categories permitted, minimum number of samples required, 
+                and maximum permitted ratio of number of categories to number of samples.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichCategoricalType.MinRequiredSamplesForSuccess">
+            <inheritdoc/>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Detection.RichDataTypes.DataKind">
+            <summary>
+                An enumerated type the describes the kind of data.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Detection.RichDataTypes.DataKind.Numeric">
+            <summary>
+                Represents numeric data.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Detection.RichDataTypes.DataKind.Date">
+            <summary>
+                Represents dates.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Detection.RichDataTypes.DataKind.Time">
+            <summary>
+                Represents times.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Detection.RichDataTypes.DataKind.DateTime">
+            <summary>
+                Represents composite date time data.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Detection.RichDataTypes.DataKind.Boolean">
+            <summary>
+                Represents boolean valued data
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Detection.RichDataTypes.DataKind.Categorical">
+            <summary>
+                Represents data that falls into a (relatively) small number
+                of categories.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Detection.RichDataTypes.DataKind.String">
+            <summary>
+                Represents data that cannot be interpreted as anything other
+                than an arbitrary string.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType.Canonicalize(System.String)">
+            <summary>
+                Convert a <see cref="T:System.String" /> that encodes a value represented by this <see cref="T:Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType" />
+                into a canocalic representation.
+            </summary>
+            <param name="value">The <see cref="T:System.String" /> encoding the value to be canonicalized.</param>
+            <returns>
+                A canonical representation of the value wrapped in a <see cref="T:Microsoft.ProgramSynthesis.Utils.Optional`1" /> if canonicalization
+                is possible. Otherwise, returns <see cref="F:Microsoft.ProgramSynthesis.Utils.Optional`1.Nothing" />.
+            </returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType.MaybeCastAsType(System.String)">
+            <summary>
+                Convert a <see cref="T:System.String" /> that encodes a value represented by this <see cref="T:Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType" />
+                into a value of that type.
+            </summary>
+            <param name="value">The <see cref="T:System.String" /> encoding the value to be type cast.</param>
+            <returns>
+                A typed value representation of the value wrapped in a <see cref="T:Microsoft.ProgramSynthesis.Utils.Optional`1" /> if type
+                cast is possible. Otherwise, returns <see cref="F:Microsoft.ProgramSynthesis.Utils.Optional`1.Nothing" />.
+            </returns>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType.BaseKind">
+            <summary>
+                The base <see cref="T:Microsoft.ProgramSynthesis.Detection.RichDataTypes.DataKind" /> of the data represented by this <see cref="T:Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType" />.
+                This is mainly for kinds like <see cref="F:Microsoft.ProgramSynthesis.Detection.RichDataTypes.DataKind.DateTime"/>, which is the base kind, with
+                sub-kinds like <see cref="F:Microsoft.ProgramSynthesis.Detection.RichDataTypes.DataKind.Date"/> and <see cref="F:Microsoft.ProgramSynthesis.Detection.RichDataTypes.DataKind.Time"/>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType.Kind">
+            <summary>
+                An optional refined <see cref="T:Microsoft.ProgramSynthesis.Detection.RichDataTypes.DataKind" /> of the data represented by this <see cref="T:Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType" />.
+                This should be the same as <see cref="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType.BaseKind" />, except when <see cref="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType.BaseKind" /> is
+                <see cref="F:Microsoft.ProgramSynthesis.Detection.RichDataTypes.DataKind.DateTime" />, in which case, this could be one of <see cref="F:Microsoft.ProgramSynthesis.Detection.RichDataTypes.DataKind.DateTime" />,
+                <see cref="F:Microsoft.ProgramSynthesis.Detection.RichDataTypes.DataKind.Time" />, or <see cref="F:Microsoft.ProgramSynthesis.Detection.RichDataTypes.DataKind.Date" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType.IsValueOfType(System.String)">
+            <summary>
+                Determines if <paramref name="value" /> is of <c>this</c> type or not.
+                If this method returns <c>true</c> for a value, then, calling <see cref="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType.Canonicalize(System.String)" />
+                on that value must result in a valid canonicalization.
+            </summary>
+            <param name="value">The value to test for membership.</param>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType.AddSample(System.String)">
+            <summary>
+                Adds a new sample to this data type.
+            </summary>
+            <param name="value">The new sample.</param>
+            <returns><c>true</c> if it was possible for the sample to be interpreted as this data type, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType.Finish(System.Int64)">
+            <summary>
+                Finalizes this <see cref="T:Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType"/>, call after all samples have been added.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType.RejectionCount">
+            <summary>
+                The number of samples rejected by <see cref="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType.AddSample(System.String)"/>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType.SampleCount">
+            <summary>
+                The number of samples analyzed by <see cref="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType.AddSample(System.String)"/>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType.AcceptanceCount">
+            <summary>
+                The number of samples analyzed by <see cref="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType.AddSample(System.String)" /> that have been identified to belong to this type.
+                Note that <see cref="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType.SampleCount" /> is the sum of <see cref="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType.RejectionCount" />,
+                <see cref="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType.AcceptanceCount" /> and <see cref="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType.NaValueCount"/>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType.NaValueCount">
+            <summary>
+                The number of samples analyzed by <see cref="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType.AddSample(System.String)"/> that have been identified as NA values.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType.SuccessOnFinish">
+            <summary>
+                Indicates if the values added via <see cref="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType.AddSample(System.String)" /> are such that they can be
+                successfully considered as belonging to this <see cref="T:Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType" />.
+                Only guaranteed to be valid after <see cref="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType.Finish(System.Int64)" /> has been called.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType.EarlyFailure">
+            <summary>
+                Indicates early failure. This is valid at all times. If this property is <c>true</c> at
+                any time, then it implies that <see cref="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType.SuccessOnFinish"/> will be <c>false</c> after
+                <see cref="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType.Finish(System.Int64)"/> is called.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType.MinRequiredSamplesForSuccess">
+            <summary>
+                The number of samples that are required to return success on finish. This should generally
+                be the minimum number of samples required to make <see cref="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType.Finish(System.Int64)"/> succeed.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType.IsFinalized">
+            <summary>
+                Set to <c>true</c> if and only if <see cref="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType.Finish(System.Int64)"/> has been called on this type.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType.EmptyStringsExpectedInData">
+            <summary>
+                <c>true</c> if and only if we expect to see empty strings in the data.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType.NormalizableStringsExpectedInData">
+            <summary>
+                <c>true</c> if and only if we expect to see normalizable and trimmable
+                strings in the data.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType.NullsExpectedInData">
+            <summary>
+                <c>true</c> if and only if we expect to see <c>null</c> values in the data.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataType`1">
+            <summary>
+                An abstract base class that represents the encoding of a
+                given data type as a string, and describes how to convert
+                instances of the data type encoded as described by an instance
+                of this class to a "canonical" string representation.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataType`1.SyntacticClusters">
+            <summary>
+                The list of syntactic type clusters. Each cluster parses a different syntactic
+                variant identified in the data. A cluster may contain more than one syntactic
+                type because the data might not provide examples that disambiguate between
+                the various syntactic types within a cluster.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataType`1.IsFinalized">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataType`1.SuccessOnFinish">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataType`1.EarlyFailure">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataType`1.EmptyStringsExpectedInData">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataType`1.NormalizableStringsExpectedInData">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataType`1.NullsExpectedInData">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataType`1.BaseKind">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataType`1.FixOneInterpretation">
+            <summary>
+                Pick one option for every syntactic cluster in <see cref="T:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataType`1"/>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataType`1.Canonicalize(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataType`1.MaybeCastAsType(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataType`1.IsValueOfType(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataType`1.Equals(Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataType{`0})">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataType`1.AddSample(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataType`1.RejectionCount">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataType`1.SampleCount">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataType`1.AcceptanceCount">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataType`1.NaValueCount">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataType`1.Finish(System.Int64)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataType`1.Equals(Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType)">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataType`1.NaValueSet">
+            <summary>
+                The set of NA values in this data type.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataType`1.NaValues">
+            <summary>
+                The set of NA values in this data type.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataType`1.MinRequiredSamplesForSuccess">
+            <inheritdoc/>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataTypeDetector">
+            <summary>
+                A detector that comprises of an ordered list of <see cref="T:Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType"/>s.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataTypeDetector.CandidateTypes">
+            <summary>
+                The set of candidate types in this <see cref="T:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataTypeDetector"/>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataTypeDetector.RejectionThreshold">
+            <summary>
+                The number of samples to be rejected by any <see cref="T:Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType"/> before
+                we consider the data to not be of that type.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataTypeDetector.MaxRejectionFraction">
+            <summary>
+                The maximum fraction of samples that are to be rejected by any <see cref="T:Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType"/>
+                before we consider the data to not be of that type.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataTypeDetector.DefaultRejectionThreshold">
+            <summary>
+                The default value for <see cref="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataTypeDetector.RejectionThreshold"/>.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataTypeDetector.DefaultMaxRejectionFraction">
+            <summary>
+                The default value for <see cref="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataTypeDetector.MaxRejectionFraction"/>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataTypeDetector.MeanInputLength">
+            <summary>
+                The average length of the samples processed by this detector.
+                The value is only valid after a call to <see cref="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataTypeDetector.Detect(System.Collections.Generic.IEnumerable{System.String},Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType,System.Nullable{System.Int64},Microsoft.ProgramSynthesis.Wrangling.Logging.ILogger,System.Nullable{System.Guid})"/>
+                or <see cref="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataTypeDetector.DetectAll(System.Collections.Generic.IEnumerable{System.String},System.Nullable{System.Int64},Microsoft.ProgramSynthesis.Wrangling.Logging.ILogger,System.Nullable{System.Guid})"/> has completed.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataTypeDetector.InputLengthStdDev">
+            <summary>
+                The standard deviation in the lengths of the samples processed by this detector.
+                The value is only valid after a call to <see cref="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataTypeDetector.Detect(System.Collections.Generic.IEnumerable{System.String},Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType,System.Nullable{System.Int64},Microsoft.ProgramSynthesis.Wrangling.Logging.ILogger,System.Nullable{System.Guid})"/>
+                or <see cref="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataTypeDetector.DetectAll(System.Collections.Generic.IEnumerable{System.String},System.Nullable{System.Int64},Microsoft.ProgramSynthesis.Wrangling.Logging.ILogger,System.Nullable{System.Guid})"/> has completed.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataTypeDetector.MaxInputLength">
+            <summary>
+                The maximum length of the samples processed by this detector.
+                The value is only valid after a call to <see cref="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataTypeDetector.Detect(System.Collections.Generic.IEnumerable{System.String},Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType,System.Nullable{System.Int64},Microsoft.ProgramSynthesis.Wrangling.Logging.ILogger,System.Nullable{System.Guid})"/>
+                or <see cref="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataTypeDetector.DetectAll(System.Collections.Generic.IEnumerable{System.String},System.Nullable{System.Int64},Microsoft.ProgramSynthesis.Wrangling.Logging.ILogger,System.Nullable{System.Guid})"/> has completed.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataTypeDetector.MinInputLength">
+            <summary>
+                The minimum length of the samples processed by this detector.
+                The value is only valid after a call to <see cref="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataTypeDetector.Detect(System.Collections.Generic.IEnumerable{System.String},Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType,System.Nullable{System.Int64},Microsoft.ProgramSynthesis.Wrangling.Logging.ILogger,System.Nullable{System.Guid})"/>
+                or <see cref="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataTypeDetector.DetectAll(System.Collections.Generic.IEnumerable{System.String},System.Nullable{System.Int64},Microsoft.ProgramSynthesis.Wrangling.Logging.ILogger,System.Nullable{System.Guid})"/> has completed.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataTypeDetector.NullValueCount">
+            <summary>
+                The number of <c>null</c> of the samples processed by this detector.
+                The value is only valid after a call to <see cref="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataTypeDetector.Detect(System.Collections.Generic.IEnumerable{System.String},Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType,System.Nullable{System.Int64},Microsoft.ProgramSynthesis.Wrangling.Logging.ILogger,System.Nullable{System.Guid})"/>
+                or <see cref="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataTypeDetector.DetectAll(System.Collections.Generic.IEnumerable{System.String},System.Nullable{System.Int64},Microsoft.ProgramSynthesis.Wrangling.Logging.ILogger,System.Nullable{System.Guid})"/> has completed.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataTypeDetector.EmptyStringCount">
+            <summary>
+                The number of empty samples processed by this detector.
+                The value is only valid after a call to <see cref="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataTypeDetector.Detect(System.Collections.Generic.IEnumerable{System.String},Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType,System.Nullable{System.Int64},Microsoft.ProgramSynthesis.Wrangling.Logging.ILogger,System.Nullable{System.Guid})"/>
+                or <see cref="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataTypeDetector.DetectAll(System.Collections.Generic.IEnumerable{System.String},System.Nullable{System.Int64},Microsoft.ProgramSynthesis.Wrangling.Logging.ILogger,System.Nullable{System.Guid})"/> has completed.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataTypeDetector.NormalizedStringCount">
+            <summary>
+                The number of samples what had non-trivial normalization and trimming
+                processed by this detector. The value is only valid after a call to
+                <see cref="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataTypeDetector.Detect(System.Collections.Generic.IEnumerable{System.String},Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType,System.Nullable{System.Int64},Microsoft.ProgramSynthesis.Wrangling.Logging.ILogger,System.Nullable{System.Guid})"/> or <see cref="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataTypeDetector.DetectAll(System.Collections.Generic.IEnumerable{System.String},System.Nullable{System.Int64},Microsoft.ProgramSynthesis.Wrangling.Logging.ILogger,System.Nullable{System.Guid})"/> has completed.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataTypeDetector.NumSamplesProcessed">
+            <summary>
+                The number of samples processed by this detector.
+                The value is only valid after a call to <see cref="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataTypeDetector.Detect(System.Collections.Generic.IEnumerable{System.String},Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType,System.Nullable{System.Int64},Microsoft.ProgramSynthesis.Wrangling.Logging.ILogger,System.Nullable{System.Guid})"/>
+                or <see cref="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataTypeDetector.DetectAll(System.Collections.Generic.IEnumerable{System.String},System.Nullable{System.Int64},Microsoft.ProgramSynthesis.Wrangling.Logging.ILogger,System.Nullable{System.Guid})"/> has completed.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataTypeDetector.MaxSampleStringLength">
+            <summary>
+                The maximum length of strings that we support. If the data contains
+                one or more strings longer than this, we default to identifying it as
+                a string type.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataTypeDetector.#ctor(System.Collections.Generic.IEnumerable{Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType},System.Int32,System.Double)">
+            <summary>
+                Constructor.
+            </summary>
+            <param name="candidates">The set of <see cref="T:Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType"/>s that are to be considered.</param>
+            <param name="rejectionThreshold">See <see cref="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataTypeDetector.RejectionThreshold"/>.</param>
+            <param name="maxRejectionFraction">See <see cref="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataTypeDetector.MaxRejectionFraction"/>.</param>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataTypeDetector.DetectAll(System.Collections.Generic.IEnumerable{System.String},System.Nullable{System.Int64},Microsoft.ProgramSynthesis.Wrangling.Logging.ILogger,System.Nullable{System.Guid})">
+            <summary>
+                Returns a subsequence of <see cref="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataTypeDetector.CandidateTypes" />, such that the returned subsequence consists of
+                <see cref="T:Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType" />s that are applicable to <paramref name="samples" />.
+            </summary>
+            <param name="samples">The data.</param>
+            <param name="trueDatasetSize">
+                For internal use only, external users should always set this to <c>null</c>.
+            
+                The true size of the dataset, in the event that <paramref name="samples" /> forms a
+                sample of the actual dataset. If omitted, the size of the dataset is assumed to be the number of elements in
+                <paramref name="samples" />.
+            </param>
+            <param name="logger">An instance of <see cref="T:Microsoft.ProgramSynthesis.Wrangling.Logging.ILogger" /> if logging is desired.</param>
+            <param name="correlationId">
+                A <see cref="T:System.Guid" /> that represents the correlation identifier to associate with logged
+                events.
+            </param>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataTypeDetector._DetectAll(System.Collections.Generic.IEnumerable{System.String},System.Nullable{System.Int64},Microsoft.ProgramSynthesis.Wrangling.Logging.ILogger,System.Nullable{System.Guid})">
+            <summary>
+                Returns a subsequence of <see cref="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataTypeDetector.CandidateTypes" />, such that the returned subsequence consists of
+                <see cref="T:Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType" />s that are applicable to <paramref name="samples" />.
+            </summary>
+            <param name="samples">The data.</param>
+            <param name="trueDatasetSize">
+                For internal use only, external users should always set this to <c>null</c>.
+            
+                The true size of the dataset, in the event that <paramref name="samples" /> forms a
+                sample of the actual dataset. If omitted, the size of the dataset is assumed to be the number of elements in
+                <paramref name="samples" />.
+            </param>
+            <param name="logger">An instance of <see cref="T:Microsoft.ProgramSynthesis.Wrangling.Logging.ILogger" /> if logging is desired.</param>
+            <param name="correlationId">
+                A <see cref="T:System.Guid" /> that represents the correlation identifier to associate with logged
+                events.
+            </param>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataTypeDetector.Detect(System.Collections.Generic.IEnumerable{System.String},Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType,System.Nullable{System.Int64},Microsoft.ProgramSynthesis.Wrangling.Logging.ILogger,System.Nullable{System.Guid})">
+            <summary>
+                Same as <see cref="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataTypeDetector.DetectAll(System.Collections.Generic.IEnumerable{System.String},System.Nullable{System.Int64},Microsoft.ProgramSynthesis.Wrangling.Logging.ILogger,System.Nullable{System.Guid})"/>, except that only the first element of the result returned
+                by <see cref="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataTypeDetector.DetectAll(System.Collections.Generic.IEnumerable{System.String},System.Nullable{System.Int64},Microsoft.ProgramSynthesis.Wrangling.Logging.ILogger,System.Nullable{System.Guid})"/> is returned.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataTypeDetector.Default">
+            <summary>
+                The default <see cref="T:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataTypeDetector" />, which comprises of <see cref="T:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichBooleanType" />,
+                <see cref="T:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichCategoricalType" />, <see cref="T:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDateType" />, <see cref="T:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichNumericType" />,
+                and <see cref="T:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichStringType" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.SyntacticDateType.ToString">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDateType.MinRequiredSamplesForSuccess">
+            <inheritdoc/>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Detection.RichDataTypes.NativeNumericType">
+            <summary>
+                An enumerated type useful for mapping to native types.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Detection.RichDataTypes.NativeNumericType.Unsigned">
+            <summary>
+                If set, indicates that only positive values are present.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Detection.RichDataTypes.NativeNumericType.Integer8">
+            <summary>
+                Represents an integer that can be represented in 8 bits.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Detection.RichDataTypes.NativeNumericType.Integer16">
+            <summary>
+                Represents an integer that can be represented in 16 bits.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Detection.RichDataTypes.NativeNumericType.Integer32">
+            <summary>
+                Represents an integer that can be represented in 32 bits.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Detection.RichDataTypes.NativeNumericType.Integer64">
+            <summary>
+                Represents an integer that can be represented in 64 bits.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Detection.RichDataTypes.NativeNumericType.BigInteger">
+            <summary>
+                Represents an integer that requires more than 64 bits to represent.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Detection.RichDataTypes.NativeNumericType.Real">
+            <summary>
+                Represents a real value.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.SyntacticNumericType.Canonicalize(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.SyntacticNumericType.IsValid(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.SyntacticNumericType.Equals(Microsoft.ProgramSynthesis.Detection.RichDataTypes.SyntacticType)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.SyntacticNumericType.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.SyntacticNumericType.ToString">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichNumericType.MaxValue">
+            <summary>
+                The maximum integer value in this type, if <see cref="F:Microsoft.ProgramSynthesis.Utils.Optional`1.Nothing"/>, then
+                the data contains numerics with fractional parts.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichNumericType.MinValue">
+            <summary>
+                The minimum integer value in this type, if <see cref="F:Microsoft.ProgramSynthesis.Utils.Optional`1.Nothing"/>, then
+                the data contains numerics with fractional parts.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichNumericType.Precision">
+            <summary>
+                The precision of the values in this type. If the values are integers, or don't have a
+                uniform precision and scale, then <see cref="F:Microsoft.ProgramSynthesis.Utils.Optional`1.Nothing"/>.
+                For non-uniform case see <see cref="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichNumericType.MaxPrecision"/>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichNumericType.Scale">
+            <summary>
+                The scale of the values in this type. If the values are integers, or don't have a
+                uniform precision and scale, then <see cref="F:Microsoft.ProgramSynthesis.Utils.Optional`1.Nothing"/>.
+                For non-uniform case see <see cref="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichNumericType.MaxScale"/>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichNumericType.MaxPrecision">
+            <summary>
+                The maximal precision of the values in this type.
+                If the values are integers then <see cref="F:Microsoft.ProgramSynthesis.Utils.Optional`1.Nothing"/>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichNumericType.MaxScale">
+            <summary>
+                The maximal scale of the values in this type.
+                If the values are integers then <see cref="F:Microsoft.ProgramSynthesis.Utils.Optional`1.Nothing"/>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichNumericType.SyntacticSubTypes">
+            <summary>
+                The <see cref="T:Microsoft.ProgramSynthesis.Detection.RichDataTypes.SyntacticType"/>s in this <see cref="T:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichDataType`1"/>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichNumericType.ContainsIntegerSubtype">
+            <summary>
+                <c>true</c> iff one of the <see cref="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichNumericType.SyntacticSubTypes"/> represents integer values.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichNumericType.ContainsRealSubtype">
+            <summary>
+                <c>true</c> iff one of the <see cref="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichNumericType.SyntacticSubTypes"/> represents real values.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichNumericType.IsNaturalNumber">
+            <summary>
+                <c>true</c> iff only interpretation is as a positive natural number.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichNumericType.HasNaNOrNaValueOnly">
+            <summary>
+                <c>true</c> iff every type cluster has NaN or Na values.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichNumericType.ContainsNonUniformPrecisionAndScale">
+            <summary>
+                <c>true</c> iff the data represented by this type does not conform to a fixed precision and
+                scale.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichNumericType.MaybeCastAsType(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichStringType.MinLength">
+            <summary>
+                The minimum length of strings in this type.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichStringType.MaxLength">
+            <summary>
+                The maximum length of strings in this type.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichStringType.Equals(Microsoft.ProgramSynthesis.Detection.RichDataTypes.IRichDataType)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichStringType.Canonicalize(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichStringType.MaybeCastAsType(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichStringType.BaseKind">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichStringType.Kind">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichStringType.IsValueOfType(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichStringType.AddSample(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichStringType.Finish(System.Int64)">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichStringType.RejectionCount">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichStringType.SampleCount">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichStringType.AcceptanceCount">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichStringType.NaValueCount">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichStringType.SuccessOnFinish">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichStringType.EarlyFailure">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichStringType.IsFinalized">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichStringType.EmptyStringsExpectedInData">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichStringType.NormalizableStringsExpectedInData">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichStringType.NullsExpectedInData">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.RichStringType.MinRequiredSamplesForSuccess">
+            <inheritdoc/>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.SyntacticType.BaseKind">
+            <summary>
+                The base <see cref="T:Microsoft.ProgramSynthesis.Detection.RichDataTypes.DataKind"/> of this type.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.SyntacticType.NaValue">
+            <summary>
+                If this syntactic type represents an NA value, then this property will be
+                set to a valid string representing an NA value.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.SyntacticType.Substitutions">
+            <summary>
+                Any substitutions to be applied to canonicalize the data.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.SyntacticType.NonEmptySubstitutions">
+            <summary>
+                <see cref="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.SyntacticType.Substitutions" /> where the new value isn't empty.
+            </summary>
+            <remarks>
+                <see cref="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.SyntacticType.Substitutions" /> is split into <see cref="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.SyntacticType.NonEmptySubstitutions" /> and
+                <see cref="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.SyntacticType.EmptySubstitutions" />, so that the <see cref="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.SyntacticType.EmptySubstitutions" />
+                can be applied before the <see cref="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.SyntacticType.NonEmptySubstitutions" />. The objective is
+                to prevent a newly substituted non-empty substitution being overwritten by a
+                subsequent empty sustitution.
+            </remarks>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.SyntacticType.EmptySubstitutions">
+            <summary>
+                Substitutions where the new value is empty.
+            </summary>
+            <remarks>
+                <see cref="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.SyntacticType.Substitutions" /> is split into <see cref="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.SyntacticType.NonEmptySubstitutions" /> and
+                <see cref="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.SyntacticType.EmptySubstitutions" />, so that the <see cref="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.SyntacticType.EmptySubstitutions" />
+                can be applied before the <see cref="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.SyntacticType.NonEmptySubstitutions" />. The objective is
+                to prevent a newly substituted non-empty substitution being overwritten by a
+                subsequent empty sustitution.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.SyntacticType.Canonicalize(System.String)">
+            <summary>
+                Returns a canonical representation of <paramref name="value"/> if <paramref name="value"/> belongs to
+                this syntactic type. Otherwise, returns <see cref="F:Microsoft.ProgramSynthesis.Utils.Optional`1.Nothing"/>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.SyntacticType.IsValid(System.String)">
+            <summary>
+                Returns <c>true</c> iff <paramref name="value"/> belongs to this syntactic type.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.SyntacticType.Equals(Microsoft.ProgramSynthesis.Detection.RichDataTypes.SyntacticType)">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.SyntacticType.IsNaValue">
+            <summary>
+                Does this syntactic type represent an NA value?
+            </summary>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Detection.RichDataTypes.SyntacticTypeOptionSet">
+            <summary>
+                A helper class to reduce typing.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.SyntacticTypeOptionSet.From``1(``0)">
+            <summary>
+                Constructs a new <see cref="T:Microsoft.ProgramSynthesis.Detection.RichDataTypes.SyntacticTypeOptionSet`1" /> from a single type.
+            </summary>
+            <param name="singleType">The single syntactic type in this option set.</param>
+            <returns>
+                A new <see cref="T:Microsoft.ProgramSynthesis.Detection.RichDataTypes.SyntacticTypeOptionSet`1" /> with <paramref name="singleType" /> as the only
+                option.
+            </returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.SyntacticTypeOptionSet.From``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+                Constructs a new <see cref="T:Microsoft.ProgramSynthesis.Detection.RichDataTypes.SyntacticTypeOptionSet`1" /> from <paramref name="types" />.
+            </summary>
+            <param name="types">The syntactic types in this option set.</param>
+            <returns>
+                A new <see cref="T:Microsoft.ProgramSynthesis.Detection.RichDataTypes.SyntacticTypeOptionSet`1" /> with <paramref name="types" /> as the options.
+            </returns>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Detection.RichDataTypes.SyntacticTypeOptionSet`1">
+            <summary>
+                Represent a set of one or more <see cref="T:Microsoft.ProgramSynthesis.Detection.RichDataTypes.SyntacticType"/>s, which
+                can then be narrowed down as required.
+            </summary>
+            <typeparam name="TSyntacticType"></typeparam>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.SyntacticTypeOptionSet`1.GetEnumerator">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.SyntacticTypeOptionSet`1.System#Collections#IEnumerable#GetEnumerator">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.SyntacticTypeOptionSet`1.Refine(System.String)">
+            <summary>
+                Refines the set of <see cref="T:Microsoft.ProgramSynthesis.Detection.RichDataTypes.SyntacticType"/>s to the ones that can
+                represent <paramref name="value"/>. All <see cref="T:Microsoft.ProgramSynthesis.Detection.RichDataTypes.SyntacticType"/>s that
+                aren't valid for <see cref="!:value"/> are removed from <c>this</c> set.
+            </summary>
+            <param name="value">The new value to handle.</param>
+            <returns><c>true</c> if <c>this</c> was successfully refined, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.SyntacticTypeOptionSet`1.MatchesAny(System.String)">
+            <summary>
+                Is <paramref name="value"/> a valid representation of any of the <see cref="T:Microsoft.ProgramSynthesis.Detection.RichDataTypes.SyntacticType"/>s
+                in this set?
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.SyntacticTypeOptionSet`1.MatchesAll(System.String)">
+            <summary>
+                Is <paramref name="value"/> a valid representation of all of the <see cref="T:Microsoft.ProgramSynthesis.Detection.RichDataTypes.SyntacticType"/>s
+                in this set?
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Detection.RichDataTypes.SyntacticTypeOptionSet`1.GetMatchCount(System.String)">
+            <summary>
+                Returns the number of <see cref="T:Microsoft.ProgramSynthesis.Detection.RichDataTypes.SyntacticType"/>s in this set for which <paramref name="value"/>
+                is a valid representation.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Detection.RichDataTypes.SyntacticTypeOptionSet`1.Count">
+            <summary>
+                Returns the number of <see cref="T:Microsoft.ProgramSynthesis.Detection.RichDataTypes.SyntacticType"/>s in this set.
+            </summary>
+        </member>
+    </members>
+</doc>

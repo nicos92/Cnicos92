@@ -1,0 +1,2146 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.ProgramSynthesis.Read.FlatFile</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.ColumnNameCleaning">
+            <summary>
+                A constraint that specifies how to clean raw column names.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.ColumnNameCleaning.#ctor(Microsoft.ProgramSynthesis.Read.FlatFile.Learning.ColumnNameCleaningType)">
+            <summary>
+                Creates a new constraint to specify how to clean raw column names.
+            </summary>
+            <param name="cleaningType">The type of column cleaning.</param>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.ColumnNameCleaning.CleaningType">
+            <summary>
+                The type of column cleaning.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.ColumnNameCleaning.SetOptions(Microsoft.ProgramSynthesis.Read.FlatFile.Learning.Options)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.ColumnNameCleaning.Valid(Microsoft.ProgramSynthesis.Program{System.String,Microsoft.ProgramSynthesis.Wrangling.Schema.TableOutput.ITable{System.String}})">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.ColumnNameCleaning.ConflictsWith(Microsoft.ProgramSynthesis.Wrangling.Constraints.Constraint{System.String,Microsoft.ProgramSynthesis.Wrangling.Schema.TableOutput.ITable{System.String}})">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.ColumnNameCleaning.Equals(Microsoft.ProgramSynthesis.Wrangling.Constraints.Constraint{System.String,Microsoft.ProgramSynthesis.Wrangling.Schema.TableOutput.ITable{System.String}})">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.ColumnNameCleaning.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.Csv">
+            <summary>
+                A constraint to learn only CSV programs.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.Csv.Instance">
+            <summary>
+                Get the instance of the <see cref="T:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.Csv" /> constraint.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.Csv.Equals(Microsoft.ProgramSynthesis.Wrangling.Constraints.Constraint{System.String,Microsoft.ProgramSynthesis.Wrangling.Schema.TableOutput.ITable{System.String}})">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.Csv.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.CsvConstraint">
+            <summary>
+                A base class for any CSV constraint.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.CsvConstraint.SetOptions(Microsoft.ProgramSynthesis.Read.FlatFile.Learning.Options)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.CsvConstraint.ConflictsWith(Microsoft.ProgramSynthesis.Wrangling.Constraints.Constraint{System.String,Microsoft.ProgramSynthesis.Wrangling.Schema.TableOutput.ITable{System.String}})">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.CsvConstraint.Valid(Microsoft.ProgramSynthesis.Program{System.String,Microsoft.ProgramSynthesis.Wrangling.Schema.TableOutput.ITable{System.String}})">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.Delimiter">
+            <summary>
+                A constraint to explicitly specify the CSV delimiter.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.Delimiter.#ctor(System.String)">
+            <summary>
+                Creates a new constraint to specify the CSV delimiter.
+            </summary>
+            <param name="delimiterString">The delimiter string to use.</param>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.Delimiter.DelimiterString">
+            <summary>
+                The CSV delimiter string to use in the learned program.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.Delimiter.SetOptions(Microsoft.ProgramSynthesis.Read.FlatFile.Learning.Options)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.Delimiter.ConflictsWith(Microsoft.ProgramSynthesis.Wrangling.Constraints.Constraint{System.String,Microsoft.ProgramSynthesis.Wrangling.Schema.TableOutput.ITable{System.String}})">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.Delimiter.Valid(Microsoft.ProgramSynthesis.Program{System.String,Microsoft.ProgramSynthesis.Wrangling.Schema.TableOutput.ITable{System.String}})">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.Delimiter.Equals(Microsoft.ProgramSynthesis.Wrangling.Constraints.Constraint{System.String,Microsoft.ProgramSynthesis.Wrangling.Schema.TableOutput.ITable{System.String}})">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.Delimiter.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.EnableExtractionTextLearning">
+            <summary>
+                Allows (but does not require) learning of EText programs in addition to CSV and fixed-width.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.EnableExtractionTextLearning.SetOptions(Microsoft.ProgramSynthesis.Read.FlatFile.Learning.Options)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.EnableExtractionTextLearning.ConflictsWith(Microsoft.ProgramSynthesis.Wrangling.Constraints.Constraint{System.String,Microsoft.ProgramSynthesis.Wrangling.Schema.TableOutput.ITable{System.String}})">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.EnableExtractionTextLearning.Valid(Microsoft.ProgramSynthesis.Program{System.String,Microsoft.ProgramSynthesis.Wrangling.Schema.TableOutput.ITable{System.String}})">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.FieldPositions">
+            <summary>
+                A constraint to explicitly specify the FW field positions.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.FieldPositions.#ctor(System.Collections.Generic.IEnumerable{Microsoft.ProgramSynthesis.Utils.Record{System.Int32,System.Nullable{System.Int32}}})">
+            <summary>
+                Creates a new constraint to specify the FW field positions.
+            </summary>
+            <param name="fieldPositions">The list of fixed-width positions.</param>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.FieldPositions.FieldPositionList">
+            <summary>
+                The list of fixed-width positions to use in the learned program.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.FieldPositions.SetOptions(Microsoft.ProgramSynthesis.Read.FlatFile.Learning.Options)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.FieldPositions.ConflictsWith(Microsoft.ProgramSynthesis.Wrangling.Constraints.Constraint{System.String,Microsoft.ProgramSynthesis.Wrangling.Schema.TableOutput.ITable{System.String}})">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.FieldPositions.Valid(Microsoft.ProgramSynthesis.Program{System.String,Microsoft.ProgramSynthesis.Wrangling.Schema.TableOutput.ITable{System.String}})">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.FieldPositions.Equals(Microsoft.ProgramSynthesis.Wrangling.Constraints.Constraint{System.String,Microsoft.ProgramSynthesis.Wrangling.Schema.TableOutput.ITable{System.String}})">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.FieldPositions.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.FieldPositions.EqualLists(System.Collections.Generic.IReadOnlyList{Microsoft.ProgramSynthesis.Utils.Record{System.Int32,System.Nullable{System.Int32}}},System.Collections.Generic.IReadOnlyList{Microsoft.ProgramSynthesis.Utils.Record{System.Int32,System.Nullable{System.Int32}}})">
+            <summary>
+                A helper method to compare two lists of field positions for equality
+                (if none of them is <c>null</c>, in which case the result is <c>false</c>).
+            </summary>
+            <param name="l1">The first list.</param>
+            <param name="l2">The second list.</param>
+            <returns>Whether the lists are equal.</returns>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.FixedWidth">
+            <summary>
+                A constraint to learn only fixed width programs.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.FixedWidth.#ctor(System.String)">
+            <summary>
+                Creates a new constraint to learn fixed-width programs using an optional <paramref name="schema" />.
+            </summary>
+            <param name="schema">The optional fixed-width schema. If null, infer the schema from the data.</param>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.FixedWidth.Schema">
+            <summary>
+                The optional fixed-width schema, <code>null</code> if it is not provided.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.FixedWidth.SetOptions(Microsoft.ProgramSynthesis.Read.FlatFile.Learning.Options)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.FixedWidth.Equals(Microsoft.ProgramSynthesis.Wrangling.Constraints.Constraint{System.String,Microsoft.ProgramSynthesis.Wrangling.Schema.TableOutput.ITable{System.String}})">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.FixedWidth.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.FixedWidthConstraint">
+            <summary>
+                A base class for any fixed-width constraint.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.FixedWidthConstraint.SetOptions(Microsoft.ProgramSynthesis.Read.FlatFile.Learning.Options)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.FixedWidthConstraint.ConflictsWith(Microsoft.ProgramSynthesis.Wrangling.Constraints.Constraint{System.String,Microsoft.ProgramSynthesis.Wrangling.Schema.TableOutput.ITable{System.String}})">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.FixedWidthConstraint.Valid(Microsoft.ProgramSynthesis.Program{System.String,Microsoft.ProgramSynthesis.Wrangling.Schema.TableOutput.ITable{System.String}})">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.LearnLineLimit">
+            <summary>
+                A constraint to set the the maximum number of lines to learn from.
+                Note: This constraint is used only internally for testing.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.LearnLineLimit.#ctor(System.Int32)">
+            <summary>
+                Creates a new constraint to set the maximum number of lines.
+            </summary>
+            <param name="limit">The maximum number of lines.</param>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.LearnLineLimit.Limit">
+            <summary>
+                The maximum number of lines.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.LearnLineLimit.SetOptions(Microsoft.ProgramSynthesis.Read.FlatFile.Learning.Options)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.LearnLineLimit.ConflictsWith(Microsoft.ProgramSynthesis.Wrangling.Constraints.Constraint{System.String,Microsoft.ProgramSynthesis.Wrangling.Schema.TableOutput.ITable{System.String}})">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.LearnLineLimit.Valid(Microsoft.ProgramSynthesis.Program{System.String,Microsoft.ProgramSynthesis.Wrangling.Schema.TableOutput.ITable{System.String}})">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.LearnLineLimit.Equals(Microsoft.ProgramSynthesis.Wrangling.Constraints.Constraint{System.String,Microsoft.ProgramSynthesis.Wrangling.Schema.TableOutput.ITable{System.String}})">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.LearnLineLimit.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.Skip">
+            <summary>
+                A constraint to explicitly specify the number of rows to skip from the start of a file.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.Skip.#ctor(System.Int32)">
+            <summary>
+                Creates a new constraint to specify the number of rows to skip from the start.
+            </summary>
+            <param name="count">The number of rows to skip.</param>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.Skip.Count">
+            <summary>
+                The number of rows to skip from the start in the learned program.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.Skip.SetOptions(Microsoft.ProgramSynthesis.Read.FlatFile.Learning.Options)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.Skip.ConflictsWith(Microsoft.ProgramSynthesis.Wrangling.Constraints.Constraint{System.String,Microsoft.ProgramSynthesis.Wrangling.Schema.TableOutput.ITable{System.String}})">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.Skip.Valid(Microsoft.ProgramSynthesis.Program{System.String,Microsoft.ProgramSynthesis.Wrangling.Schema.TableOutput.ITable{System.String}})">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.Skip.Equals(Microsoft.ProgramSynthesis.Wrangling.Constraints.Constraint{System.String,Microsoft.ProgramSynthesis.Wrangling.Schema.TableOutput.ITable{System.String}})">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.Skip.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.SkipFooter">
+            <summary>
+                A constraint to explicitly specify the number of rows to skip from the end of a file.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.SkipFooter.#ctor(System.Int32)">
+            <summary>
+                Creates a new constraint to specify the number of rows to skip from the end.
+            </summary>
+            <param name="count">The number of rows to skip.</param>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.SkipFooter.Count">
+            <summary>
+                The number of rows to skip from the end in the learned program.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.SkipFooter.SetOptions(Microsoft.ProgramSynthesis.Read.FlatFile.Learning.Options)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.SkipFooter.ConflictsWith(Microsoft.ProgramSynthesis.Wrangling.Constraints.Constraint{System.String,Microsoft.ProgramSynthesis.Wrangling.Schema.TableOutput.ITable{System.String}})">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.SkipFooter.Valid(Microsoft.ProgramSynthesis.Program{System.String,Microsoft.ProgramSynthesis.Wrangling.Schema.TableOutput.ITable{System.String}})">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.SkipFooter.Equals(Microsoft.ProgramSynthesis.Wrangling.Constraints.Constraint{System.String,Microsoft.ProgramSynthesis.Wrangling.Schema.TableOutput.ITable{System.String}})">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Constraints.SkipFooter.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Read.FlatFile.Learner">
+            <summary>
+                A learner to learn flat-file programs.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Learner.Instance">
+            <summary>
+                Get the learner instance.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Learner.ScoreFeature">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Learner.LearnAll(System.Collections.Generic.IEnumerable{Microsoft.ProgramSynthesis.Wrangling.Constraints.Constraint{System.String,Microsoft.ProgramSynthesis.Wrangling.Schema.TableOutput.ITable{System.String}}},System.Collections.Generic.IEnumerable{System.String},System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Learner.LearnTopKUnchecked``1(System.Collections.Generic.IEnumerable{Microsoft.ProgramSynthesis.Wrangling.Constraints.Constraint{System.String,Microsoft.ProgramSynthesis.Wrangling.Schema.TableOutput.ITable{System.String}}},Microsoft.ProgramSynthesis.Features.Feature{``0},System.Int32,System.Nullable{System.Int32},Microsoft.ProgramSynthesis.Learning.ProgramSamplingStrategy,System.Collections.Generic.IEnumerable{System.String},System.Threading.CancellationToken,System.Nullable{System.Guid})">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Learner.Learn(System.Collections.Generic.IEnumerable{Microsoft.ProgramSynthesis.Wrangling.Constraints.Constraint{System.String,Microsoft.ProgramSynthesis.Wrangling.Schema.TableOutput.ITable{System.String}}},System.Nullable{System.Int32},System.Collections.Generic.IEnumerable{System.String},System.Nullable{System.Guid},System.Threading.CancellationToken)">
+            <summary>
+                Learns top-<see cref="!:k" /> programs, based on <see cref="!:constrains" /> and <see cref="!:additionalInputs" />.
+            </summary>
+            <param name="constraints">The constrains to learn from.</param>
+            <param name="k">The number of programs to learn.</param>
+            <param name="additionalInputs">The inputs to learn from.</param>
+            <param name="guid">A correlation id for logging and telemtry.</param>
+            <param name="cancel">The token to cancel the learning.</param>
+            <returns>The resulting sequence of programs.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Learner.GetOptions(System.Collections.Generic.IEnumerable{Microsoft.ProgramSynthesis.Wrangling.Constraints.Constraint{System.String,Microsoft.ProgramSynthesis.Wrangling.Schema.TableOutput.ITable{System.String}}})">
+            <summary>
+                Constructs <see cref="T:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.Options" /> from a sequence of constraints.
+            </summary>
+            <param name="constraints">The sequence of constrains.</param>
+            <returns>The resulting options.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Learner.CreateProgram(Microsoft.ProgramSynthesis.Read.FlatFile.Learning.LearnResult)">
+            <summary>
+                Creates a <see cref="T:Microsoft.ProgramSynthesis.Read.FlatFile.Program" /> from <see cref="T:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.LearnResult"/>.
+            </summary>
+            <param name="result">The learn result to construct program from.</param>
+            <returns>The resulting program.</returns>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Read.FlatFile.LearningOptions">
+            <summary>
+                A learning options used in <see cref="T:Microsoft.ProgramSynthesis.Read.FlatFile.ReadFlatFileLearner" />.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.LearningOptions.LinesToLearn">
+            <summary>
+                The number of lines (of the input file) used to learn a program.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.LearningOptions.ColumnNameCleaning">
+            <summary>
+                How to clean the raw column names.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.LearningOptions.TimeLimit">
+            <summary>
+                The time limit to learn a program (if any).
+            </summary>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Read.FlatFile.Loader">
+            <summary>
+                Loads a deserialized <see cref="T:Microsoft.ProgramSynthesis.Read.FlatFile.Program" />.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Read.FlatFile.Loader.Builder">
+            <summary>
+                The grammar builder used to construct typed ASTs.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Loader.Instance">
+            <summary>
+                Singleton instance of this class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Loader.Create(Microsoft.ProgramSynthesis.AST.ProgramNode)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Loader.Load(System.String,Microsoft.ProgramSynthesis.AST.ASTSerializationFormat,Microsoft.ProgramSynthesis.AST.DeserializationContext,Microsoft.ProgramSynthesis.AST.ProgramNodeParser)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Loader.Load(System.String,Microsoft.ProgramSynthesis.AST.ASTSerializationFormat,Microsoft.ProgramSynthesis.AST.DeserializationContext)">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Read.FlatFile.Program">
+            <summary>
+                A program to read a flat-file into a table.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Read.FlatFile.Program.DSLName">
+            <summary>
+                The name of the DSL.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Read.FlatFile.Program.Builder">
+            <summary>
+                The grammar builder used to construct typed ASTs.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Program.#ctor(Microsoft.ProgramSynthesis.Read.FlatFile.Build.NodeTypes.readFlatFile,System.Collections.Generic.IReadOnlyList{System.String},System.Collections.Generic.IReadOnlyList{System.String})">
+            <summary>
+                Constructs a new flat-file program.
+            </summary>
+            <param name="program">The (typed) AST of the new program.</param>
+            <param name="columnNames">The (cleaned) column names.</param>
+            <param name="rawColumnNames">The unprocessed column names.</param>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Program.TypedProgram">
+            <summary>
+                The typed AST of the program.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Program.RawColumnNames">
+            <summary>
+                The unprocessed column names.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Program.ColumnNames">
+            <summary>
+                The (cleaned) column names.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Program.Run(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Program.Run(System.String,System.Boolean)">
+            <summary>
+                Executes the program on the <paramref name="input" /> to obtain the output.
+            </summary>
+            <param name="input">The input.</param>
+            <param name="trim">Whether to trim quote, escape and extra space characters from the output.</param>
+            <returns>The output table.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Program.Run(System.IO.TextReader)">
+            <summary>
+                Executes the program on the <paramref name="input" /> to obtain the output.
+            </summary>
+            <param name="input">The input reader.</param>
+            <returns>The output table.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Program.Run(System.IO.TextReader,System.Boolean)">
+            <summary>
+                Executes the program on the <paramref name="input" /> to obtain the output.
+            </summary>
+            <param name="input">The input reader.</param>
+            <param name="trim">Whether to trim quote, escape and extra space characters from the output.</param>
+            <returns>The output table.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Program.RunInternal(System.String,System.Boolean)">
+            <summary>
+                Executes the program on the <paramref name="input" /> to obtain the output.
+            </summary>
+            <param name="input">The input string.</param>
+            <param name="trim">Whether to trim quote, escape and extra space characters from the output.</param>
+            <returns>The output table.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Program.RunInternal(System.IO.TextReader,System.Boolean)">
+            <summary>
+                Executes the program on the <paramref name="input" /> to obtain the output.
+            </summary>
+            <param name="input">The input reader.</param>
+            <param name="trim">Whether to trim quote, escape and extra space characters from the output.</param>
+            <returns>The output table.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Program.GetMCode(System.String,System.String,Microsoft.ProgramSynthesis.Read.FlatFile.Translation.PowerQueryM.ILocalizedPowerQueryMStrings,Microsoft.ProgramSynthesis.Translation.PowerQuery.IEscapePowerQueryM)">
+            <summary>
+                Gets the M code to parse <paramref name="binaryContent" />.
+            </summary>
+            <param name="binaryContent">The input binary content.</param>
+            <param name="encoding">The encoding.</param>
+            <param name="localizedStrings">The localized strings.</param>
+            <param name="escape">The interface to escape identifier.</param>
+            <returns>The code the parse <paramref name="binaryContent" />.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Program.Serialize(Microsoft.ProgramSynthesis.AST.ASTSerializationFormat)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Program.Serialize(Microsoft.ProgramSynthesis.AST.ASTSerializationSettings)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Program.Equals(Microsoft.ProgramSynthesis.Read.FlatFile.Program)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Program.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Program.Switch(System.Action{Microsoft.ProgramSynthesis.Read.FlatFile.CsvProgram},System.Action{Microsoft.ProgramSynthesis.Read.FlatFile.FwProgram},System.Action{Microsoft.ProgramSynthesis.Read.FlatFile.ExtractionTextProgram})">
+            <summary>
+                Switch on the type of the program.
+            </summary>
+            <param name="csv">The action to execute on the CSV program.</param>
+            <param name="fw">The action to execute on the FW program.</param>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Program.IsPySparkSupported">
+            <summary>
+                Whether the program is supported by PySpark.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.SimpleProgram.#ctor(Microsoft.ProgramSynthesis.Read.FlatFile.Build.NodeTypes.readFlatFile,System.Collections.Generic.IReadOnlyList{System.String},System.Int32,System.Int32,System.Boolean,Microsoft.ProgramSynthesis.Utils.Optional{System.String},System.Collections.Generic.IReadOnlyList{System.String},System.Int32,System.Boolean,System.Boolean,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+                Constructs a new flat-file program.
+            </summary>
+            <param name="program">The (typed) AST of the new program.</param>
+            <param name="columnNames">The (cleaned) column names.</param>
+            <param name="skip">The number of rows to skip from the start.</param>
+            <param name="skipFooter">The number of rows to skip from the end.</param>
+            <param name="filterEmptyLines">The flag indicating whether to skip the empty lines.</param>
+            <param name="commentStr">The string used to comment lines (if any).</param>
+            <param name="rawColumnNames">The unprocessed column names.</param>
+            <param name="skipEmptyAndCommentCount">The number of skipped rows that are empty or comment.</param>
+            <param name="hasEmptyLines">Whether the input used for learning has any empty lines.</param>
+            <param name="hasMultiLineRows">Whether there are any multi-line rows in the input used for learning.</param>
+            <param name="newLineStrings">The sequence of newline strings (separators) encountered in the input used for learning.</param>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.SimpleProgram.Skip">
+            <summary>
+                The number of rows to skip from the start.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.SimpleProgram.SkipFooter">
+            <summary>
+                The number of rows to skip from the end.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.SimpleProgram.FilterEmptyLines">
+            <summary>
+                The flag indicating whether to skip the empty lines.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.SimpleProgram.CommentStr">
+            <summary>
+                The string used to comment lines (if any).
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.SimpleProgram.SkipEmptyAndCommentCount">
+            <summary>
+                The number of skipped rows (from the start) that are empty or comment
+                in the input used for learning.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.SimpleProgram.HasEmptyLines">
+            <summary>
+                Whether the input used for learning has any empty lines.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.SimpleProgram.HasMultiLineRows">
+            <summary>
+                Whether there are any multi-line rows in the input used for learning.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.SimpleProgram.NewLineStrings">
+            <summary>
+                The sequence of newline strings (separators) encountered in the input used for learning.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.SimpleProgram.Equals(Microsoft.ProgramSynthesis.Read.FlatFile.Program)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.SimpleProgram.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Read.FlatFile.CsvProgram">
+            <summary>
+                A program to read a CSV file into a table.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.CsvProgram.#ctor(System.Collections.Generic.IReadOnlyList{System.String},System.Int32,System.Int32,System.String,System.Boolean,Microsoft.ProgramSynthesis.Utils.Optional{System.String},Microsoft.ProgramSynthesis.Utils.Optional{System.Char},Microsoft.ProgramSynthesis.Utils.Optional{System.Char},System.Boolean,System.Collections.Generic.IReadOnlyList{System.String},System.Int32,System.Boolean,System.Boolean,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+                Constructs a new CSV program.
+            </summary>
+            <param name="columnNames">The (cleaned) column names.</param>
+            <param name="skip">The number of rows to skip from the start.</param>
+            <param name="skipFooter">The number of rows to skip from the end.</param>
+            <param name="delimiter">The CSV delimiter string.</param>
+            <param name="filterEmptyLines">The flag indicating whether to skip the empty lines.</param>
+            <param name="commentStr">The string used to comment lines (if any).</param>
+            <param name="quoteChar">The character character used for CSV quoting (if any).</param>
+            <param name="escapeChar">The character character used for CSV escaping (if any).</param>
+            <param name="doubleQuote">The flag indicating whether a double quote escapes the quote character.</param>
+            <param name="rawColumnNames">The unprocessed column names.</param>
+            <param name="skipEmptyAndCommentCount">The number of skipped rows that are empty or comment.</param>
+            <param name="hasEmptyLines">Whether the input used for learning has any empty lines.</param>
+            <param name="hasMultiLineRows">Whether there are any multi-line rows in the input used for learning.</param>
+            <param name="newLineStrings">The sequence of newline strings (separators) encountered in the input used for learning.</param>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.CsvProgram.Delimiter">
+            <summary>
+                The CSV delimiter string.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.CsvProgram.QuoteChar">
+            <summary>
+                The character character used for CSV quoting (if any).
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.CsvProgram.EscapeChar">
+            <summary>
+                The character character used for CSV escaping (if any).
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.CsvProgram.DoubleQuote">
+            <summary>
+                The flag indicating whether a double quote is used to escape the quote character.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.CsvProgram.RunInternal(System.String,System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.CsvProgram.RunInternal(System.IO.TextReader,System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.CsvProgram.IsPySparkSupported">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.CsvProgram.BuildProgram(System.Collections.Generic.IReadOnlyList{System.String},System.Int32,System.Int32,System.String,System.Boolean,Microsoft.ProgramSynthesis.Utils.Optional{System.String},Microsoft.ProgramSynthesis.Utils.Optional{System.Char},Microsoft.ProgramSynthesis.Utils.Optional{System.Char},System.Boolean)">
+            <summary>
+                Creates a typed AST from the given parameters.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Read.FlatFile.FwProgram">
+            <summary>
+                A program to read a fixed-width file into a table.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.FwProgram.#ctor(System.Collections.Generic.IReadOnlyList{System.String},System.Int32,System.Int32,System.Collections.Generic.IReadOnlyList{Microsoft.ProgramSynthesis.Utils.Record{System.Int32,System.Nullable{System.Int32}}},System.Boolean,Microsoft.ProgramSynthesis.Utils.Optional{System.String},System.Collections.Generic.IReadOnlyList{System.String},System.Int32,System.Boolean,System.Boolean,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+                Constructs a new fixed-width program.
+            </summary>
+            <param name="columnNames">The (cleaned) column names.</param>
+            <param name="skip">The number of rows to skip from the start.</param>
+            <param name="skipFooter">The number of rows to skip from the end.</param>
+            <param name="fieldPositions">The (fixed) field positions for each column.</param>
+            <param name="filterEmptyLines">The flag indicating whether to skip the empty lines.</param>
+            <param name="commentStr">The string used to comment lines (if any).</param>
+            <param name="rawColumnNames">The unprocessed column names.</param>
+            <param name="skipEmptyAndCommentCount">The number of skipped rows that are empty or comment.</param>
+            <param name="hasEmptyLines">Whether the input used for learning has any empty lines.</param>
+            <param name="hasMultiLineRows">Whether there are any multi-line rows in the input used for learning.</param>
+            <param name="newLineStrings">The sequence of newline strings (separators) encountered in the input used for learning.</param>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.FwProgram.FieldPositions">
+            <summary>
+                The (fixed) field positions for each column.
+                Note: Each field is identified by a tuple of [start, end).
+                    The starting position is inclusive while the ending position is exclusive.
+                    If the ending position is <c>null</c>, the field spans to the end of record.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.FwProgram.RunInternal(System.String,System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.FwProgram.RunInternal(System.IO.TextReader,System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.FwProgram.BuildProgram(System.Collections.Generic.IReadOnlyList{System.String},System.Int32,System.Int32,System.Collections.Generic.IReadOnlyList{Microsoft.ProgramSynthesis.Utils.Record{System.Int32,System.Nullable{System.Int32}}},System.Boolean,Microsoft.ProgramSynthesis.Utils.Optional{System.String})">
+            <summary>
+                Creates a typed AST from the given parameters.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Read.FlatFile.ReadFlatFileLearner">
+            <summary>
+                An API for learning flat-file programs directly.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.ReadFlatFileLearner.Learn(System.String,Microsoft.ProgramSynthesis.Read.FlatFile.LearningOptions,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Threading.CancellationToken)">
+            <summary>
+                Learns a top-ranked program, using the input, the options, and the explicitly set (override) parameters.
+            </summary>
+            <param name="input">The input string to learn from.</param>
+            <param name="options">The learning options.</param>
+            <param name="skip">The number of rows to skip from the start.</param>
+            <param name="skipFooter">The number of rows to skip from the end.</param>
+            <param name="cancel">Optional token for cancelling the operation.</param>
+            <returns>The learned program.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.ReadFlatFileLearner.LearnCsv(System.String,Microsoft.ProgramSynthesis.Read.FlatFile.LearningOptions,System.String,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Threading.CancellationToken)">
+            <summary>
+                Learns a top-ranked CSV rogram, using the input, the options, and the explicitly set (override) parameters.
+            </summary>
+            <param name="input">The input string to learn from.</param>
+            <param name="options">The learning options.</param>
+            <param name="delimiter">The CSV delimiter string.</param>
+            <param name="skip">The number of rows to skip from the start.</param>
+            <param name="skipFooter">The number of rows to skip from the end.</param>
+            <param name="cancel">Optional token for cancelling the operation.</param>
+            <returns>The learned CSV program.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.ReadFlatFileLearner.LearnFw(System.String,Microsoft.ProgramSynthesis.Read.FlatFile.LearningOptions,System.String,System.Collections.Generic.IReadOnlyList{Microsoft.ProgramSynthesis.Utils.Record{System.Int32,System.Nullable{System.Int32}}},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Threading.CancellationToken)">
+            <summary>
+                Learns a top-ranked fixed-width rogram, using the input, the options, and the explicitly set (override) parameters.
+            </summary>
+            <param name="input">The input string to learn from.</param>
+            <param name="options">The learning options.</param>
+            <param name="fwSchema">The fixed-width schema.</param>
+            <param name="fieldPositions">The list of FW field positions.</param>
+            <param name="skip">The number of rows to skip from the start.</param>
+            <param name="skipFooter">The number of rows to skip from the end.</param>
+            <param name="cancel">Optional token for cancelling the operation.</param>
+            <returns>The learned FW program.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.ReadFlatFileLearner.Learn(System.IO.TextReader,Microsoft.ProgramSynthesis.Read.FlatFile.LearningOptions,System.String,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Threading.CancellationToken)">
+            <summary>
+                Learns a top-ranked program, using the input, the options, and the explicitly set (override) parameters.
+            </summary>
+            <param name="input">The input reader to learn from.</param>
+            <param name="options">The learning options.</param>
+            <param name="skip">The number of rows to skip from the start.</param>
+            <param name="skipFooter">The number of rows to skip from the end.</param>
+            <param name="cancel">Optional token for cancelling the operation.</param>
+            <returns>The learned program.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.ReadFlatFileLearner.LearnCsv(System.IO.TextReader,Microsoft.ProgramSynthesis.Read.FlatFile.LearningOptions,System.String,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Threading.CancellationToken)">
+            <summary>
+                Learns a top-ranked CSV rogram, using the input, the options, and the explicitly set (override) parameters.
+            </summary>
+            <param name="input">The input reader to learn from.</param>
+            <param name="options">The learning options.</param>
+            <param name="delimiter">The CSV delimiter string.</param>
+            <param name="skip">The number of rows to skip from the start.</param>
+            <param name="skipFooter">The number of rows to skip from the end.</param>
+            <param name="cancel">Optional token for cancelling the operation.</param>
+            <returns>The learned CSV program.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.ReadFlatFileLearner.LearnFw(System.IO.TextReader,Microsoft.ProgramSynthesis.Read.FlatFile.LearningOptions,System.IO.TextReader,System.Collections.Generic.IReadOnlyList{Microsoft.ProgramSynthesis.Utils.Record{System.Int32,System.Nullable{System.Int32}}},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Threading.CancellationToken)">
+            <summary>
+                Learns a top-ranked fixed-width rogram, using the input, the options, and the explicitly set (override) parameters.
+            </summary>
+            <param name="input">The input reader to learn from.</param>
+            <param name="options">he learning options.</param>
+            <param name="fwSchema">The fixed-width schema.</param>
+            <param name="fieldPositions">The list of FW field positions.</param>
+            <param name="skip">The number of rows to skip from the start.</param>
+            <param name="skipFooter">The number of rows to skip from the end.</param>
+            <param name="cancel">Optional token for cancelling the operation.</param>
+            <returns>The learned FW program.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.ReadFlatFileLearner.Learn(System.IO.TextReader,Microsoft.ProgramSynthesis.Read.FlatFile.LearningOptions,Microsoft.ProgramSynthesis.Read.FlatFile.ReadFlatFileLearner.ProgramType,System.String,System.String,System.Collections.Generic.IReadOnlyList{Microsoft.ProgramSynthesis.Utils.Record{System.Int32,System.Nullable{System.Int32}}},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Threading.CancellationToken)">
+            <summary>
+                Learns a program from the text reader.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.ReadFlatFileLearner.Learn(System.String,Microsoft.ProgramSynthesis.Read.FlatFile.LearningOptions,Microsoft.ProgramSynthesis.Read.FlatFile.ReadFlatFileLearner.ProgramType,System.String,System.String,System.Collections.Generic.IReadOnlyList{Microsoft.ProgramSynthesis.Utils.Record{System.Int32,System.Nullable{System.Int32}}},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Threading.CancellationToken)">
+            <summary>
+                Learns a program from the string.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.ReadFlatFileLearner.CreateTimeoutCancellationToken(Microsoft.ProgramSynthesis.Read.FlatFile.LearningOptions,System.Threading.CancellationToken)">
+            <summary>
+                Creates a cancellation from the learning options.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.ReadFlatFileLearner.AddConstraints(Microsoft.ProgramSynthesis.Read.FlatFile.Session,Microsoft.ProgramSynthesis.Read.FlatFile.ReadFlatFileLearner.ProgramType,Microsoft.ProgramSynthesis.Read.FlatFile.Learning.ColumnNameCleaningType,System.String,System.String,System.Collections.Generic.IReadOnlyList{Microsoft.ProgramSynthesis.Utils.Record{System.Int32,System.Nullable{System.Int32}}},System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+                Adds constraints to the session based on the provided parameters.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Read.FlatFile.ReadFlatFileLearner.ProgramType">
+            <summary>
+                A program type to learn.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Read.FlatFile.Session">
+            <summary>
+                A session for learning flat-file programs.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Read.FlatFile.Session.LoggingInputLines">
+            <summary>
+                The maximum number of lines of the input to log.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Read.FlatFile.Session.LoggingInputSize">
+            <summary>
+                The maximum size of the input to log.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Read.FlatFile.Session.LazyJsonSerializerSettings">
+            <summary>
+                See <see cref="T:Microsoft.ProgramSynthesis.Read.FlatFile.SessionJsonSerializerSettings" />.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Read.FlatFile.Session.DefaultLinesToLearn">
+            <summary>
+                The default number of lines (of the input file) used for learning programs.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Session.#ctor(Microsoft.ProgramSynthesis.Wrangling.Session.IJournalStorage,System.Globalization.CultureInfo,Microsoft.ProgramSynthesis.Wrangling.Logging.ILogger)">
+            <summary>
+                Constructs a new session.
+            </summary>
+            <param name="journalStorage">
+                Backing store for the journal of user actions used to adapt to user preferences. May be
+                null to not save this data.
+            </param>
+            <param name="culture">
+                The <see cref="T:System.Globalization.CultureInfo" /> to use when learning programs; accessible using
+                <see cref="P:Microsoft.ProgramSynthesis.Wrangling.Session.Session`3.Culture" />. Used to select preferred date and number formats and
+                defaults for other culture-specific settings.
+            </param>
+            <param name="logger">
+                The <see cref="T:Microsoft.ProgramSynthesis.Wrangling.Logging.ILogger" /> implementation to use for providing telemetry information.
+            </param>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Session.JsonSerializerSettings">
+            <summary>
+                Pass this property to json.net when serializing or deserializing a session object.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Session.JsonSerializerSettingsInstance">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Session.AddInput(System.String,System.Int32)">
+            <summary>
+                Adds a new input to learn from.
+            </summary>
+            <param name="input">The whole input string.</param>
+            <param name="linesToLearn">The number of lines of the input to use for learning.</param>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Session.AddInput(System.IO.TextReader,System.Int32)">
+            <summary>
+                Adds a new input to learn from.
+            </summary>
+            <param name="input">The input reader.</param>
+            <param name="linesToLearn">The number of lines of the input to use for learning.</param>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Session.TrackedLearningProperties(Microsoft.ProgramSynthesis.Wrangling.Session.LearnProgramRequest{Microsoft.ProgramSynthesis.Read.FlatFile.Program,System.String,Microsoft.ProgramSynthesis.Wrangling.Schema.TableOutput.ITable{System.String}},Microsoft.ProgramSynthesis.Read.FlatFile.Program)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Session.TrackedLearningUserProperties(Microsoft.ProgramSynthesis.Wrangling.Session.LearnProgramRequest{Microsoft.ProgramSynthesis.Read.FlatFile.Program,System.String,Microsoft.ProgramSynthesis.Wrangling.Schema.TableOutput.ITable{System.String}},Microsoft.ProgramSynthesis.Read.FlatFile.Program,System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.SessionJsonSerializerSettings.SessionTypes">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.SessionJsonSerializerSettings.ConstraintTypes">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.SessionJsonSerializerSettings.Initialize">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Read.FlatFile.Translation.Python.PythonTranslator">
+            <summary>
+                Translates <see cref="T:Microsoft.ProgramSynthesis.Read.FlatFile.Program" /> into Python code.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Read.FlatFile.Translation.Python.PythonTranslator.PySparkSqlFunctions">
+            <summary>
+                PySpark module with functions.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Read.FlatFile.Translation.Python.PythonTranslator.PySparkSqlTypes">
+            <summary>
+                PySpark module with types.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Read.FlatFile.Translation.Python.PythonTranslator.PandasDefaultQuoteChar">
+            <summary>
+                The default value for pandas quote char - in which case it doesn't need to be generated.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Read.FlatFile.Translation.Python.PythonTranslator._program">
+            <summary>
+                The program to translate.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Read.FlatFile.Translation.Python.PythonTranslator._options">
+            <summary>
+                The translation options.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Translation.Python.PythonTranslator.#ctor(Microsoft.ProgramSynthesis.Read.FlatFile.Program,Microsoft.ProgramSynthesis.Read.FlatFile.Translation.Python.TranslationOptions)">
+            <summary>
+                Creates a new instance of the translator.
+            </summary>
+            <param name="program">The program to translate.</param>
+            <param name="options">The translation options.</param>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Translation.Python.PythonTranslator.GenerateCode(Microsoft.ProgramSynthesis.Translation.Python.PythonTarget,System.String,System.String)">
+            <summary>
+                Generates Python code.
+            </summary>
+            <param name="target">The target to generate code for.</param>
+            <param name="encoding">The encoding of the input.</param>
+            <param name="input">The input.</param>
+            <returns>The generated Python snippet.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Translation.Python.PythonTranslator.NormalizeEncoding(System.String)">
+            <summary>
+                Normalizes encoding to lower case invariant without '-'.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Translation.Python.PythonTranslator.GeneratePySpark(Microsoft.ProgramSynthesis.Utils.CodeBuilder,Microsoft.ProgramSynthesis.Translation.Python.PythonImports,System.String,System.String)">
+            <summary>
+                Generates PySpark code for <see cref="F:Microsoft.ProgramSynthesis.Read.FlatFile.Translation.Python.PythonTranslator._program" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Translation.Python.PythonTranslator.GeneratePySparkNoSplit(Microsoft.ProgramSynthesis.Utils.CodeBuilder,Microsoft.ProgramSynthesis.Translation.Python.PythonImports,System.Int32,System.String)">
+            <summary>
+                Generates PySpark code for a single-column program.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Translation.Python.PythonTranslator.GeneratePySparkCsv(Microsoft.ProgramSynthesis.Utils.CodeBuilder,Microsoft.ProgramSynthesis.Translation.Python.PythonImports,Microsoft.ProgramSynthesis.Read.FlatFile.CsvProgram,System.Int32,System.String,System.String)">
+            <summary>
+                Generates PySpark code for a CSV program.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Translation.Python.PythonTranslator.GeneratePySparkFw(Microsoft.ProgramSynthesis.Utils.CodeBuilder,Microsoft.ProgramSynthesis.Translation.Python.PythonImports,Microsoft.ProgramSynthesis.Read.FlatFile.FwProgram,System.Int32,System.String)">
+            <summary>
+                Generates PySpark code for a FW program.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Translation.Python.PythonTranslator.GeneratePySparkSkip(Microsoft.ProgramSynthesis.Utils.CodeBuilder,Microsoft.ProgramSynthesis.Translation.Python.PythonImports,System.Int32)">
+            <summary>
+                Generates PySpark code to skip rows.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Translation.Python.PythonTranslator.GeneratePySparkSchema(Microsoft.ProgramSynthesis.Utils.CodeBuilder,Microsoft.ProgramSynthesis.Translation.Python.PythonImports)">
+            <summary>
+                Generates PySpark code for schema definition.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Translation.Python.PythonTranslator.GeneratePySparkTrim(Microsoft.ProgramSynthesis.Utils.CodeBuilder,Microsoft.ProgramSynthesis.Translation.Python.PythonImports)">
+            <summary>
+                Generate PySpark function definition to trim string.
+            </summary>
+            <param name="builder"></param>
+            <param name="imports"></param>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Translation.Python.PythonTranslator.GeneratePySparkStripCR(Microsoft.ProgramSynthesis.Utils.CodeBuilder,Microsoft.ProgramSynthesis.Translation.Python.PythonImports)">
+            <summary>
+                Generates PySpark code to trim "\r" (CR) from columns (if neccessary).
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Translation.Python.PythonTranslator.GenerateColumnNameComment(System.String,System.String)">
+            <summary>
+                Generates a comment content with the original column name (if it differs from the new column name).
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Translation.Python.PythonTranslator.GenerateColumnNameComments">
+            <summary>
+                Generates a list of column name comments (<seealso cref="M:Microsoft.ProgramSynthesis.Read.FlatFile.Translation.Python.PythonTranslator.GenerateColumnNameComment(System.String,System.String)" />).
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Translation.Python.PythonTranslator.GeneratePandas(Microsoft.ProgramSynthesis.Utils.CodeBuilder,Microsoft.ProgramSynthesis.Translation.Python.PythonImports,System.String,System.String)">
+            <summary>
+                Generates Pandas code.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Translation.Python.PythonTranslator.FieldPairToLiteral(Microsoft.ProgramSynthesis.Utils.Record{System.Int32,System.Nullable{System.Int32}})">
+            <summary>
+                Converts field-pair to Python literal.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Translation.Python.PythonTranslator.GeneratePandasNoSplitCode(Microsoft.ProgramSynthesis.Utils.CodeBuilder,System.String,System.String)">
+            <summary>
+                Generates PySpark code for a single-column program.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Translation.Python.PythonTranslator.ToUnicodeEscapedPythonLiteral(System.String,System.Boolean@)">
+            <summary>
+                Converts a string to a Python literal, while also encoding not-ASCII characters.
+            </summary>
+            <param name="delimiter">The input string.</param>
+            <param name="hasNonAscii">Whether the input string has non-ASCII chars.</param>
+            <returns>The resulting Python literal.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Translation.Python.PythonTranslator.AddSupressPandasTypeDetectionParams(Microsoft.ProgramSynthesis.Read.FlatFile.Translation.Python.PythonTranslator.ArgumentList)">
+            <summary>
+                Adds common Pandas parameters to a parameter list.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Read.FlatFile.Translation.Python.PythonTranslator.ArgumentList">
+            <summary>
+                A helper class for holding a list of arguments for a function call.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Translation.Python.PythonTranslator.ArgumentList.Arguments">
+            <summary>
+                The list of added arguments.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Translation.Python.PythonTranslator.ArgumentList.Add(System.String)">
+            <summary>
+                Add a new argument.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Translation.Python.PythonTranslator.ArgumentList.AddLiteral(System.String)">
+            <summary>
+                Add a new string literal argument.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Translation.Python.PythonTranslator.ArgumentList.Add(System.String,System.String)">
+            <summary>
+                Add a new named argument.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Translation.Python.PythonTranslator.ArgumentList.AddLiteral(System.String,System.String)">
+            <summary>
+                Add a new named string literal argument.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Translation.Python.PythonTranslator.ArgumentList.AddLiteral(System.String,System.Char)">
+            <summary>
+                Add a new named char literal argument.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Translation.Python.PythonTranslator.ArgumentList.AddLiteral(System.String,Microsoft.ProgramSynthesis.Utils.Optional{System.Char})">
+            <summary>
+                Add a new named optional char literal argument.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Translation.Python.PythonTranslator.ArgumentList.AddLiteral(System.String,System.Int32)">
+            <summary>
+                Add a new named integer literal argument.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Translation.Python.PythonTranslator.ArgumentList.AddLiteral(System.String,System.Boolean)">
+            <summary>
+                Add a new named boolean literal argument.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Read.FlatFile.Translation.Python.PythonTranslatorUtils">
+            <summary>
+                Python translation utilities.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Translation.Python.PythonTranslatorUtils.ToPython(Microsoft.ProgramSynthesis.Read.FlatFile.Program,Microsoft.ProgramSynthesis.Translation.Python.PythonTarget,System.String,System.String,Microsoft.ProgramSynthesis.Read.FlatFile.Translation.Python.TranslationOptions)">
+            <summary>
+                Translates a program to Python.
+            </summary>
+            <param name="program">The program to translate.</param>
+            <param name="target">The target of the Python code.</param>
+            <param name="encoding">The encoding of the input.</param>
+            <param name="input">The input to read.</param>
+            <param name="options">The translation options.</param>
+            <returns>The Python code snippet.</returns>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Read.FlatFile.Translation.Python.TranslationOptions">
+            <summary>
+                The options used while translating a <see cref="T:Microsoft.ProgramSynthesis.Read.FlatFile.Program" /> to Python code.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Translation.Python.TranslationOptions.NamesVar">
+            <summary>
+                The name of the column names variable.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Translation.Python.TranslationOptions.ResultVar">
+            <summary>
+                The name of the result variable.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Translation.Python.TranslationOptions.ColumnsVar">
+            <summary>
+                The name of the column description (column names and colspecs) variable, used for FW programs.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Translation.Python.TranslationOptions.ColspecsVar">
+            <summary>
+                The name of the column specification (FW field positions) variable.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Translation.Python.TranslationOptions.LinesVar">
+            <summary>
+                The name of the lines variable.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Translation.Python.TranslationOptions.CreateNewSparkSession">
+            <summary>
+                Whether to create a new Spark session.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Translation.Python.TranslationOptions.SparkSession">
+            <summary>
+                The name of the spark session variable.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Translation.Python.TranslationOptions.SchemaVar">
+            <summary>
+                The name of the (PySpark) schema variable.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Translation.Python.TranslationOptions.TrimFnc">
+            <summary>
+                The name of the (manually-defined) string trim function.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Translation.Python.TranslationOptions.RStripCRFnc">
+            <summary>
+                The name of the (manually-defined) carriage-return strip function.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Translation.Python.TranslationOptions.IsNotCommentFnc">
+            <summary>
+                The name of the (manually-defined) function to filter comment rows.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Translation.Python.TranslationOptions.SuppressTypeDetection">
+            <summary>
+                Whether to generate code to supress native type detection in read calls;
+                this is useful if we expect that custom type-detection will follow read-code.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.FwColumnFormat">
+            <summary>
+                The format of a column in a fixed-width file.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.FwColumnFormat.#ctor(System.Int32,System.Nullable{System.Int32},System.String,System.String,System.String)">
+            <summary>
+                Constructs a fixed-width column format.
+            </summary>
+            <param name="start">The staring position.</param>
+            <param name="end">The ending position.</param>
+            <param name="name">The name.</param>
+            <param name="type">The type.</param>
+            <param name="description">The description.</param>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.FwColumnFormat.Start">
+            <summary>
+                The column's starting position (1-based, inclusive).
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.FwColumnFormat.End">
+            <summary>
+                The column's ending position (1-based, inclusive).
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.FwColumnFormat.Name">
+            <summary>
+                The column's name.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.FwColumnFormat.Type">
+            <summary>
+                The column's type.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.FwColumnFormat.Description">
+            <summary>
+                The column's description.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.FwColumnFormat.Equals(Microsoft.ProgramSynthesis.Read.FlatFile.Learning.FwColumnFormat)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.FwColumnFormat.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.FwColumnFormat.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.FwColumnFormat.ToString">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.FwFormatExtractor">
+            <summary>
+                Extracts a column format from a row in the schema table
+            </summary>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.RangeFormatExtractor">
+            <summary>
+                Extracts a column format in the form of start-end
+            </summary>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.StartEndFormatExtractor">
+            <summary>
+                Extracts a column format using two cells start and end.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.StartLengthFormatExtractor">
+            <summary>
+                Extracts a column format using two cells start and length.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.FwFormatLearner">
+            <summary>
+                Learns <see cref="T:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.FwColumnFormat" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.FwFormatLearner.Learn(System.String,System.Nullable{System.Guid},System.Threading.CancellationToken)">
+            <summary>
+                Learns a list of <see cref="T:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.FwColumnFormat" /> for a fixed-width file from a free-form
+                <paramref name="formatDescription" />.
+            </summary>
+            <param name="formatDescription">The format description.</param>
+            <param name="guid">Correlation id for logging and telemtry.</param>
+            <param name="cancel">A token to cancel learning.</param>
+            <returns>A list of <see cref="T:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.FwColumnFormat" />.</returns>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses">
+            <summary>
+                All the (automatic/predictive) learning functionality.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.StandardDelimiterScores">
+            <summary>
+                Scores of standard delimiters.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.BadDataDelimiterFactor">
+            <summary>
+                A score factor for delimiters that produce "bad" data.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.StandardParens">
+            <summary>
+                Pairs of closing-opening parenthesis of different kinds, used to check whether data is well-balanced.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.UnlikelyDelimiterChars">
+            <summary>
+                A set of characters that are very unlikely to be part of a delimiter.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.UnlikelyDelimiterCharScoreFactor">
+            <summary>
+                A factor to multiply delimiter score with when delimiter contains some unlikely character.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.DefaultDelimiterScore">
+            <summary>
+                Default (non-standard) delimiter score.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.FwAllSpaceDelimiterScore">
+            <summary>
+                Score for FW or all-space delimiter.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.AllSpaceExtraSpaceFactor">
+            <summary>
+                A score factor when there are extra spaces in cells with all-space delimiter
+                (this signals that this is likely a FW program).
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.NoDelimiterScore">
+            <summary>
+                No delimiter (single column split) score.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.IgnoreDelimiterChars">
+            <summary>
+                Characters that should not be considered for delimiters.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.MaxDelimiterLength">
+            <summary>
+                The maximum length of learned delimiters.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.StandardQuoteScores">
+            <summary>
+                Scores of standard quote characters.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.StandardEscapeScores">
+            <summary>
+                Scores of standard escape characters.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.DefaultQuoteAndEscapeScore">
+            <summary>
+                Default (non-standard) quote and escape character score.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.EmptyQuoteAndEscapeScore">
+            <summary>
+                Score of empty (no) quote and escape characters.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.MaxMissingColumns(System.Int32)">
+            <summary>
+                The maximum number of missing CSV columns per total columns in the file.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.LikelyCommentStrings">
+            <summary>
+                A list of likely comment strings.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.ColumnNameTrimChars">
+            <summary>
+                The chacarters to trim from the raw column name.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.ColumnNameRegex">
+            <summary>
+                The regular expression that (good) column names should match. 
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.PreferredColumnNameRegex">
+            <summary>
+                The regular expression that (really good) column names should match. 
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.ValidColumnsThreshold(System.Int32,System.String)">
+            <summary>
+                Determines a required ratio of good column names for a row to be considered for column names.
+            </summary>
+            <param name="colNum">The total number of columns.</param>
+            <param name="delimiter">The delimiter</param>
+            <returns>The ratio.</returns>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.ColumnNameLearningTokens">
+            <summary>
+                The tokens used in learning column names, that is, distinguishing column names from data.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.PrefixRegexes">
+            <summary>
+                Regexes used to distinguish record prefixes of headers and data.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.WhiteSpaceTokenName">
+            <summary>
+                The name of the white-space token.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.MaxColumnNameLearningRows">
+            <summary>
+                The maximum number of rows used for learning column names.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses._options">
+            <summary>
+                The options used for learning.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.#ctor(Microsoft.ProgramSynthesis.Read.FlatFile.Learning.Options)">
+            <summary>
+                Constructs a new witnesses class.
+            </summary>
+            <param name="options">The options used for learning.</param>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.LearnAuto(System.String,System.Nullable{System.Int32},System.Nullable{System.Guid},System.Threading.CancellationToken)">
+            <summary>
+                Automatically (predictively, only from inputs) learn programs.
+            </summary>
+            <param name="input">The input.</param>
+            <param name="k">The number of programs to learn (<c>null</c> means not limit).</param>
+            <param name="guid">A correlation id for logging and telemtry.</param>
+            <param name="cancel">A token to cancel learning.</param>
+            <returns>The sequence of top programs.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.IsBadDataRow(System.Collections.Generic.IReadOnlyList{System.String})">
+            <summary>
+                Heuristics to determine whether a row contains bad data.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.GetNewLineSeps(System.Collections.Generic.IReadOnlyList{System.String})">
+            <summary>
+                Extracts the new line separators from the list of lines.
+            </summary>
+            <param name="lines">The input lines.</param>
+            <returns>The list of line separator strings found in the lines.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.GetLines(System.String)">
+            <summary>
+                Extracts lines from the input.
+            </summary>
+            <param name="input">The input.</param>
+            <returns>The extracted lines.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.HasMultiLineRows(System.Collections.Generic.IReadOnlyList{System.Collections.Generic.IReadOnlyList{System.String}})">
+            <summary>
+                Checks whether there are any multi-line rows.
+            </summary>
+            <param name="rows">The input rows.</param>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.ComputeConsistencyScore(Microsoft.ProgramSynthesis.Read.FlatFile.Learning.LearnCsvResult@,System.Collections.Generic.IReadOnlyList{System.Collections.Generic.IReadOnlyList{System.String}}@,System.Int32@,System.Collections.Generic.ISet{System.Int32}@)">
+            <summary>
+                Computes a consistency (regularity) score and updates additional paramaters.
+            </summary>
+            <param name="result">The learned result.</param>
+            <param name="rows">The learned output table.</param>
+            <param name="columnCount">The most common number of columns in the table.</param>
+            <param name="filteredRows">The filtered (empty, commented) rows.</param>
+            <returns>The score, where <c>1.0</c> means fully consistent.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.CheckExtraSpaces(System.Collections.Generic.IReadOnlyList{System.String},Microsoft.ProgramSynthesis.Read.FlatFile.Learning.LearnResult,System.Int32,System.Collections.Generic.ISet{System.Int32})">
+            <summary>
+                Check whether there are extra spaces in the cells.
+            </summary>
+            <param name="lines">The input lines.</param>
+            <param name="result">The learning result.</param>
+            <param name="columnCount">The number of columns.</param>
+            <param name="filteredRows">The set of filtered rows.</param>
+            <returns>Whether there is any cell with extra space.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.LearnBasicResultAndTable(System.String,System.Collections.Generic.IReadOnlyList{System.String},Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.DelimiterConfig,System.Nullable{System.Guid},System.Threading.CancellationToken)">
+            <summary>
+                Learns the initial (incomplete) learning result and the output table from the delimiter configuration.
+            </summary>
+            <param name="lines">The input lines.</param>
+            <param name="config">The delimiter configuration to learn from.</param>
+            <param name="cancel">The token to cancel learning.</param>
+            <param name="guid">A correlation id for logging and telemtry.</param>
+            <returns>The sequence of learning results and output tables.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.LearnFixedWidth(System.Collections.Generic.IReadOnlyList{System.String},System.Nullable{System.Guid},System.Threading.CancellationToken)">
+            <summary>
+                Learns the initial (incomplete) FW learning result and the output table, using Split.Text.
+            </summary>
+            <param name="lines">The input lines.</param>
+            <param name="guid">A correlation id for logging and telemtry.</param>
+            <param name="cancel">The token to cancel learning.</param>
+            <returns>The learning result and output table (if any learned).</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.LearnFixedWidthFromSchema(System.Collections.Generic.IReadOnlyList{System.String},System.Nullable{System.Guid},System.Threading.CancellationToken)">
+            <summary>
+                Learn a FW program from a fixed-width schema.
+            </summary>
+            <param name="guid">A correlation id for logging and telemtry.</param>
+            <param name="cancel">A token to cancel learning.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.CleanColumnNames(System.Collections.Generic.IReadOnlyList{System.String},System.Int32)">
+            <summary>
+                Cleans raw column names.
+            </summary>
+            <param name="rawColumnNames">The column names to clean.</param>
+            <param name="columnCount">The number of columns.</param>
+            <returns>The cleaned column names.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.ToValidIdentifier(System.String)">
+            <summary>
+                Converst a column name into a valid identifier.
+            </summary>
+            <param name="name">The raw column name.</param>
+            <returns>The converted column name.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.ComputeCountFreqs(System.Collections.Generic.IReadOnlyList{System.Int32},System.Int32,System.Collections.Generic.ISet{System.Int32})">
+            <summary>
+                Computes a dictionary of column count frequencies.
+            </summary>
+            <param name="columnCounts">The list of column counts (for each row).</param>
+            <param name="skip">The number of skipped rows.</param>
+            <param name="filteredRows">The set of skipped rows.</param>
+            <returns>The frequency dictionary.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.LearnDelimiterConfigs(System.Collections.Generic.IReadOnlyList{System.String},System.Threading.CancellationToken)">
+            <summary>
+                Learns delimiter configurations from the input lines.
+            </summary>
+            <param name="lines">The input lines.</param>
+            <param name="cancel">The token to cancel learning.</param>
+            <returns>The ranked sequence of learned delimiter configurations.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.LearnCommentString(System.Collections.Generic.IEnumerable{System.Collections.Generic.IReadOnlyList{System.String}},Microsoft.ProgramSynthesis.Utils.Optional{System.Int32})">
+            <summary>
+                Learns a comment string from table rows.
+            </summary>
+            <param name="rows">The table rows.</param>
+            <param name="colNum">The expected column count (if any).</param>
+            <returns>The learned comment string or <c>null</c> if there is no comment string.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.GetFilteredRows(System.Collections.Generic.IReadOnlyList{System.Collections.Generic.IReadOnlyList{System.String}},Microsoft.ProgramSynthesis.Utils.Optional{System.String},System.Boolean@,System.Boolean)">
+            <summary>
+                Gets a set of filtered (empty or comment rows).
+            </summary>
+            <param name="rows">The input table rows.</param>
+            <param name="commentStr">The comment string (if any).</param>
+            <param name="hasEmptyLines">Whether there are any empty lines.</param>
+            <param name="isCsv">Whether the rows result from CSV.</param>
+            <returns>The list of filtered rows.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.EvalResult(Microsoft.ProgramSynthesis.Read.FlatFile.Learning.LearnResult,System.Collections.Generic.IReadOnlyList{System.String},System.Int32,System.Boolean)">
+            <summary>
+                Evaluates a learning result into a list of rows.
+            </summary>
+            <param name="result">The learning result.</param>
+            <param name="lines">The input lines.</param>
+            <param name="columnCount">The expected column count or <c>0</c> if column count arbitrary.</param>
+            <param name="trim">Whether to trim (of quote/escape/whitespace chars) the output cells.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.GetRegularTable(System.Int32,System.Collections.Generic.IReadOnlyList{System.Collections.Generic.IReadOnlyList{System.String}})">
+            <summary>
+                Gets a regular table from a possibly non-regular table.
+            </summary>
+            <param name="columnCount">The expected number of columns in each row.</param>
+            <param name="originalTable">The original, possibly non-regular table.</param>
+            <returns>The table where each row has <c>columnCount</c> rows.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.LearnEmptyColumns(System.Collections.Generic.IReadOnlyList{System.Collections.Generic.IReadOnlyList{System.String}},System.Int32,System.Int32,System.Collections.Generic.ISet{System.Int32})">
+            <summary>
+                Learns empty columns of a table.
+            </summary>
+            <param name="rows">The table.</param>
+            <param name="columnCount">The number of columns in each row.</param>
+            <param name="skip">The number of skipped rows at the start.</param>
+            <param name="filteredRows">The set of filtered rows.</param>
+            <returns>The set of emppty columns.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.LearnHeader(System.Collections.Generic.IReadOnlyList{System.Collections.Generic.IReadOnlyList{System.String}},System.Int32,System.String,System.Collections.Generic.ISet{System.Int32},System.Int32@)">
+            <summary>
+                Learns a table header (columns names + any additional skip).
+            </summary>
+            <param name="rows">The input table.</param>
+            <param name="originalSkip">The current/original skip.</param>
+            <param name="delimiter">The CSV delimiter string.</param>
+            <param name="emptyColumns">The set of empty columns.</param>
+            <param name="additionalSkip">The learned additional skip.</param>
+            <returns>The list of column names or <c>null</c> if there are no column names.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.LearnPrefixSkip(System.Collections.Generic.IReadOnlyList{System.String},System.String)">
+            <summary>
+                Learns skip value based on prefix-regexes.
+            </summary>
+            <param name="rows">The list of row prefixes (first columns).</param>
+            <param name="delimiter">The CSV delimiter string (if any).</param>
+            <returns>The number of rows to skip at the start.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.LearnPrefixRegexes(System.String,System.String,System.Int32)">
+            <summary>
+                Learns a set of prefix regular expressions (<see cref="F:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.PrefixRegexes" />) that match the string start.
+            </summary>
+            <param name="s">The input string.</param>
+            <param name="delimiter">The CSV delimiter (if any).</param>
+            <param name="len">The length (number of tokens) of the regular expressions.</param>
+            <returns>The set of resulting regular expressions.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.GetPrefixRegexes">
+            <summary>
+                Constructs a sequence of prefix regexes <see cref="F:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.PrefixRegexes" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.LearnColumnNamesInSkippedRows(System.Collections.Generic.IReadOnlyList{System.Collections.Generic.IReadOnlyList{System.String}},System.String,System.Collections.Generic.ISet{System.Int32})">
+            <summary>
+                Learns column names in skipped (non-data) rows.
+            </summary>
+            <param name="skippedRows">The list of skipped rows to learn from.</param>
+            <param name="delimiter">The CSV delimiter (if any).</param>
+            <param name="emptyColumns">The list of empty columns.</param>
+            <returns>The list of learned column names.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.LearnColumnNamesInData(System.Collections.Generic.IReadOnlyList{System.Collections.Generic.IReadOnlyList{System.String}},System.String,System.Collections.Generic.ISet{System.Int32},System.Int32@)">
+            <summary>
+                Learns column names in data rows.
+            </summary>
+            <param name="rows">The list of data rows to learn from.</param>
+            <param name="delimiter">The CSV delimiter (if any).</param>
+            <param name="emptyColumns">The list of empty columns.</param>
+            <param name="skip">The number of data rows to skip, if the column names are learned.</param>
+            <returns>The list of learned column names.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.LearnLongestColumnNameRegexes(System.String)">
+            <summary>
+                Learns a set of longest column name regexes (<see cref="F:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.ColumnNameLearningTokens" />.
+            </summary>
+            <param name="s">The input string.</param>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.TrimColumnNames(System.String)">
+            <summary>
+                Trims extra characters from the column name.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.IsAsciiLetter(System.Char)">
+            <summary>
+                Whether <paramref name="ch" /> is an ASCII letter.
+            </summary>
+            <param name="ch">The chacater to check.</param>
+            <returns>Whether it is an ASCII letter.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.IsAsciiDigit(System.Char)">
+            <summary>
+                 Whether <paramref name="ch" /> is an ASCII digit.
+            </summary>
+            <param name="ch">The chacater to check.</param>
+            <returns>Whether it is an ASCII digit.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.IsAsciiLetterOrDigit(System.Char)">
+            <summary>
+                Whether <paramref name="ch" /> is ASCII letter or digit.
+            </summary>
+            <param name="ch">The chacater to check.</param>
+            <returns>Whether it is ASCII letter or digit.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.DelimiterScore(System.String)">
+            <summary>
+                Computes the delimiter score.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.QuoteScore(Microsoft.ProgramSynthesis.Utils.Optional{System.Char})">
+            <summary>
+                Computes the quote character score.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.EscapeScore(Microsoft.ProgramSynthesis.Utils.Optional{System.Char})">
+            <summary>
+                Computes the escape character score.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.DelimiterConfig">
+            <summary>
+                The delimiter configurations.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.DelimiterConfig.#ctor(System.String,System.Collections.Generic.IReadOnlyList{Microsoft.ProgramSynthesis.Utils.Optional{System.Char}},System.Collections.Generic.IReadOnlyList{Microsoft.ProgramSynthesis.Utils.Optional{System.Char}})">
+            <summary>
+                Construct a new delimiter configuration.
+            </summary>
+            <param name="delimiter">The delimiter string.</param>
+            <param name="quoteChars">The list of quote characters.</param>
+            <param name="escapeChars">The list of escape characters.</param>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.DelimiterConfig.Delimiter">
+            <summary>
+                The delimiter string.
+                Note: <c>null</c> denotes a fixed-width configuration.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.DelimiterConfig.DelimiterScore">
+            <summary>
+                The score of the delimiter.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.DelimiterConfig.QuoteChars">
+            <summary>
+                The list of quote characters.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.DelimiterConfig.EscapeChars">
+            <summary>
+                The list of escape characters.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.DelimiterConfig.IsStandardDelimiter">
+            <summary>
+                Whether the delimiter is standard.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.DelimiterConfig.ToString">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.TopK">
+            <summary>
+                A container to hold top-K results based on score.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.TopK._results">
+            <summary>
+                A list to hold the results.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.TopK._k">
+            <summary>
+                A number of results to hold (<c>null</c> means no limit).
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.TopK.#ctor(System.Nullable{System.Int32})">
+            <summary>
+                Constructs a new (empty) container.
+            </summary>
+            <param name="k">A number of results to hold (<c>null</c> means no limit).</param>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.TopK.LowestScore">
+            <summary>
+                The score of the lowest-scored result.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.TopK.Count">
+            <summary>
+                The number of results in the container.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.TopK.Add(Microsoft.ProgramSynthesis.Read.FlatFile.Learning.LearnResult,System.Single)">
+            <summary>
+                Add a new result.
+            </summary>
+            <param name="result">The result to add.</param>
+            <param name="score">The score of the result to add.</param>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.TopK.GetEnumerator">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.AutoWitnesses.TopK.System#Collections#IEnumerable#GetEnumerator">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.ColumnNameCleaningType">
+            <summary>
+                Enum describing how to clean column names.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.ColumnNameCleaningType.NoCleaning">
+            <summary>
+                No cleaning is performed.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.ColumnNameCleaningType.UnicodeAlphaNumeric">
+            <summary>
+                Alpha-numeric characters and spaces (including Unicode characters) are preserved.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.ColumnNameCleaningType.AsciiAlphaNumeric">
+            <summary>
+                Alpha-numeric characters and spaces (ASCII only) are preserved. Additionally, column name
+                is a valid identifier name (i.e., contains no spaces, does not start with a digit).
+            </summary>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.LearnResult">
+            <summary>
+                The result of learning.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.LearnResult.RawColumnNames">
+            <summary>
+                The unprocessed column names.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.LearnResult.ColumnNames">
+            <summary>
+                The cleaned column names.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.LearnResult.Skip">
+            <summary>
+                The number of rows to skip from the start.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.LearnResult.SkipFooter">
+            <summary>
+                The number of rows to skip from the end.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.LearnResult.FilterEmptyLines">
+            <summary>
+                The flag indicating whether to skip the empty lines.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.LearnResult.CommentStr">
+            <summary>
+                The string used to comment lines (if any).
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.LearnResult.SkipEmptyAndCommentCount">
+            <summary>
+                The number of skipped rows (from the start) that are empty or comment
+                in the input used for learning.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.LearnResult.HasEmptyLines">
+            <summary>
+                Whether the input used for learning has any empty lines.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.LearnResult.HasMultiLineRows">
+            <summary>
+                Whether there are any multi-line rows in the input used for learning.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.LearnResult.NewLineStrings">
+            <summary>
+                The sequence of newline strings (separators) encountered in the input used for learning.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.LearnResult.Switch``1(System.Func{Microsoft.ProgramSynthesis.Read.FlatFile.Learning.LearnCsvResult,``0},System.Func{Microsoft.ProgramSynthesis.Read.FlatFile.Learning.LearnFwResult,``0},System.Func{Microsoft.ProgramSynthesis.Read.FlatFile.Learning.LearnETextResult,``0})">
+            <summary>
+                A "switch" (matching) function on type of the learn result.
+            </summary>
+            <typeparam name="T">The type of the result.</typeparam>
+            <param name="csvCase">The function to apply if the result is <see cref="T:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.LearnCsvResult" /></param>
+            <param name="fwCase">The function to apply if the result is <see cref="T:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.LearnFwResult" /></param>
+            <param name="etextCase">The function to apply if the result is <see cref="T:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.LearnETextResult" /></param>
+            <returns>The result of the appropriate function application on the learn result.</returns>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.LearnCsvResult">
+            <summary>
+                The CSV result of learning.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.LearnCsvResult.Delimiter">
+            <summary>
+                The CSV delimiter string.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.LearnCsvResult.QuoteChar">
+            <summary>
+                The character character used for CSV quoting (if any).
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.LearnCsvResult.EscapeChar">
+            <summary>
+                The character character used for CSV escaping (if any).
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.LearnCsvResult.DoubleQuoteEscape">
+            <summary>
+                The flag indicating whether a double quote is used to escape the quote character.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.LearnFwResult">
+            <summary>
+                The FW result of learning.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.LearnFwResult.FieldPositions">
+            <summary>
+                The (fixed) field positions for each column.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.Options">
+            <summary>
+                Options used for learning.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.Options.LearnCsv">
+            <summary>
+                Whether to learn CSV programs.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.Options.LearnFw">
+            <summary>
+                Whether to learn fixed-width programs.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.Options.LearnExtractionText">
+            <summary>
+                Whether to learn Extraction.Text programs.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.Options.FwSchema">
+            <summary>
+                The optional fixed-width schema, <code>null</code> if it is not provided.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.Options.FieldPositions">
+            <summary>
+                The (fixed) field positions for each column (if not <c>null</c>) to use instead of learning them.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.Options.Delimiter">
+            <summary>
+                A delimiter string (if not <c>null</c>) to use instead of learning it.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.Options.Skip">
+            <summary>
+                A value for the number of rows to skip at the start (if not <c>null</c>) to use,
+                instead of learning it.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.Options.SkipFooter">
+            <summary>
+                A value for the number of rows to skip at the end (if not <c>null</c>) to use,
+                instead of learning it.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.Options.ColumnNameCleaning">
+            <summary>
+                How to clean raw column names from the input.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.Options.LearnLineLimit">
+            <summary>
+                The maximum number of lines from the input to use for learning.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Read.FlatFile.Learning.RankingScore">
+            <summary>
+                The ranking for the Read.FlatFile DSL.
+                The ranking currently assigns score 0 to all programs. This is done
+                to respect predictive learning ranking, which depends on the data used
+                for learning, as opposed to syntax of the program.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Read.FlatFile.Semantics.Semantics">
+            <summary>
+                The implementations the operators in the Read.FlatFile language.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Semantics.Semantics.Csv(System.String,System.Collections.Generic.IReadOnlyList{System.String},System.Int32,System.Int32,System.String,System.Boolean,Microsoft.ProgramSynthesis.Utils.Optional{System.String},Microsoft.ProgramSynthesis.Utils.Optional{System.Char},Microsoft.ProgramSynthesis.Utils.Optional{System.Char},System.Boolean)">
+            <summary>
+                Reads a CSV input string into a table.
+            </summary>
+            <param name="input">The input string.</param>
+            <param name="columnNames">The name of the columns in the table.</param>
+            <param name="skip">The number of rows to skip from the start.</param>
+            <param name="skipFooter">The number of rows to skip from the end.</param>
+            <param name="delimiter">The delimiter string.</param>
+            <param name="filterEmptyLines">The flag indicating whether to skip the empty lines.</param>
+            <param name="commentStr">The string used to comment lines (if any).</param>
+            <param name="quoteChar">The character character used for quoting (if any).</param>
+            <param name="escapeChar">The character character used for escaping (if any).</param>
+            <param name="doubleQuoteEscape">The flag indicating whether a double quote is used to escape the quote character.</param>
+            <returns>The resulting table.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Semantics.Semantics.Fw(System.String,System.Collections.Generic.IReadOnlyList{System.String},System.Int32,System.Int32,System.Collections.Generic.IReadOnlyList{Microsoft.ProgramSynthesis.Utils.Record{System.Int32,System.Nullable{System.Int32}}},System.Boolean,Microsoft.ProgramSynthesis.Utils.Optional{System.String})">
+            <summary>
+                Reads a FW input string into a table.
+            </summary>
+            <param name="input">The input string.</param>
+            <param name="columnNames">The name of the columns in the table.</param>
+            <param name="skip">The number of rows to skip from the start.</param>
+            <param name="skipFooter">The number of rows to skip from the end.</param>
+            <param name="fieldPositions">The (fixed) field positions for each column.</param>
+            <param name="filterEmptyLines">The flag indicating whether to skip the empty lines.</param>
+            <param name="commentStr">The string used to comment lines (if any).</param>
+            <returns>The resulting table.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Semantics.Semantics.Csv(System.String,System.Collections.Generic.IReadOnlyList{System.String},System.Int32,System.Int32,System.String,System.Boolean,Microsoft.ProgramSynthesis.Utils.Optional{System.String},Microsoft.ProgramSynthesis.Utils.Optional{System.Char},Microsoft.ProgramSynthesis.Utils.Optional{System.Char},System.Boolean,System.Boolean)">
+            <summary>
+                Reads a CSV input string into a table.
+            </summary>
+            <param name="input">The input string.</param>
+            <param name="columnNames">The name of the columns in the table.</param>
+            <param name="skip">The number of rows to skip from the start.</param>
+            <param name="skipFooter">The number of rows to skip from the end.</param>
+            <param name="delimiter">The delimiter string.</param>
+            <param name="filterEmptyLines">The flag indicating whether to skip the empty lines.</param>
+            <param name="commentStr">The string used to comment lines (if any).</param>
+            <param name="quoteChar">The character character used for quoting (if any).</param>
+            <param name="escapeChar">The character character used for escaping (if any).</param>
+            <param name="doubleQuoteEscape">The flag indicating whether a double quote is used to escape the quote character.</param>
+            <param name="trim">Whether to trim quote, escape and extra space characters from the output.</param>
+            <returns>The resulting table.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Semantics.Semantics.Fw(System.String,System.Collections.Generic.IReadOnlyList{System.String},System.Int32,System.Int32,System.Collections.Generic.IReadOnlyList{Microsoft.ProgramSynthesis.Utils.Record{System.Int32,System.Nullable{System.Int32}}},System.Boolean,Microsoft.ProgramSynthesis.Utils.Optional{System.String},System.Boolean)">
+            <summary>
+                Reads a FW input string into a table.
+            </summary>
+            <param name="input">The input string.</param>
+            <param name="columnNames">The name of the columns in the table.</param>
+            <param name="skip">The number of rows to skip from the start.</param>
+            <param name="skipFooter">The number of rows to skip from the end.</param>
+            <param name="fieldPositions">The (fixed) field positions for each column.</param>
+            <param name="filterEmptyLines">The flag indicating whether to skip the empty lines.</param>
+            <param name="commentStr">The string used to comment lines (if any).</param>
+            <param name="trim">Whether to trim extra space characters from the output.</param>
+            <returns>The resulting table.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Semantics.Semantics.Csv(System.IO.TextReader,System.Collections.Generic.IReadOnlyList{System.String},System.Int32,System.Int32,System.String,System.Boolean,Microsoft.ProgramSynthesis.Utils.Optional{System.String},Microsoft.ProgramSynthesis.Utils.Optional{System.Char},Microsoft.ProgramSynthesis.Utils.Optional{System.Char},System.Boolean,System.Boolean)">
+            <summary>
+                Reads a CSV input from a reader into a table.
+            </summary>
+            <param name="input">The input reader.</param>
+            <param name="columnNames">The name of the columns in the table.</param>
+            <param name="skip">The number of rows to skip from the start.</param>
+            <param name="skipFooter">The number of rows to skip from the end.</param>
+            <param name="delimiter">The delimiter string.</param>
+            <param name="filterEmptyLines">The flag indicating whether to skip the empty lines.</param>
+            <param name="commentStr">The string used to comment lines (if any).</param>
+            <param name="quoteChar">The character character used for quoting (if any).</param>
+            <param name="escapeChar">The character character used for escaping (if any).</param>
+            <param name="doubleQuoteEscape">The flag indicating whether a double quote is used to escape the quote character.</param>
+            <param name="trim">Whether to trim quote, escape and extra space characters from the output.</param>
+            <returns>The resulting table.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Semantics.Semantics.Fw(System.IO.TextReader,System.Collections.Generic.IReadOnlyList{System.String},System.Int32,System.Int32,System.Collections.Generic.IReadOnlyList{Microsoft.ProgramSynthesis.Utils.Record{System.Int32,System.Nullable{System.Int32}}},System.Boolean,Microsoft.ProgramSynthesis.Utils.Optional{System.String},System.Boolean)">
+            <summary>
+                Reads a FW input from a reader into a table.
+            </summary>
+            <param name="input">The input reader.</param>
+            <param name="columnNames">The name of the columns in the table.</param>
+            <param name="skip">The number of rows to skip from the start.</param>
+            <param name="skipFooter">The number of rows to skip from the end.</param>
+            <param name="fieldPositions">The (fixed) field positions for each column.</param>
+            <param name="filterEmptyLines">The flag indicating whether to skip the empty lines.</param>
+            <param name="commentStr">The string used to comment lines (if any).</param>
+            <param name="trim">Whether to trim extra space characters from the output.</param>
+            <returns>The resulting table.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Semantics.Semantics.SkipRows``1(System.Collections.Generic.IEnumerable{``0},System.Int32,System.Int32)">
+            <summary>
+                Skips rows from start and end.
+            </summary>
+            <typeparam name="T">The type of the rows.</typeparam>
+            <param name="rows">The sequence of input rows.</param>
+            <param name="skip">The number of rows to skip from the start.</param>
+            <param name="skipFooter">The number of rows to skip from the end.</param>
+            <returns>The sequence of remaining unskipped rows.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Semantics.Semantics.FilterRows(System.Collections.Generic.IEnumerable{System.Collections.Generic.IReadOnlyList{System.String}},System.Boolean,Microsoft.ProgramSynthesis.Utils.Optional{System.String},System.Boolean)">
+            <summary>
+                Filters empty and comment rows (based on the arguments).
+            </summary>
+            <param name="rows">The sequence of input rows.</param>
+            <param name="filterEmptyLines">The flag indicating whether to skip the empty lines.</param>
+            <param name="commentStr">The string used to comment lines (if any).</param>
+            <param name="isCsv">The flag indicating whether the input rows are CSV (or FW).</param>
+            <returns>The sequence of filtered rows.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Semantics.Semantics.Csv(System.Collections.Generic.IEnumerable{System.String},Microsoft.ProgramSynthesis.Utils.Optional{System.Int32},System.String,Microsoft.ProgramSynthesis.Utils.Optional{System.Char},Microsoft.ProgramSynthesis.Utils.Optional{System.Char},System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+                Laziliy reads a sequence of CSV lines into a list of rows.
+            </summary>
+            <param name="lines">The sequence of lines.</param>
+            <param name="columnCount">
+                The expected number of columns in each row.
+                If it has value the each row is normalized to contain this number of columns.
+            </param>
+            <param name="delimiter">The delimiter string.</param>
+            <param name="quoteChar">The character character used for quoting (if any).</param>
+            <param name="escapeChar">The character character used for escaping (if any).</param>
+            <param name="doubleQuoteEscape">The flag indicating whether a double quote is used to escape the quote character.</param>
+            <param name="trim">Whether to trim quote/escape chars and whitespace from cells.</param>
+            <param name="lastIncomplete">Whether to return the last row if incomplete.</param>
+            <returns>The resulting rows.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Semantics.Semantics.StartsAt(System.String,System.Int32,System.String)">
+            <summary>
+                Determines whether the string <paramref name="s" /> starts at the position <paramref name="pos" />
+                of the string <paramref name="src" />.
+            </summary>
+            <param name="src">The source string.</param>
+            <param name="pos">The position to start searching at.</param>
+            <param name="s">The string to look for.</param>
+            <returns>Whether the searched strings starts at the given position in the source string.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Semantics.Semantics.IsCsvEmptyRow(System.Collections.Generic.IReadOnlyList{System.String})">
+            <summary>
+                Determines whether a row is an empty CSV row.
+            </summary>
+            <param name="row">The row to check.</param>
+            <returns>Whether the CSV row is empty.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Semantics.Semantics.IsFwEmptyRow(System.Collections.Generic.IReadOnlyList{System.String})">
+            <summary>
+                Determines whether a row is an empty fixed-width row.
+            </summary>
+            <param name="row">The row to check.</param>
+            <returns>Whether the fixed-width row is empty.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Semantics.Semantics.IsCommentRow(System.Collections.Generic.IReadOnlyList{System.String},System.String)">
+            <summary>
+                Determines whether a row is a comment row.
+            </summary>
+            <param name="row">The row to check.</param>
+            <param name="commentStr">The comment string.</param>
+            <returns>Whether the row is a comment row.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Semantics.Semantics.Fw(System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IReadOnlyList{Microsoft.ProgramSynthesis.Utils.Record{System.Int32,System.Nullable{System.Int32}}},System.Boolean)">
+            <summary>
+                Laziliy reads a sequence of FW lines into a list of rows.
+            </summary>
+            <param name="lines">The sequence of lines.</param>
+            <param name="fieldPositions">The (fixed) field positions for each column.</param>
+            <param name="trim">Whether to trim extra space characters from the output.</param>
+            <returns>The resulting rows.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Semantics.Semantics.FwSplit(System.String,System.Int32,System.Nullable{System.Int32},System.Boolean)">
+            <summary>
+                Returns the <c>[start, end)</c> substring of the <paramref name="line" />.
+                If the <paramref name="end" /> position is <c>null</c>, the end position is the end of the <paramref name="line" />.
+            </summary>
+            <param name="line">The input line.</param>
+            <param name="start">The start position within the string.</param>
+            <param name="end">The end position within the string or <c>null</c>.</param>
+            <param name="trim">Whether to trim extra space characters from the output.</param>
+            <returns>THe resulting substring.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Semantics.Semantics.SplitLines(System.String,System.Boolean)">
+            <summary>
+                Splits a string into a sequence of lines.
+            </summary>
+            <param name="s">The input string.</param>
+            <param name="trimEnd">Whether to trim the endline characters from the lines.</param>
+            <returns>The resulting sequence of lines.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Semantics.Semantics.SplitLines(System.IO.TextReader,System.Boolean)">
+            <summary>
+                Splits content from a <see cref="T:System.IO.TextReader" /> into a sequence of lines.
+            </summary>
+            <param name="reader">The input reader.</param>
+            <param name="trimEnd">Whether to trim the endline characters from the lines.</param>
+            <returns>The resulting sequence of lines.</returns>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Read.FlatFile.Semantics.Semantics.CsvState">
+            <summary>
+                The state of the CSV parser.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Read.FlatFile.Semantics.Semantics.CsvState.FieldStart">
+            <summary>
+                At the start of a new field.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Read.FlatFile.Semantics.Semantics.CsvState.InField">
+            <summary>
+                Inside a field.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Read.FlatFile.Semantics.Semantics.CsvState.InQuotedField">
+            <summary>
+                Inside a quoted field.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Read.FlatFile.Semantics.Semantics.CsvState.Escape">
+            <summary>
+                Inside a field, with the next character escaped.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Read.FlatFile.Semantics.Semantics.CsvState.EscapeQuoted">
+            <summary>
+                Inside a quoted field, with the next character escaped.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Semantics.Semantics.CreateStringRegion(System.String)">
+            <summary>
+                Wraps a string in a <see cref="T:Microsoft.ProgramSynthesis.DslLibrary.StringRegion" /> for calling into Extraction.Text.
+            </summary>
+            <param name="str">String to wrap.</param>
+            <returns>A StringRegion appropriate for passing into Extraction.Text.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Semantics.Semantics.StringRegionToStringTable(Microsoft.ProgramSynthesis.Wrangling.Schema.TableOutput.ITable{Microsoft.ProgramSynthesis.DslLibrary.StringRegion})">
+            <summary>
+                Converts a table of StringRegions from Extraction.Text into a table of strings.
+            </summary>
+            <param name="table">Table of StringRegions generated by Extraction.Text.</param>
+            <returns>A table of strings with the same string values as <paramref name="table" />.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Build.GrammarBuilders.Nodes.NodeRules.Csv(Microsoft.ProgramSynthesis.Read.FlatFile.Build.NodeTypes.file,Microsoft.ProgramSynthesis.Read.FlatFile.Build.NodeTypes.columnNames,Microsoft.ProgramSynthesis.Read.FlatFile.Build.NodeTypes.skip,Microsoft.ProgramSynthesis.Read.FlatFile.Build.NodeTypes.skipFooter,Microsoft.ProgramSynthesis.Read.FlatFile.Build.NodeTypes.delimiter,Microsoft.ProgramSynthesis.Read.FlatFile.Build.NodeTypes.filterEmptyLines,Microsoft.ProgramSynthesis.Read.FlatFile.Build.NodeTypes.commentStr,Microsoft.ProgramSynthesis.Read.FlatFile.Build.NodeTypes.quoteChar,Microsoft.ProgramSynthesis.Read.FlatFile.Build.NodeTypes.escapeChar,Microsoft.ProgramSynthesis.Read.FlatFile.Build.NodeTypes.doubleQuote)">
+            <summary> Build a typed program node correponding to the Csv rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.Csv, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.readFlatFile.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Build.GrammarBuilders.Nodes.NodeRules.Fw(Microsoft.ProgramSynthesis.Read.FlatFile.Build.NodeTypes.file,Microsoft.ProgramSynthesis.Read.FlatFile.Build.NodeTypes.columnNames,Microsoft.ProgramSynthesis.Read.FlatFile.Build.NodeTypes.skip,Microsoft.ProgramSynthesis.Read.FlatFile.Build.NodeTypes.skipFooter,Microsoft.ProgramSynthesis.Read.FlatFile.Build.NodeTypes.fieldPositions,Microsoft.ProgramSynthesis.Read.FlatFile.Build.NodeTypes.filterEmptyLines,Microsoft.ProgramSynthesis.Read.FlatFile.Build.NodeTypes.commentStr)">
+            <summary> Build a typed program node correponding to the Fw rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.Fw, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.readFlatFile.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Build.GrammarBuilders.Nodes.NodeRules.StringRegionToStringTable(Microsoft.ProgramSynthesis.Read.FlatFile.Build.NodeTypes.eText)">
+            <summary> Build a typed program node correponding to the StringRegionToStringTable rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.StringRegionToStringTable, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.readFlatFile.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Build.GrammarBuilders.Nodes.NodeRules.CreateStringRegion(Microsoft.ProgramSynthesis.Read.FlatFile.Build.NodeTypes.file)">
+            <summary> Build a typed program node correponding to the CreateStringRegion rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.CreateStringRegion, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes._LetB0.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Build.GrammarBuilders.Nodes.NodeRules.ETextOutput(Microsoft.ProgramSynthesis.Extraction.Text.Build.NodeTypes.output)">
+            <summary> Build a typed program node correponding to the ETextOutput rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.ETextOutput, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes._LetB1.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Read.FlatFile.Build.GrammarBuilders.Nodes.NodeRules.LetEText(Microsoft.ProgramSynthesis.Read.FlatFile.Build.NodeTypes._LetB0,Microsoft.ProgramSynthesis.Read.FlatFile.Build.NodeTypes._LetB1)">
+            <summary> Build a typed program node correponding to the LetEText rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.LetEText, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.eText.
+            </remarks>
+        </member>
+    </members>
+</doc>

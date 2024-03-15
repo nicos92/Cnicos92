@@ -20,3 +20,37 @@ D:\Users\n.sandoval\Documents\Cnicos92\clean comment\obj\Debug\clean comment.exe
 D:\Users\n.sandoval\Documents\Cnicos92\clean comment\obj\Debug\clean comment.pdb
 D:\Users\n.sandoval\Documents\Cnicos92\clean comment\bin\Debug\Control.Draggable.dll
 D:\Users\n.sandoval\Documents\Cnicos92\clean comment\obj\Debug\clean co.964C91B9.Up2Date
+E:\C#\clean comment\clean comment\bin\Debug\clean comment.exe.config
+E:\C#\clean comment\clean comment\bin\Debug\clean comment.exe
+E:\C#\clean comment\clean comment\bin\Debug\clean comment.pdb
+E:\C#\clean comment\clean comment\bin\Debug\Control.Draggable.dll
+E:\C#\clean comment\clean comment\bin\Debug\ExcelDataReader.dll
+E:\C#\clean comment\clean comment\bin\Debug\Microsoft.ProgramSynthesis.Common.dll
+E:\C#\clean comment\clean comment\bin\Debug\Microsoft.ProgramSynthesis.Detection.dll
+E:\C#\clean comment\clean comment\bin\Debug\Microsoft.ProgramSynthesis.Extraction.Text.dll
+E:\C#\clean comment\clean comment\bin\Debug\Microsoft.ProgramSynthesis.Read.FlatFile.dll
+E:\C#\clean comment\clean comment\bin\Debug\Microsoft.ProgramSynthesis.Split.Text.dll
+E:\C#\clean comment\clean comment\bin\Debug\Newtonsoft.Json.dll
+E:\C#\clean comment\clean comment\bin\Debug\System.Collections.Immutable.dll
+E:\C#\clean comment\clean comment\bin\Debug\ExcelDataReader.pdb
+E:\C#\clean comment\clean comment\bin\Debug\ExcelDataReader.xml
+E:\C#\clean comment\clean comment\bin\Debug\Microsoft.ProgramSynthesis.Common.pdb
+E:\C#\clean comment\clean comment\bin\Debug\Microsoft.ProgramSynthesis.Common.xml
+E:\C#\clean comment\clean comment\bin\Debug\Microsoft.ProgramSynthesis.Detection.pdb
+E:\C#\clean comment\clean comment\bin\Debug\Microsoft.ProgramSynthesis.Detection.xml
+E:\C#\clean comment\clean comment\bin\Debug\Microsoft.ProgramSynthesis.Extraction.Text.pdb
+E:\C#\clean comment\clean comment\bin\Debug\Microsoft.ProgramSynthesis.Extraction.Text.xml
+E:\C#\clean comment\clean comment\bin\Debug\Microsoft.ProgramSynthesis.Read.FlatFile.pdb
+E:\C#\clean comment\clean comment\bin\Debug\Microsoft.ProgramSynthesis.Read.FlatFile.xml
+E:\C#\clean comment\clean comment\bin\Debug\Microsoft.ProgramSynthesis.Split.Text.pdb
+E:\C#\clean comment\clean comment\bin\Debug\Microsoft.ProgramSynthesis.Split.Text.xml
+E:\C#\clean comment\clean comment\bin\Debug\Newtonsoft.Json.xml
+E:\C#\clean comment\clean comment\bin\Debug\System.Collections.Immutable.xml
+E:\C#\clean comment\clean comment\obj\Debug\clean comment.csproj.AssemblyReference.cache
+E:\C#\clean comment\clean comment\obj\Debug\clean_comment.Form1.resources
+E:\C#\clean comment\clean comment\obj\Debug\clean_comment.Properties.Resources.resources
+E:\C#\clean comment\clean comment\obj\Debug\clean comment.csproj.GenerateResource.cache
+E:\C#\clean comment\clean comment\obj\Debug\clean comment.csproj.CoreCompileInputs.cache
+E:\C#\clean comment\clean comment\obj\Debug\clean co.964C91B9.Up2Date
+E:\C#\clean comment\clean comment\obj\Debug\clean comment.exe
+E:\C#\clean comment\clean comment\obj\Debug\clean comment.pdb

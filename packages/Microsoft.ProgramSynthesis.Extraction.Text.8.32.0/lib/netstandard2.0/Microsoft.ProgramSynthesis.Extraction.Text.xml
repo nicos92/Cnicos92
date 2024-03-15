@@ -1,0 +1,689 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.ProgramSynthesis.Extraction.Text</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.ProgramSynthesis.Extraction.Text.Example">
+            <summary>
+                The input/output example.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Example.#ctor(Microsoft.ProgramSynthesis.DslLibrary.StringRegion,Microsoft.ProgramSynthesis.Wrangling.Schema.TableOutput.ITable{Microsoft.ProgramSynthesis.Extraction.Text.Semantics.ExampleCell})">
+            <summary>
+                Constructs an example from the input and the output.
+            </summary>
+            <param name="input">The input <see cref="T:Microsoft.ProgramSynthesis.DslLibrary.StringRegion" />.</param>
+            <param name="output">The output table. Null cells mean that the (exemplar) cell values are unspecified.</param>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Example.#ctor(System.String,Microsoft.ProgramSynthesis.Wrangling.Schema.TableOutput.ITable{Microsoft.ProgramSynthesis.Extraction.Text.Semantics.ExampleCell})">
+            <summary>
+                Constructs an example from the input and the output.
+            </summary>
+            <param name="input">The input <see cref="T:Microsoft.ProgramSynthesis.DslLibrary.StringRegion" />.</param>
+            <param name="output">The output table. Null cells mean that the (exemplar) cell values are unspecified.</param>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Extraction.Text.Example.Output">
+            <summary>
+                The output table.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Example.Equals(Microsoft.ProgramSynthesis.Wrangling.Constraints.Constraint{Microsoft.ProgramSynthesis.DslLibrary.StringRegion,Microsoft.ProgramSynthesis.Wrangling.Schema.TableOutput.ITable{Microsoft.ProgramSynthesis.DslLibrary.StringRegion}})">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Example.ConflictsWith(Microsoft.ProgramSynthesis.Wrangling.Constraints.Constraint{Microsoft.ProgramSynthesis.DslLibrary.StringRegion,Microsoft.ProgramSynthesis.Wrangling.Schema.TableOutput.ITable{Microsoft.ProgramSynthesis.DslLibrary.StringRegion}})">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Example.Valid(Microsoft.ProgramSynthesis.Program{Microsoft.ProgramSynthesis.DslLibrary.StringRegion,Microsoft.ProgramSynthesis.Wrangling.Schema.TableOutput.ITable{Microsoft.ProgramSynthesis.DslLibrary.StringRegion}})">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Example.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Extraction.Text.Learner">
+            <summary>
+                Learns text table programs.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Extraction.Text.Learner.Instance">
+            <summary>
+                The singleton instance of this class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Extraction.Text.Learner.ScoreFeature">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Learner.LearnAll(System.Collections.Generic.IEnumerable{Microsoft.ProgramSynthesis.Wrangling.Constraints.Constraint{Microsoft.ProgramSynthesis.DslLibrary.StringRegion,Microsoft.ProgramSynthesis.Wrangling.Schema.TableOutput.ITable{Microsoft.ProgramSynthesis.DslLibrary.StringRegion}}},System.Collections.Generic.IEnumerable{Microsoft.ProgramSynthesis.DslLibrary.StringRegion},System.Threading.CancellationToken)">
+            <summary>
+                Learns all programs from the given positive and negative examples.
+            </summary>
+            <param name="constraints">The examples.</param>
+            <param name="additionalInputs">
+                The set of additional references that do not have output examples, which helps learn
+                programs.
+            </param>
+            <param name="cancel">
+                The token to monitor for cancellation requests. The default value is
+                <see cref="P:System.Threading.CancellationToken.None" />.
+            </param>
+            <returns>The set of all programs consistent with the examples.</returns>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Extraction.Text.Loader">
+            <summary>
+                Class for loading a <see cref="T:Microsoft.ProgramSynthesis.Extraction.Text.Program" /> from its deserialized string.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Extraction.Text.Loader.Instance">
+            <summary>
+                Singleton instance of <see cref="T:Microsoft.ProgramSynthesis.Extraction.Text.Loader" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Loader.Create(Microsoft.ProgramSynthesis.AST.ProgramNode)">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Extraction.Text.Program">
+            <summary>
+                Class for learning and running Extraction.Text programs. These programs transform a string
+                to a table
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Program.Run(Microsoft.ProgramSynthesis.DslLibrary.StringRegion)">
+            <summary>
+                Executes the program on the <paramref name="input" /> to obtain the output table.
+            </summary>
+            <param name="input">The input <see cref="T:Microsoft.ProgramSynthesis.DslLibrary.StringRegion"/>.</param>
+            <returns>The output table.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Program.Run(System.String)">
+            <summary>
+                Executes the program on a <see cref="T:System.String"/> <paramref name="input" /> to obtain the output <see cref="T:System.String"/> table.
+            </summary>
+            <param name="input">The input string.</param>
+            <returns>The output table.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Program.GetMCode(System.String,System.String,Microsoft.ProgramSynthesis.Extraction.Text.Translation.ILocalizedPowerQueryMStrings,Microsoft.ProgramSynthesis.Translation.PowerQuery.IEscapePowerQueryM)">
+            <summary>
+                Gets the M code to parse <paramref name="binaryContent" />.
+            </summary>
+            <param name="binaryContent">The input binary content.</param>
+            <param name="encoding">The encoding.</param>
+            <param name="localizedStrings">The localized strings.</param>
+            <param name="escape">The interface to escape identifier.</param>
+            <returns>The code the parse <paramref name="binaryContent" />.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Program.GetPythonCode(System.String,System.Boolean)">
+            <summary>
+                Gets the Python code to parse <paramref name="s" />.
+            </summary>
+            <param name="s">The input file name or string.</param>
+            <param name="readFile">
+                If true, generate code to parse the file having path <paramref name="s" />.
+                Otherwise, generate code to parse the string <paramref name="s" />.
+            </param>
+            <returns>The code the parse <paramref name="s" />.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Program.Serialize">
+            <summary>
+                Serializes a program to a string that can be loaded using <see cref="!:Loader.Load" />.
+            </summary>
+            <returns>A machine-readable string representation of this program.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Program.Equals(Microsoft.ProgramSynthesis.Extraction.Text.Program)">
+            <summary>
+                Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <returns>
+                true if the current object is equal to the <paramref name="other" /> parameter; otherwise, false.
+            </returns>
+            <param name="other">An object to compare with this object.</param>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Program.Equals(System.Object)">
+            <summary>
+                Determines whether the specified object is equal to the current object.
+            </summary>
+            <returns>
+                true if the specified object  is equal to the current object; otherwise, false.
+            </returns>
+            <param name="obj">The object to compare with the current object. </param>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Program.GetHashCode">
+            <summary>
+                Serves as the default hash function.
+            </summary>
+            <returns>
+                A hash code for the current object.
+            </returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Program.ToString">
+            <summary>
+                Returns a string that represents the current object.
+            </summary>
+            <returns>
+                A string that represents the current object.
+            </returns>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Extraction.Text.Session">
+            <summary>
+                A Extraction.Text session. See <see cref="T:Microsoft.ProgramSynthesis.Wrangling.Session.Session`3" /> for the API for
+                learning sessions.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Session.#ctor(Microsoft.ProgramSynthesis.Wrangling.Session.IJournalStorage,System.Globalization.CultureInfo)">
+            <param name="journalStorage">
+                Backing store for the journal of user actions used to adapt to user preferences. May be
+                null to not save this data.
+            </param>
+            <param name="culture">
+                The <see cref="T:System.Globalization.CultureInfo" /> to use when learning programs; accessible using
+                <see cref="P:Microsoft.ProgramSynthesis.Wrangling.Session.Session`3.Culture" />. Used to select preferred date and number formats and
+                defaults for other culture-specific settings.
+            </param>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Session.AddExample(System.String,Microsoft.ProgramSynthesis.Wrangling.Schema.TableOutput.ITable{Microsoft.ProgramSynthesis.Extraction.Text.Semantics.ExampleCell})">
+            <summary>
+                Adds an example.
+            </summary>
+            <param name="input">The input string.</param>
+            <param name="table">A prefix of the expected table.</param>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Extraction.Text.Translation.CodeFragmentCollector">
+            <summary>
+                The visitor to collect program fragments used to generate code.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Extraction.Text.Translation.PowerQueryMGenerator">
+            <summary>
+                The class to generate PowerQuery M code.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Translation.PowerQueryMGenerator.Generate(Microsoft.ProgramSynthesis.AST.ProgramNode,System.String,System.String,Microsoft.ProgramSynthesis.Extraction.Text.Translation.ILocalizedPowerQueryMStrings,Microsoft.ProgramSynthesis.Translation.PowerQuery.IEscapePowerQueryM)">
+            <summary>
+                Translates <paramref name="node" /> into PowerQuery M to parse <paramref name="binaryContent" />.
+            </summary>
+            <param name="node">The program.</param>
+            <param name="binaryContent">The input binary content.</param>
+            <param name="localizedStrings">The localized strings.</param>
+            <param name="escapeIdentifiers">The interface to escape identifier.</param>
+            <param name="encoding">The encoding.</param>
+            <returns>The code the parse <paramref name="binaryContent" />.</returns>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Extraction.Text.Translation.PythonGenerator">
+            <summary>
+                The class to generate Python code.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Translation.PythonGenerator.Generate(Microsoft.ProgramSynthesis.AST.ProgramNode,System.String,System.Boolean)">
+            <summary>
+                Translates <paramref name="node" /> into Python to parse <paramref name="s" />.
+            </summary>
+            <param name="node">The program.</param>
+            <param name="s">The input file name or string.</param>
+            <param name="readFile">
+                If true, generate code to parse the file having path <paramref name="s" />.
+                Otherwise, generate code to parse the string <paramref name="s" />.
+            </param>
+            <returns>The code the parse <paramref name="s" />.</returns>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Extraction.Text.Semantics.Cell`1">
+            <summary>
+                The table cell.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Extraction.Text.Semantics.Cell`1.Value">
+            <summary>
+                The cell value.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Extraction.Text.Semantics.Cell`1.IsUserSpecified">
+            <summary>
+                Indicates whether the cell is provided by the user.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Semantics.Cell`1.Equals(Microsoft.ProgramSynthesis.Extraction.Text.Semantics.Cell{`0})">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Semantics.Cell`1.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Semantics.Cell`1.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Extraction.Text.Semantics.ExampleCell">
+            <summary>
+                The example table cell.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Semantics.ExampleCell.#ctor(System.String,System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Extraction.Text.Semantics.Semantics">
+            <summary>
+                The implementations of the operators in the Text Extraction language.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Semantics.Semantics.Table(System.Collections.Generic.IReadOnlyList{System.String},System.Collections.Generic.IEnumerable{System.Collections.Generic.IReadOnlyList{Microsoft.ProgramSynthesis.DslLibrary.StringRegion}})">
+            <summary>
+                Constructs a table object.
+            </summary>
+            <param name="columnNames">The column names.</param>
+            <param name="rows">The rows.</param>
+            <returns>The table object.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Semantics.Semantics.List(Microsoft.ProgramSynthesis.DslLibrary.StringRegion)">
+            <summary>
+                Creates a singleton list.
+            </summary>
+            <param name="extract">The single element.</param>
+            <returns>The singleton list.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Semantics.Semantics.Prepend(Microsoft.ProgramSynthesis.DslLibrary.StringRegion,System.Collections.Generic.IReadOnlyList{Microsoft.ProgramSynthesis.DslLibrary.StringRegion})">
+            <summary>
+                Prepends <paramref name="extractTup" /> to <paramref name="colSplit" />.
+            </summary>
+            <param name="extractTup">The element to prepend.</param>
+            <param name="colSplit">The list.</param>
+            <returns>A new appended list.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Semantics.Semantics.First(Microsoft.ProgramSynthesis.Utils.Record{Microsoft.ProgramSynthesis.DslLibrary.StringRegion,Microsoft.ProgramSynthesis.DslLibrary.StringRegion})">
+            <summary>
+                Retrieves the first element of a tuple.
+            </summary>
+            <param name="tup">The tuple.</param>
+            <returns>The first tuple element.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Semantics.Semantics.Second(Microsoft.ProgramSynthesis.Utils.Record{Microsoft.ProgramSynthesis.DslLibrary.StringRegion,Microsoft.ProgramSynthesis.DslLibrary.StringRegion})">
+            <summary>
+                Retrieves the second element of a tuple.
+            </summary>
+            <param name="tup">The tuple.</param>
+            <returns>The second tuple element.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Semantics.Semantics.Slice(Microsoft.ProgramSynthesis.DslLibrary.StringRegion,System.Int32,System.Int32)">
+            <summary>
+                Extracts a substring between two positions <paramref name="start" /> and <paramref name="end" />.
+                The positions are 1-based; positive/negative positions are from left-to-right/right-to-left.
+            </summary>
+            <param name="row">The input string.</param>
+            <param name="start">The starting position.</param>
+            <param name="end">The ending position.</param>
+            <returns>The substring.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Semantics.Semantics.Substring(Microsoft.ProgramSynthesis.DslLibrary.StringRegion,System.Int32,System.Int32)">
+            <summary>
+                Extracts a substring starting at <paramref name="index" /> and having length <paramref name="length" />.
+                The positions are 1-based; positive/negative positions are from left-to-right/right-to-left.
+            </summary>
+            <param name="row">The input string.</param>
+            <param name="index">The starting position.</param>
+            <param name="length">The length.</param>
+            <returns>The substring.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Semantics.Semantics.BetweenDelimiters(Microsoft.ProgramSynthesis.DslLibrary.StringRegion,Microsoft.ProgramSynthesis.Utils.Optional{System.String},Microsoft.ProgramSynthesis.Utils.Optional{System.String})">
+            <summary>
+                Extracts a substring between two delimiters <paramref name="prefix" /> and <paramref name="suffix" />.
+                If the starting/ending delimiter is <see cref="F:Microsoft.ProgramSynthesis.Utils.Optional`1.Nothing" />, use the starting/ending position.
+            </summary>
+            <param name="row">The input string.</param>
+            <param name="prefix">The prefix delimiter.</param>
+            <param name="suffix">The suffix delimiter.</param>
+            <returns>The substring.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Semantics.Semantics.SplitPosition(Microsoft.ProgramSynthesis.DslLibrary.StringRegion,System.Int32)">
+            <summary>
+                Splits <paramref name="row" /> into two substrings at position <paramref name="k" />.
+                The positions are 1-based; positive/negative positions are from left-to-right/right-to-left.
+            </summary>
+            <param name="row">The input string.</param>
+            <param name="k">The split position.</param>
+            <returns>A tuple of two split substrings.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Semantics.Semantics.SplitDelimiter(Microsoft.ProgramSynthesis.DslLibrary.StringRegion,System.String,System.Int32)">
+            <summary>
+                Splits <paramref name="row" /> into two substrings at the <paramref name="k" />-th delimiter
+                <paramref name="str" />.
+                The index are 1-based; positive/negative indices are from left-to-right/right-to-left.
+            </summary>
+            <param name="row">The input string.</param>
+            <param name="str">The delimiter.</param>
+            <param name="k">The index.</param>
+            <returns>A tuple of two split substrings.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Semantics.Semantics.Group(System.Text.RegularExpressions.Regex,System.Collections.Generic.IReadOnlyList{Microsoft.ProgramSynthesis.DslLibrary.StringRegion})">
+            <summary>
+                Groups a list of lines <paramref name="skip" /> using <paramref name="re" /> and merges them.
+                A group begins with a line that matches <paramref name="re" /> and all following unmatched lines
+                (until another line matches <paramref name="re" /> which starts another group).
+            </summary>
+            <param name="re">The regular expression.</param>
+            <param name="skip">The list of lines to group.</param>
+            <returns>The grouped and merged lines.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Semantics.Semantics.MergeEvery(System.Int32,System.Collections.Generic.IReadOnlyList{Microsoft.ProgramSynthesis.DslLibrary.StringRegion})">
+            <summary>
+                Merges every <paramref name="k"/> lines of a list of lines <paramref name="skip" />.
+            </summary>
+            <param name="k">The number of lines to merge.</param>
+            <param name="skip">The list of lines to group.</param>
+            <returns>The grouped and merged lines.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Semantics.Semantics.Select(System.Text.RegularExpressions.Regex,System.Collections.Generic.IReadOnlyList{Microsoft.ProgramSynthesis.DslLibrary.StringRegion})">
+            <summary>
+                Selects from a list of lines <paramref name="skip" /> all lines that start with <paramref name="re" />.
+            </summary>
+            <param name="re">The regular expression.</param>
+            <param name="skip">The list of lines to select from.</param>
+            <returns>The selected lines.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Semantics.Semantics.Skip(System.Int32,System.Collections.Generic.IReadOnlyList{Microsoft.ProgramSynthesis.DslLibrary.StringRegion})">
+            <summary>
+                Skips <paramref name="k" /> lines from <paramref name="lines" />.
+            </summary>
+            <param name="k">The number of lines to skip.</param>
+            <param name="lines">The original list of lines.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Semantics.Semantics.SplitLines(Microsoft.ProgramSynthesis.DslLibrary.StringRegion)">
+            <summary>
+                Splits a string <paramref name="v" /> into lines.
+            </summary>
+            <param name="v">The input string.</param>
+            <returns>The split lines.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Semantics.Semantics.Trim(Microsoft.ProgramSynthesis.DslLibrary.StringRegion)">
+            <summary>
+                Trims a string.
+            </summary>
+            <param name="s">The string to trim.</param>
+            <returns>The trimmed string.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Semantics.Semantics.CreateStringRegion(System.String)">
+            <summary>
+                Creates a <see cref="T:Microsoft.ProgramSynthesis.DslLibrary.StringRegion" />.
+            </summary>
+            <param name="input">An input string.</param>
+            <returns>The output <see cref="T:Microsoft.ProgramSynthesis.DslLibrary.StringRegion" />.</returns>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Extraction.Text.Learning.LearningException">
+            <summary>
+                Represents errors that occur during learning.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Extraction.Text.Learning.InvalidInputException">
+            <summary>
+                Represents learning errors in which the example input is invalid.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Extraction.Text.Learning.ExampleException">
+            <summary>
+                Represents learning errors in the example.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Extraction.Text.Learning.ExampleException.RowIndex">
+            <summary>
+            The row index.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Extraction.Text.Learning.ExampleException.ColumnIndex">
+            <summary>
+            The column index.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Extraction.Text.Learning.ExampleException.Example">
+            <summary>
+            The example value.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Extraction.Text.Learning.ExampleNotFoundException">
+            <summary>
+                Represents learning errors in which in which the example cell is not found in the input.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Extraction.Text.Learning.TableNotRectangleException">
+            <summary>
+                Represents learning errors in which the table is not a rectangle (some rows have different elements).
+            </summary>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Extraction.Text.Learning.InconsistentColumnNameException">
+            <summary>
+                Represents learning errors in which the column names are inconsistent in different examples.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Extraction.Text.Learning.InconsistentExampleException">
+            <summary>
+                Represents learning errors in which the cell values are inconsistent in different examples.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Extraction.Text.Learning.EmptyTableException">
+            <summary>
+                Represents learning errors in which the example table is empty.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Learning.Split.GroupLearner.AssignRecordsToExamples(System.Collections.Generic.IReadOnlyList{Microsoft.ProgramSynthesis.DslLibrary.StringRegion},System.Collections.Generic.IReadOnlyList{System.Collections.Generic.List{Microsoft.ProgramSynthesis.Extraction.Text.Learning.StringRegionCell}})">
+            <summary>
+                Associates row examples with their records.
+                Also calculates additional inputs (the remaining records after the examples).
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Learning.Split.SplitDelimiterLearner.GetPossibleDelimiters(Microsoft.ProgramSynthesis.DslLibrary.StringRegion)">
+            <summary>
+                Get possible delimiters from the gap between two fields.
+                A delimiter can be a symbol or a sequence of characters from the beginning of the gap.
+                E.g., "ab$12" -> { "ab", "$", "ab$", "ab$12" }
+            </summary>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Extraction.Text.Learning.StringRegionCell">
+            <summary>
+                The example table cell that can be mapped to the input <see cref="T:Microsoft.ProgramSynthesis.DslLibrary.StringRegion" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Learning.StringRegionCell.#ctor(Microsoft.ProgramSynthesis.DslLibrary.StringRegion,System.Boolean)">
+            <summary>
+                Constructs an object. <paramref name="value" /> can be null but cannot contain only whitespaces.
+            </summary>
+            <param name="value">The value. Cannot contain only whitespaces.</param>
+            <param name="isUserSpecified">Whether users specified this cell.</param>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Extraction.Text.Learning.StringRegionCell.Length">
+            <summary>
+                The length.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Extraction.Text.Learning.StringRegionCell.Start">
+            <summary>
+                The starting position.
+                When Value is null position is 0 instead of throwing exception to avoid affecting serialization.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Extraction.Text.Learning.StringRegionCell.End">
+            <summary>
+                The ending position.
+                When Value is null position is 0 instead of throwing exception to avoid affecting serialization.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Extraction.Text.Learning.StringRegionCell.StringValue">
+            <summary>
+                The string value.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Extraction.Text.Learning.Witnesses">
+            <summary>
+                The learning class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Learning.Witnesses.#ctor(Microsoft.ProgramSynthesis.Grammar,Microsoft.ProgramSynthesis.Extraction.Text.Learning.Witnesses.Options)">
+            <summary>
+                Constructs an object.
+            </summary>
+            <param name="grammar">The grammar.</param>
+            <param name="options">The options.</param>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Build.GrammarBuilders.Nodes.NodeRules.Table(Microsoft.ProgramSynthesis.Extraction.Text.Build.NodeTypes.columnNames,Microsoft.ProgramSynthesis.Extraction.Text.Build.NodeTypes.table)">
+            <summary> Build a typed program node correponding to the Table rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.Table, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.output.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Build.GrammarBuilders.Nodes.NodeRules.Second(Microsoft.ProgramSynthesis.Extraction.Text.Build.NodeTypes.tup)">
+            <summary> Build a typed program node correponding to the Second rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.Second, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes._LetB0.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Build.GrammarBuilders.Nodes.NodeRules.Prepend(Microsoft.ProgramSynthesis.Extraction.Text.Build.NodeTypes.extractTup,Microsoft.ProgramSynthesis.Extraction.Text.Build.NodeTypes.colSplit)">
+            <summary> Build a typed program node correponding to the Prepend rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.Prepend, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes._LetB1.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Build.GrammarBuilders.Nodes.NodeRules.List(Microsoft.ProgramSynthesis.Extraction.Text.Build.NodeTypes.trimExtract)">
+            <summary> Build a typed program node correponding to the List rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.List, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.colSplit.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Build.GrammarBuilders.Nodes.NodeRules.First(Microsoft.ProgramSynthesis.Extraction.Text.Build.NodeTypes.tup)">
+            <summary> Build a typed program node correponding to the First rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.First, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes._LetB3.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Build.GrammarBuilders.Nodes.NodeRules.Trim(Microsoft.ProgramSynthesis.Extraction.Text.Build.NodeTypes.extract)">
+            <summary> Build a typed program node correponding to the Trim rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.Trim, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.trimExtract.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Build.GrammarBuilders.Nodes.NodeRules.BetweenDelimiters(Microsoft.ProgramSynthesis.Extraction.Text.Build.NodeTypes.row,Microsoft.ProgramSynthesis.Extraction.Text.Build.NodeTypes.del,Microsoft.ProgramSynthesis.Extraction.Text.Build.NodeTypes.del)">
+            <summary> Build a typed program node correponding to the BetweenDelimiters rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.BetweenDelimiters, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.extract.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Build.GrammarBuilders.Nodes.NodeRules.Substring(Microsoft.ProgramSynthesis.Extraction.Text.Build.NodeTypes.row,Microsoft.ProgramSynthesis.Extraction.Text.Build.NodeTypes.k,Microsoft.ProgramSynthesis.Extraction.Text.Build.NodeTypes.k)">
+            <summary> Build a typed program node correponding to the Substring rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.Substring, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.extract.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Build.GrammarBuilders.Nodes.NodeRules.Slice(Microsoft.ProgramSynthesis.Extraction.Text.Build.NodeTypes.row,Microsoft.ProgramSynthesis.Extraction.Text.Build.NodeTypes.k,Microsoft.ProgramSynthesis.Extraction.Text.Build.NodeTypes.k)">
+            <summary> Build a typed program node correponding to the Slice rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.Slice, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.extract.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Build.GrammarBuilders.Nodes.NodeRules.SplitPosition(Microsoft.ProgramSynthesis.Extraction.Text.Build.NodeTypes.row,Microsoft.ProgramSynthesis.Extraction.Text.Build.NodeTypes.k)">
+            <summary> Build a typed program node correponding to the SplitPosition rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.SplitPosition, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.split.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Build.GrammarBuilders.Nodes.NodeRules.SplitDelimiter(Microsoft.ProgramSynthesis.Extraction.Text.Build.NodeTypes.row,Microsoft.ProgramSynthesis.Extraction.Text.Build.NodeTypes.str,Microsoft.ProgramSynthesis.Extraction.Text.Build.NodeTypes.k)">
+            <summary> Build a typed program node correponding to the SplitDelimiter rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.SplitDelimiter, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.split.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Build.GrammarBuilders.Nodes.NodeRules.Select(Microsoft.ProgramSynthesis.Extraction.Text.Build.NodeTypes.re,Microsoft.ProgramSynthesis.Extraction.Text.Build.NodeTypes.skip)">
+            <summary> Build a typed program node correponding to the Select rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.Select, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.records.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Build.GrammarBuilders.Nodes.NodeRules.Group(Microsoft.ProgramSynthesis.Extraction.Text.Build.NodeTypes.re,Microsoft.ProgramSynthesis.Extraction.Text.Build.NodeTypes.skip)">
+            <summary> Build a typed program node correponding to the Group rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.Group, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.records.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Build.GrammarBuilders.Nodes.NodeRules.MergeEvery(Microsoft.ProgramSynthesis.Extraction.Text.Build.NodeTypes.k,Microsoft.ProgramSynthesis.Extraction.Text.Build.NodeTypes.skip)">
+            <summary> Build a typed program node correponding to the MergeEvery rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.MergeEvery, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.records.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Build.GrammarBuilders.Nodes.NodeRules.Skip(Microsoft.ProgramSynthesis.Extraction.Text.Build.NodeTypes.k,Microsoft.ProgramSynthesis.Extraction.Text.Build.NodeTypes.lines)">
+            <summary> Build a typed program node correponding to the Skip rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.Skip, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.skip.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Build.GrammarBuilders.Nodes.NodeRules.SplitLines(Microsoft.ProgramSynthesis.Extraction.Text.Build.NodeTypes.v)">
+            <summary> Build a typed program node correponding to the SplitLines rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.SplitLines, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.lines.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Build.GrammarBuilders.Nodes.NodeRules.RowMap(Microsoft.ProgramSynthesis.Extraction.Text.Build.NodeTypes.colSplit,Microsoft.ProgramSynthesis.Extraction.Text.Build.NodeTypes.records)">
+            <summary> Build a typed program node correponding to the RowMap rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.RowMap, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.table.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Build.GrammarBuilders.Nodes.NodeRules.LetPrepend(Microsoft.ProgramSynthesis.Extraction.Text.Build.NodeTypes._LetB0,Microsoft.ProgramSynthesis.Extraction.Text.Build.NodeTypes._LetB1)">
+            <summary> Build a typed program node correponding to the LetPrepend rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.LetPrepend, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes._LetB2.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Build.GrammarBuilders.Nodes.NodeRules.LetSplit(Microsoft.ProgramSynthesis.Extraction.Text.Build.NodeTypes.split,Microsoft.ProgramSynthesis.Extraction.Text.Build.NodeTypes._LetB2)">
+            <summary> Build a typed program node correponding to the LetSplit rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.LetSplit, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.colSplit.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Build.GrammarBuilders.Nodes.NodeRules.LetExtractTup(Microsoft.ProgramSynthesis.Extraction.Text.Build.NodeTypes._LetB3,Microsoft.ProgramSynthesis.Extraction.Text.Build.NodeTypes.trimExtract)">
+            <summary> Build a typed program node correponding to the LetExtractTup rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.LetExtractTup, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.extractTup.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Build.GrammarBuilders.Nodes.NodeUnnamedConversionRules.trimExtract_extract(Microsoft.ProgramSynthesis.Extraction.Text.Build.NodeTypes.extract)">
+            <summary> Build a typed program node correponding to the ~convert_trimExtract_extract rule.</summary>
+            <remarks>
+                The return type could be UnnamedConversionNodeTypes.trimExtract_extract, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.trimExtract.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Build.GrammarBuilders.Nodes.NodeUnnamedConversionRules.extract_row(Microsoft.ProgramSynthesis.Extraction.Text.Build.NodeTypes.row)">
+            <summary> Build a typed program node correponding to the ~convert_extract_row rule.</summary>
+            <remarks>
+                The return type could be UnnamedConversionNodeTypes.extract_row, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.extract.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Build.GrammarBuilders.Nodes.NodeUnnamedConversionRules.records_skip(Microsoft.ProgramSynthesis.Extraction.Text.Build.NodeTypes.skip)">
+            <summary> Build a typed program node correponding to the ~convert_records_skip rule.</summary>
+            <remarks>
+                The return type could be UnnamedConversionNodeTypes.records_skip, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.records.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Extraction.Text.Build.GrammarBuilders.Nodes.NodeUnnamedConversionRules.skip_lines(Microsoft.ProgramSynthesis.Extraction.Text.Build.NodeTypes.lines)">
+            <summary> Build a typed program node correponding to the ~convert_skip_lines rule.</summary>
+            <remarks>
+                The return type could be UnnamedConversionNodeTypes.skip_lines, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.skip.
+            </remarks>
+        </member>
+    </members>
+</doc>

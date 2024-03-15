@@ -1,0 +1,1791 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.ProgramSynthesis.Split.Text</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.ProgramSynthesis.Split.Text.DelimiterStringsConstraint">
+            <summary>
+                Constraint which specifies delimiter strings to be used for learning.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.DelimiterStringsConstraint.#ctor(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+                Constructs a constraint to use particular string delimiters when learning split programs.
+            </summary>
+            <param name="delimiterStrings">The delimiter strings to use</param>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.DelimiterStringsConstraint.#ctor(System.String[])">
+            <summary>
+                Constructs a constraint to use particular string delimiters when learning split programs.
+            </summary>
+            <param name="delimiterStrings">The delimiter strings to use</param>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Split.Text.DelimiterStringsConstraint.DelimiterStrings">
+            <summary>
+                The delimiters.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.DelimiterStringsConstraint.Valid(Microsoft.ProgramSynthesis.Program{Microsoft.ProgramSynthesis.DslLibrary.StringRegion,Microsoft.ProgramSynthesis.Split.Text.Semantics.SplitCell[]})">
+            <summary>
+                Validate a program against this constraint.
+            </summary>
+            <param name="program">The program that needs to validate.</param>
+            <returns>The validation result.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.DelimiterStringsConstraint.ConflictsWith(Microsoft.ProgramSynthesis.Wrangling.Constraints.Constraint{Microsoft.ProgramSynthesis.DslLibrary.StringRegion,Microsoft.ProgramSynthesis.Split.Text.Semantics.SplitCell[]})">
+            <summary>
+                Checks if these constraints are obviously not valid together.
+            </summary>
+            <param name="other">The constraint to check for conflicts.</param>
+            <returns>
+                True if there is a conflict, false otherwise
+            </returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.DelimiterStringsConstraint.Equals(Microsoft.ProgramSynthesis.Split.Text.DelimiterStringsConstraint)">
+            <summary>
+                Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <returns>
+                true if the current object is equal to the <paramref name="other" /> parameter; otherwise, false.
+            </returns>
+            <param name="other">An object to compare with this object.</param>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.DelimiterStringsConstraint.Equals(Microsoft.ProgramSynthesis.Wrangling.Constraints.Constraint{Microsoft.ProgramSynthesis.DslLibrary.StringRegion,Microsoft.ProgramSynthesis.Split.Text.Semantics.SplitCell[]})">
+            <summary>
+                Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <returns>
+                true if the current object is equal to the <paramref name="other" /> parameter; otherwise, false.
+            </returns>
+            <param name="other">An object to compare with this object.</param>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.DelimiterStringsConstraint.Equals(System.Object)">
+            <summary>Determines whether the specified object is equal to the current object.</summary>
+            <returns>true if the specified object  is equal to the current object; otherwise, false.</returns>
+            <param name="obj">The object to compare with the current object. </param>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.DelimiterStringsConstraint.GetHashCode">
+            <summary>Serves as the default hash function. </summary>
+            <returns>A hash code for the current object.</returns>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Split.Text.FillStrategyConstraint">
+            <summary>
+                Constraint which specifies the fill strategy to use when the number of split cells is not equal to the number
+                specified in the split program
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.FillStrategyConstraint.#ctor(Microsoft.ProgramSynthesis.Split.Text.Semantics.FillStrategy)">
+            <summary>
+                Constructs a constraint to use a particular fill strategy when learning programs.
+            </summary>
+            <param name="strategy">The fill strategy to use</param>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.FillStrategyConstraint.Valid(Microsoft.ProgramSynthesis.Program{Microsoft.ProgramSynthesis.DslLibrary.StringRegion,Microsoft.ProgramSynthesis.Split.Text.Semantics.SplitCell[]})">
+            <summary>
+                Validate a program against this constraint.
+            </summary>
+            <param name="program">The program that needs to validate.</param>
+            <returns>The validation result.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.FillStrategyConstraint.ConflictsWith(Microsoft.ProgramSynthesis.Wrangling.Constraints.Constraint{Microsoft.ProgramSynthesis.DslLibrary.StringRegion,Microsoft.ProgramSynthesis.Split.Text.Semantics.SplitCell[]})">
+            <summary>
+                Checks if these constraints are obviously not valid together.
+            </summary>
+            <param name="other">The constraint to check for conflicts.</param>
+            <returns>
+                False as this constraint cannot conflict with any others.
+            </returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.FillStrategyConstraint.Equals(Microsoft.ProgramSynthesis.Split.Text.FillStrategyConstraint)">
+            <summary>
+                Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <returns>
+                true if the current object is equal to the <paramref name="other" /> parameter; otherwise, false.
+            </returns>
+            <param name="other">An object to compare with this object.</param>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.FillStrategyConstraint.Equals(Microsoft.ProgramSynthesis.Wrangling.Constraints.Constraint{Microsoft.ProgramSynthesis.DslLibrary.StringRegion,Microsoft.ProgramSynthesis.Split.Text.Semantics.SplitCell[]})">
+            <summary>
+                Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <returns>
+                true if the current object is equal to the <paramref name="other" /> parameter; otherwise, false.
+            </returns>
+            <param name="other">An object to compare with this object.</param>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.FillStrategyConstraint.Equals(System.Object)">
+            <summary>Determines whether the specified object is equal to the current object.</summary>
+            <returns>true if the specified object  is equal to the current object; otherwise, false.</returns>
+            <param name="obj">The object to compare with the current object. </param>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.FillStrategyConstraint.GetHashCode">
+            <summary>Serves as the default hash function. </summary>
+            <returns>A hash code for the current object.</returns>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Split.Text.FixedWidthConstraint">
+            <summary>
+                Constraint which indicates whether fixed-width programs should be learnt.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.FixedWidthConstraint.Valid(Microsoft.ProgramSynthesis.Program{Microsoft.ProgramSynthesis.DslLibrary.StringRegion,Microsoft.ProgramSynthesis.Split.Text.Semantics.SplitCell[]})">
+            <summary>
+                Validate a program against this constraint.
+            </summary>
+            <param name="program">The program that needs to validate.</param>
+            <returns>The validation result.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.FixedWidthConstraint.ConflictsWith(Microsoft.ProgramSynthesis.Wrangling.Constraints.Constraint{Microsoft.ProgramSynthesis.DslLibrary.StringRegion,Microsoft.ProgramSynthesis.Split.Text.Semantics.SplitCell[]})">
+            <summary>
+                Checks if these constraints are obviously not valid together.
+            </summary>
+            <param name="other">The constraint to check for conflicts.</param>
+            <returns>
+                False as this constraint cannot conflict with any others.
+            </returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.FixedWidthConstraint.Equals(Microsoft.ProgramSynthesis.Split.Text.FixedWidthConstraint)">
+            <summary>
+                Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <returns>
+                true if the current object is equal to the <paramref name="other" /> parameter; otherwise, false.
+            </returns>
+            <param name="other">An object to compare with this object.</param>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.FixedWidthConstraint.Equals(Microsoft.ProgramSynthesis.Wrangling.Constraints.Constraint{Microsoft.ProgramSynthesis.DslLibrary.StringRegion,Microsoft.ProgramSynthesis.Split.Text.Semantics.SplitCell[]})">
+            <summary>
+                Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <returns>
+                true if the current object is equal to the <paramref name="other" /> parameter; otherwise, false.
+            </returns>
+            <param name="other">An object to compare with this object.</param>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.FixedWidthConstraint.Equals(System.Object)">
+            <summary>Determines whether the specified object is equal to the current object.</summary>
+            <returns>true if the specified object  is equal to the current object; otherwise, false.</returns>
+            <param name="obj">The object to compare with the current object. </param>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.FixedWidthConstraint.GetHashCode">
+            <summary>Serves as the default hash function. </summary>
+            <returns>A hash code for the current object.</returns>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Split.Text.IncludeDelimitersInOutput">
+            <summary>
+                Constraint which indicates whether delimiter cells should be returned by a split program.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.IncludeDelimitersInOutput.#ctor(System.Boolean)">
+            <summary>
+                Constructs a constraint to include/exclude the delimiters.
+            </summary>
+            <param name="includeDelimiters">Indicates whether to include delimiters in program output</param>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Split.Text.IncludeDelimitersInOutput.IncludeDelimiters">
+            <summary>
+                Indicates if delimiters should be included in the output of the program.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.IncludeDelimitersInOutput.Valid(Microsoft.ProgramSynthesis.Program{Microsoft.ProgramSynthesis.DslLibrary.StringRegion,Microsoft.ProgramSynthesis.Split.Text.Semantics.SplitCell[]})">
+            <summary>
+                Validate a program against this constraint.
+            </summary>
+            <param name="program">The program that needs to validate.</param>
+            <returns>The validation result.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.IncludeDelimitersInOutput.ConflictsWith(Microsoft.ProgramSynthesis.Wrangling.Constraints.Constraint{Microsoft.ProgramSynthesis.DslLibrary.StringRegion,Microsoft.ProgramSynthesis.Split.Text.Semantics.SplitCell[]})">
+            <summary>
+                Checks if these constraints are obviously not valid together.
+            </summary>
+            <param name="other">The constraint to check for conflicts.</param>
+            <returns>
+                True if the conjunction of the specifications of this constraint and <paramref name="other" /> is
+                <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.IncludeDelimitersInOutput.Equals(Microsoft.ProgramSynthesis.Split.Text.IncludeDelimitersInOutput)">
+            <summary>
+                Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <returns>
+                true if the current object is equal to the <paramref name="other" /> parameter; otherwise, false.
+            </returns>
+            <param name="other">An object to compare with this object.</param>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.IncludeDelimitersInOutput.Equals(Microsoft.ProgramSynthesis.Wrangling.Constraints.Constraint{Microsoft.ProgramSynthesis.DslLibrary.StringRegion,Microsoft.ProgramSynthesis.Split.Text.Semantics.SplitCell[]})">
+            <summary>
+                Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <returns>
+                true if the current object is equal to the <paramref name="other" /> parameter; otherwise, false.
+            </returns>
+            <param name="other">An object to compare with this object.</param>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.IncludeDelimitersInOutput.Equals(System.Object)">
+            <summary>Determines whether the specified object is equal to the current object.</summary>
+            <returns>true if the specified object  is equal to the current object; otherwise, false.</returns>
+            <param name="obj">The object to compare with the current object. </param>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.IncludeDelimitersInOutput.GetHashCode">
+            <summary>Serves as the default hash function. </summary>
+            <returns>A hash code for the current object.</returns>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Split.Text.NthExampleConstraint">
+            <summary>
+                Constraint which specifies that the nth split should have a given value on a given input string region.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.NthExampleConstraint.#ctor(System.String,System.Int32,System.String)">
+            <summary>
+                Constructs a constraint to use particular string delimiters when learning split programs.
+            </summary>
+            <param name="inputString">The input region</param>
+            <param name="splitIndex">The split index for which the example is given</param>
+            <param name="exampleValue">The example value</param>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.NthExampleConstraint.Valid(Microsoft.ProgramSynthesis.Program{Microsoft.ProgramSynthesis.DslLibrary.StringRegion,Microsoft.ProgramSynthesis.Split.Text.Semantics.SplitCell[]})">
+            <summary>
+                Validate a program against this constraint.
+            </summary>
+            <param name="program">The program that needs to validate.</param>
+            <returns>The validation result.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.NthExampleConstraint.ConflictsWith(Microsoft.ProgramSynthesis.Wrangling.Constraints.Constraint{Microsoft.ProgramSynthesis.DslLibrary.StringRegion,Microsoft.ProgramSynthesis.Split.Text.Semantics.SplitCell[]})">
+            <summary>
+                Checks if these constraints are obviously not valid together.
+            </summary>
+            <param name="other">The constraint to check for conflicts.</param>
+            <returns>
+                True if there is a conflict, false otherwise
+            </returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.NthExampleConstraint.Equals(Microsoft.ProgramSynthesis.Split.Text.NthExampleConstraint)">
+            <summary>
+                Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <returns>
+                true if the current object is equal to the <paramref name="other" /> parameter; otherwise, false.
+            </returns>
+            <param name="other">An object to compare with this object.</param>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.NthExampleConstraint.Equals(Microsoft.ProgramSynthesis.Wrangling.Constraints.Constraint{Microsoft.ProgramSynthesis.DslLibrary.StringRegion,Microsoft.ProgramSynthesis.Split.Text.Semantics.SplitCell[]})">
+            <summary>
+                Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <returns>
+                true if the current object is equal to the <paramref name="other" /> parameter; otherwise, false.
+            </returns>
+            <param name="other">An object to compare with this object.</param>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.NthExampleConstraint.Equals(System.Object)">
+            <summary>Determines whether the specified object is equal to the current object.</summary>
+            <returns>true if the specified object  is equal to the current object; otherwise, false.</returns>
+            <param name="obj">The object to compare with the current object. </param>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.NthExampleConstraint.GetHashCode">
+            <summary>Serves as the default hash function. </summary>
+            <returns>A hash code for the current object.</returns>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Split.Text.Program">
+                Currently not being used - to be incorporated in the SplitProgram class. 
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Split.Text.Program.ProgramNode">
+            <summary>
+                The <see cref="P:Microsoft.ProgramSynthesis.Split.Text.Program.ProgramNode" /> object which contains the actual JSON Transformation program.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Split.Text.Program.ScoreFeature">
+            <summary>
+                The feature used by default to rank programs.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Program.Learn(System.Collections.Generic.IEnumerable{System.String},System.Threading.CancellationToken)">
+            <summary>
+                Learn top-ranked <see cref="T:Microsoft.ProgramSynthesis.Split.Text.Program" /> for a given set of input strings.
+                In the case of a tie, only one result will be returned.
+            </summary>
+            <param name="examples">The set of input examples.</param>
+            <param name="cancel">
+                The token to monitor for cancellation requests. The default value is
+                <see cref="P:System.Threading.CancellationToken.None" />.
+            </param>
+            <returns>The top-ranked <see cref="T:Microsoft.ProgramSynthesis.Split.Text.Program" />.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Program.Learn(System.Collections.Generic.IEnumerable{Microsoft.ProgramSynthesis.DslLibrary.StringRegion},System.Threading.CancellationToken)">
+            <summary>
+                Learn top-ranked <see cref="T:Microsoft.ProgramSynthesis.Split.Text.Program" /> for a given set of input <see cref="T:Microsoft.ProgramSynthesis.DslLibrary.StringRegion" />s.
+                In the case of a tie, only one result will be returned.
+            </summary>
+            <param name="examples">The set of input examples.</param>
+            <param name="cancel">
+                The token to monitor for cancellation requests. The default value is
+                <see cref="P:System.Threading.CancellationToken.None" />.
+            </param>
+            <returns>The top-ranked <see cref="T:Microsoft.ProgramSynthesis.Split.Text.Program" />.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Program.Run(Microsoft.ProgramSynthesis.DslLibrary.StringRegion)">
+            <summary>
+                Executes the program on an input <see cref="T:Microsoft.ProgramSynthesis.DslLibrary.StringRegion" /> to obtain the output.
+            </summary>
+            <param name="input">The input token.</param>
+            <returns>The result output.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Program.Run(System.String)">
+            <summary>
+                Executes the program on an input string to obtain the output.
+            </summary>
+            <param name="input">The input token.</param>
+            <returns>The result output.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Program.Serialize">
+            <summary>
+                Serializes a program to a string that can be loaded using
+                <see cref="!:IProgramLoader&lt;TProgram,TInput,TOutput&gt;.Load" />.
+            </summary>
+            <returns>A machine-readable string representation of this program.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Program.Equals(System.Object)">
+            <summary>
+                Determines whether the specified object is equal to the current object.
+            </summary>
+            <returns>
+                true if the specified object  is equal to the current object; otherwise, false.
+            </returns>
+            <param name="obj">The object to compare with the current object. </param>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Program.GetHashCode">
+            <summary>
+                Serves as the default hash function.
+            </summary>
+            <returns>
+                A hash code for the current object.
+            </returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Program.ToString">
+            <summary>
+                Returns a string that represents the current object.
+            </summary>
+            <returns>
+                A string that represents the current object.
+            </returns>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Split.Text.ProgramProperties">
+            <summary>
+                Stores the metadata of <see cref="T:Microsoft.ProgramSynthesis.Split.Text.SplitProgram" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.ProgramProperties.#ctor(System.String,System.Int32,System.Int32,Microsoft.ProgramSynthesis.Utils.Record{System.Int32,System.Nullable{System.Int32}}[],Microsoft.ProgramSynthesis.Split.Text.Semantics.QuotingConfiguration)">
+            <summary>
+                Constructs new object.
+            </summary>
+            <param name="delimiter">The delimiter string if the program is simple, otherwise null.</param>
+            <param name="columnCount"> The number of columns (excluding delimiters) in the program.</param>
+            <param name="splitCount">The number of splits (including delimiters) in the program.</param>
+            <param name="fieldPositions">The positions of each field if the program is fixed-width,
+            otherwise null</param>
+            <param name="quotingConf">The quoting configuration (<see cref="P:Microsoft.ProgramSynthesis.Split.Text.ProgramProperties.QuotingConfiguration" />).</param>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Split.Text.ProgramProperties.Delimiter">
+            <summary>
+                If this is a simple delimiter program, then return the delimiter string, otherwise null.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Split.Text.ProgramProperties.QuotingConfiguration">
+            <summary>
+                Quoting configuration used for simple delimiter (CSV) splitting.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Split.Text.ProgramProperties.FieldPositions">
+            <summary>
+                The field positions if this is a fixed-width program, null otherwise.
+                Each field is identified by a tuple of [start, end). 
+                The starting position is inclusive while the ending position is exclusive.
+                If the ending position is <c>null</c>, the field spans to the next field's start, or end of record.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Split.Text.ProgramProperties.ColumnCount">
+            <summary>
+                The number of data columns (excluding delimiters).
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Split.Text.ProgramProperties.SplitCount">
+            <summary>
+                The number of split counts (both delimiters and columns).
+            </summary>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Split.Text.QuotingConfigurationConstraint">
+            <summary>
+                A constraint that specifies that learner should try learning
+                programs with a <see cref="T:Microsoft.ProgramSynthesis.Split.Text.Semantics.QuotingConfiguration" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.QuotingConfigurationConstraint.#ctor(Microsoft.ProgramSynthesis.Split.Text.Semantics.QuotingConfiguration)">
+            <summary>
+                Constructs a new constraint.
+            </summary>
+            <param name="conf">The quoting configuration (<see cref="P:Microsoft.ProgramSynthesis.Split.Text.QuotingConfigurationConstraint.Configuration" />).</param>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Split.Text.QuotingConfigurationConstraint.Configuration">
+            <summary>
+                A quoting configuration that the learner should try using.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.QuotingConfigurationConstraint.Valid(Microsoft.ProgramSynthesis.Program{Microsoft.ProgramSynthesis.DslLibrary.StringRegion,Microsoft.ProgramSynthesis.Split.Text.Semantics.SplitCell[]})">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.QuotingConfigurationConstraint.ConflictsWith(Microsoft.ProgramSynthesis.Wrangling.Constraints.Constraint{Microsoft.ProgramSynthesis.DslLibrary.StringRegion,Microsoft.ProgramSynthesis.Split.Text.Semantics.SplitCell[]})">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.QuotingConfigurationConstraint.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.QuotingConfigurationConstraint.Equals(Microsoft.ProgramSynthesis.Wrangling.Constraints.Constraint{Microsoft.ProgramSynthesis.DslLibrary.StringRegion,Microsoft.ProgramSynthesis.Split.Text.Semantics.SplitCell[]})">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.QuotingConfigurationConstraint.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Split.Text.SimpleDelimiter">
+            <summary>
+                Constraint which indicates whether simple single delimiter programs should be learnt.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.SimpleDelimiter.Valid(Microsoft.ProgramSynthesis.Program{Microsoft.ProgramSynthesis.DslLibrary.StringRegion,Microsoft.ProgramSynthesis.Split.Text.Semantics.SplitCell[]})">
+            <summary>
+                Validate a program against this constraint.
+            </summary>
+            <param name="program">The program that needs to validate.</param>
+            <returns>The validation result.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.SimpleDelimiter.ConflictsWith(Microsoft.ProgramSynthesis.Wrangling.Constraints.Constraint{Microsoft.ProgramSynthesis.DslLibrary.StringRegion,Microsoft.ProgramSynthesis.Split.Text.Semantics.SplitCell[]})">
+            <summary>
+                Checks if these constraints are obviously not valid together.
+            </summary>
+            <param name="other">The constraint to check for conflicts.</param>
+            <returns>
+                False as this constraint cannot conflict with any others.
+            </returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.SimpleDelimiter.Equals(Microsoft.ProgramSynthesis.Split.Text.SimpleDelimiter)">
+            <summary>
+                Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <returns>
+                true if the current object is equal to the <paramref name="other" /> parameter; otherwise, false.
+            </returns>
+            <param name="other">An object to compare with this object.</param>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.SimpleDelimiter.Equals(Microsoft.ProgramSynthesis.Wrangling.Constraints.Constraint{Microsoft.ProgramSynthesis.DslLibrary.StringRegion,Microsoft.ProgramSynthesis.Split.Text.Semantics.SplitCell[]})">
+            <summary>
+                Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <returns>
+                true if the current object is equal to the <paramref name="other" /> parameter; otherwise, false.
+            </returns>
+            <param name="other">An object to compare with this object.</param>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.SimpleDelimiter.Equals(System.Object)">
+            <summary>Determines whether the specified object is equal to the current object.</summary>
+            <returns>true if the specified object  is equal to the current object; otherwise, false.</returns>
+            <param name="obj">The object to compare with the current object. </param>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.SimpleDelimiter.GetHashCode">
+            <summary>Serves as the default hash function. </summary>
+            <returns>A hash code for the current object.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.SimpleDelimitersOrFixedWidth.Valid(Microsoft.ProgramSynthesis.Program{Microsoft.ProgramSynthesis.DslLibrary.StringRegion,Microsoft.ProgramSynthesis.Split.Text.Semantics.SplitCell[]})">
+            <summary>
+                Validate a program against this constraint.
+            </summary>
+            <param name="program">The program that needs to validate.</param>
+            <returns>The validation result.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.SimpleDelimitersOrFixedWidth.ConflictsWith(Microsoft.ProgramSynthesis.Wrangling.Constraints.Constraint{Microsoft.ProgramSynthesis.DslLibrary.StringRegion,Microsoft.ProgramSynthesis.Split.Text.Semantics.SplitCell[]})">
+            <summary>
+                Checks if these constraints are obviously not valid together.
+            </summary>
+            <param name="other">The constraint to check for conflicts.</param>
+            <returns>
+                False as this constraint cannot conflict with any others.
+            </returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.SimpleDelimitersOrFixedWidth.Equals(Microsoft.ProgramSynthesis.Split.Text.SimpleDelimitersOrFixedWidth)">
+            <summary>
+                Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <returns>
+                true if the current object is equal to the <paramref name="other" /> parameter; otherwise, false.
+            </returns>
+            <param name="other">An object to compare with this object.</param>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.SimpleDelimitersOrFixedWidth.Equals(Microsoft.ProgramSynthesis.Wrangling.Constraints.Constraint{Microsoft.ProgramSynthesis.DslLibrary.StringRegion,Microsoft.ProgramSynthesis.Split.Text.Semantics.SplitCell[]})">
+            <summary>
+                Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <returns>
+                true if the current object is equal to the <paramref name="other" /> parameter; otherwise, false.
+            </returns>
+            <param name="other">An object to compare with this object.</param>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.SimpleDelimitersOrFixedWidth.Equals(System.Object)">
+            <summary>Determines whether the specified object is equal to the current object.</summary>
+            <returns>true if the specified object  is equal to the current object; otherwise, false.</returns>
+            <param name="obj">The object to compare with the current object. </param>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.SimpleDelimitersOrFixedWidth.GetHashCode">
+            <summary>Serves as the default hash function. </summary>
+            <returns>A hash code for the current object.</returns>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Split.Text.SplitInputOutputExample">
+            <summary>
+                Constraint which specifies that the array of split cells that should be produced on a given input string region.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.SplitInputOutputExample.#ctor(Microsoft.ProgramSynthesis.DslLibrary.StringRegion,Microsoft.ProgramSynthesis.Split.Text.Semantics.SplitCell[])">
+            <summary>
+                Constructs a constraint to specify the input and output of a split operation
+            </summary>
+            <param name="input">The input string region to split</param>
+            <param name="output">The the array of split cells returned</param>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.SplitInputOutputExample.Valid(Microsoft.ProgramSynthesis.Program{Microsoft.ProgramSynthesis.DslLibrary.StringRegion,Microsoft.ProgramSynthesis.Split.Text.Semantics.SplitCell[]})">
+            <summary>
+                Validate a program against this constraint
+            </summary>
+            <param name="program">The program that needs to validate</param>
+            <returns>The validation result</returns>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Split.Text.SplitProgram">
+            <summary>
+                The program for splitting a <see cref="T:Microsoft.ProgramSynthesis.DslLibrary.StringRegion" /> into a list of <see cref="T:Microsoft.ProgramSynthesis.Split.Text.Semantics.SplitCell" />s.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.SplitProgram.#ctor(Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.regionSplit)">
+            <summary>
+                Constructs a split program wrapping <paramref name="programNode" />
+            </summary>
+            <param name="programNode">The program to wrap.</param>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Split.Text.SplitProgram.Properties">
+            <summary>
+                The properties of the program.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.SplitProgram.Run(Microsoft.ProgramSynthesis.DslLibrary.StringRegion)">
+            <summary>
+                Run this program to transform <paramref name="input" />.
+            </summary>
+            <param name="input">The input to be transformed.</param>
+            <returns>The result of running the transformation program.</returns>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Split.Text.SplitProgramLearner">
+            <summary>
+                Class for learning <see cref="T:Microsoft.ProgramSynthesis.Split.Text.SplitProgram" />s.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Split.Text.SplitProgramLearner.ScoreFeature">
+            <summary>
+                The <see cref="T:Microsoft.ProgramSynthesis.Features.FeatureInfo" /> used for ranking the top-k programs in
+                <see cref="M:Microsoft.ProgramSynthesis.Wrangling.ProgramLearner`3.LearnTopK(System.Collections.Generic.IEnumerable{Microsoft.ProgramSynthesis.Wrangling.Constraints.Constraint{`1,`2}},System.Int32,System.Collections.Generic.IEnumerable{`1},System.Threading.CancellationToken)" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.SplitProgramLearner.LearnAll(System.Collections.Generic.IEnumerable{Microsoft.ProgramSynthesis.Wrangling.Constraints.Constraint{Microsoft.ProgramSynthesis.DslLibrary.StringRegion,Microsoft.ProgramSynthesis.Split.Text.Semantics.SplitCell[]}},System.Collections.Generic.IEnumerable{Microsoft.ProgramSynthesis.DslLibrary.StringRegion},System.Threading.CancellationToken)">
+            <summary>
+                Learn the set of programs that satisfy the given constraints.
+                Note: this method currently does not support non-empty output constraints.
+            </summary>
+            <param name="constraints">The output constraints</param>
+            <param name="additionalInputs">The additional inputs the programs can be executed</param>
+            <param name="cancel">Cancellation token</param>
+            <returns>The set of programs learnt</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.SplitProgramLearner.LearnProgram(System.Collections.Generic.IEnumerable{Microsoft.ProgramSynthesis.DslLibrary.StringRegion},System.Threading.CancellationToken)">
+            <summary>
+                Learn the highest ranked program from the given inputs.
+            </summary>
+            <param name="inputs">The inputs from which the program is to be learnt</param>
+            <param name="cancel">Cancellation token</param>
+            <returns>The top learnt program (or null if no program is learnt)</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.SplitProgramLearner.LearnTableExtraction(System.String[],System.Collections.Generic.IEnumerable{Microsoft.ProgramSynthesis.Wrangling.Constraints.Constraint{Microsoft.ProgramSynthesis.DslLibrary.StringRegion,Microsoft.ProgramSynthesis.Split.Text.Semantics.SplitCell[]}},System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Int32)">
+            <summary>
+                Learn a table from the given list of rows.
+            </summary>
+            <param name="rows">The string values of all the rows</param>
+            <param name="constraints">Constraints on the learning</param>
+            <param name="includeDelimiters">Indicates if delimiter columns should be included in the output.</param>
+            <param name="learnSimpleDelimiters">Indicates if simple delimiter programs are to be learnt.</param>
+            <param name="learnFixedWidth"> Indicates if fixed-width programs are to be learnt.</param>
+            <param name="showSigInputs">Indicates if significant inputs are to be included before the actual results</param>
+            <param name="numLearningInputs">The number of inputs to use in learning, or all of this is -1</param>
+            <returns>The list of learnt columns, where each column is a list of the column values for each row.</returns>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Split.Text.SplitProgramLoader">
+            <summary>
+                Factory class for loading serialized <see cref="T:Microsoft.ProgramSynthesis.Split.Text.SplitProgram" />s.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Split.Text.SplitProgramLoader.Instance">
+            <summary>
+                Singleton instance of <see cref="T:Microsoft.ProgramSynthesis.Split.Text.SplitProgramLoader" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.SplitProgramLoader.Create(Microsoft.ProgramSynthesis.AST.ProgramNode)">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Split.Text.SplitSession">
+            <summary>
+                The session for performing a split operation. Note: currently the learning is based only on inputs, and various
+                output constraints are planned to be supported in the future.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.SplitSession.#ctor(Microsoft.ProgramSynthesis.Wrangling.Session.IJournalStorage,System.Globalization.CultureInfo,Microsoft.ProgramSynthesis.Wrangling.Logging.ILogger)">
+            <summary>
+                Creates a new session object with no inputs.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Split.Text.SplitSession.JsonSerializerSettings">
+            <summary>
+                Pass this property to json.net when serializing or deserializing a session object.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Split.Text.SplitSession.JsonSerializerSettingsInstance">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.SplitSession.CreateStringRegion(System.String)">
+            <summary>
+                Creates a <see cref="T:Microsoft.ProgramSynthesis.DslLibrary.StringRegion" /> for a string.
+            </summary>
+            <param name="s">The input string.</param>
+            <returns>The corresponding <see cref="T:Microsoft.ProgramSynthesis.DslLibrary.StringRegion" />.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.SplitSession.LearnOutputs">
+            <summary>
+                Perform the splitting on the current inputs.
+            </summary>
+            <returns>The result of the splitting.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.SplitSession.GetSignificantInputsAsync(System.Nullable{System.Double},System.Threading.CancellationToken,System.Nullable{System.Guid})">
+            <summary>
+                Returns a subset of inputs that represent mutually distinct formats found among all inputs
+            </summary>
+            <param name="confidenceThreshold">
+                A number in [0,1] representing how confident the algorithm should be in the inputs
+                it selects where higher thresholds correspond to more certain that the input is needed and therefore fewer
+                inputs. A threshold of 1 means to only include inputs when completely certain.
+            </param>
+            <param name="cancel">Cancellation token.</param>
+            <param name="guid">Correlation id for logging and telemetry.</param>
+            <returns>
+                A list of inputs paired with confidence scores sorted in descending order by confidence (higher confidence values
+                mean the user should look at those inputs first) or <c>null</c> if unable to select inputs for any reason.
+            </returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.SplitSession.TrackedLearningMetrics(Microsoft.ProgramSynthesis.Wrangling.Session.LearnProgramRequest{Microsoft.ProgramSynthesis.Split.Text.SplitProgram,Microsoft.ProgramSynthesis.DslLibrary.StringRegion,Microsoft.ProgramSynthesis.Split.Text.Semantics.SplitCell[]},Microsoft.ProgramSynthesis.Split.Text.SplitProgram)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.SplitSession.TrackedLearningProperties(Microsoft.ProgramSynthesis.Wrangling.Session.LearnProgramRequest{Microsoft.ProgramSynthesis.Split.Text.SplitProgram,Microsoft.ProgramSynthesis.DslLibrary.StringRegion,Microsoft.ProgramSynthesis.Split.Text.Semantics.SplitCell[]},Microsoft.ProgramSynthesis.Split.Text.SplitProgram)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.SplitSession.TrackedLearningUserProperties(Microsoft.ProgramSynthesis.Wrangling.Session.LearnProgramRequest{Microsoft.ProgramSynthesis.Split.Text.SplitProgram,Microsoft.ProgramSynthesis.DslLibrary.StringRegion,Microsoft.ProgramSynthesis.Split.Text.Semantics.SplitCell[]},Microsoft.ProgramSynthesis.Split.Text.SplitProgram,System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Split.Text.SplitSessionJsonSerializerSettings.SessionTypes">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Split.Text.SplitSessionJsonSerializerSettings.ConstraintTypes">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Split.Text.SuggestionsMode">
+            <summary>
+                Constraint which indicates if the user only wants split suggestions (system volunteers a split suggestion if it detects that splitting is appropriate). 
+                This is false by default to indicate that the user desires some necessary splitting of the input.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.SuggestionsMode.#ctor(System.Boolean)">
+            <summary>
+                Constructs a constraint to make suggestions only.
+            </summary>
+            <param name="suggestionsMode">Indicates whether to learn in suggestions mode.</param>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Split.Text.SuggestionsMode.IsSuggestionsMode">
+            <summary>
+                Indicates if learning should be done in suggestions mode.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.SuggestionsMode.Valid(Microsoft.ProgramSynthesis.Program{Microsoft.ProgramSynthesis.DslLibrary.StringRegion,Microsoft.ProgramSynthesis.Split.Text.Semantics.SplitCell[]})">
+            <summary>
+                Validate a program against this constraint.
+            </summary>
+            <param name="program">The program that needs to validate.</param>
+            <returns>The validation result.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.SuggestionsMode.ConflictsWith(Microsoft.ProgramSynthesis.Wrangling.Constraints.Constraint{Microsoft.ProgramSynthesis.DslLibrary.StringRegion,Microsoft.ProgramSynthesis.Split.Text.Semantics.SplitCell[]})">
+            <summary>
+                Checks if these constraints are obviously not valid together.
+            </summary>
+            <param name="other">The constraint to check for conflicts.</param>
+            <returns>
+                True if the conjunction of the specifications of this constraint and <paramref name="other" /> is
+                <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.SuggestionsMode.Equals(Microsoft.ProgramSynthesis.Split.Text.SuggestionsMode)">
+            <summary>
+                Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <returns>
+                true if the current object is equal to the <paramref name="other" /> parameter; otherwise, false.
+            </returns>
+            <param name="other">An object to compare with this object.</param>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.SuggestionsMode.Equals(Microsoft.ProgramSynthesis.Wrangling.Constraints.Constraint{Microsoft.ProgramSynthesis.DslLibrary.StringRegion,Microsoft.ProgramSynthesis.Split.Text.Semantics.SplitCell[]})">
+            <summary>
+                Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <returns>
+                true if the current object is equal to the <paramref name="other" /> parameter; otherwise, false.
+            </returns>
+            <param name="other">An object to compare with this object.</param>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.SuggestionsMode.Equals(System.Object)">
+            <summary>Determines whether the specified object is equal to the current object.</summary>
+            <returns>true if the specified object  is equal to the current object; otherwise, false.</returns>
+            <param name="obj">The object to compare with the current object. </param>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.SuggestionsMode.GetHashCode">
+            <summary>Serves as the default hash function. </summary>
+            <returns>A hash code for the current object.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Translation.Python.PythonModule.GenerateCode(Microsoft.ProgramSynthesis.Translation.OptimizeFor)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Translation.Python.PythonModule.GenerateUnisolatedCode(Microsoft.ProgramSynthesis.Translation.OptimizeFor)">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Split.Text.Translation.Python.PythonTranslator">
+            <summary>
+                A Python translator for the Automatic Split DSL.
+                Like <see cref="!:PythonTranslator&lt;TProgram,TProgramInput,TProgramOutput&gt;" />, this
+                class is not thread safe.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Split.Text.Translation.Python.PythonTranslator.OperatorMapping">
+            <summary>
+                Provides a mapping from names of DSL operators to functions/operators
+                in the target language.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Translation.Python.PythonTranslator.GenerateHeaderModule(Microsoft.ProgramSynthesis.Split.Text.SplitProgram,System.String)">
+            <summary>
+                Generates a module containing the header (if any) for
+                the given program <see cref="!:p" />.
+                The header can include any definitions required for the generated
+                program corresponding to <see cref="!:p" /> to execute.
+            </summary>
+            <param name="p">A generated program</param>
+            <param name="headerModuleName">The name of the header module.</param>
+            <returns>
+                A <see cref="T:Microsoft.ProgramSynthesis.Translation.Module" /> which contains the definitions that all code generated by this translator can
+                implicitly depend on.
+            </returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Translation.Python.PythonTranslator.CreateModule(System.String,System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Translation.Python.PythonTranslator.GenerateLiteralRepresentation(System.Object,System.Type)">
+            <summary>
+                Generates the representation of the literal in the target language.
+            </summary>
+            <param name="literalValue">An <see cref="T:System.Object" /> representing the value of the literal.</param>
+            <param name="literalType">The type of the literal.</param>
+            <returns>
+                A representation of <see cref="!:literalValue" /> interpreted as a value
+                of the type <see cref="!:literalType" /> in the target language.
+            </returns>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Split.Text.Learning.MatchRecordLearningExtensions">
+            <summary>
+                Extension methods for various features of match records computed during learning
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Learning.MatchRecordLearningExtensions.NumNonZLDs(Microsoft.ProgramSynthesis.Split.Text.Semantics.MatchRecord,System.Collections.Generic.HashSet{System.Int32})">
+            <summary>
+                Returns the number of non-zero length delimiters in this match record that occur in the given delimiter indexes set.
+            </summary>
+            <param name="relevantDelimiterIndexes">The set of relevant delimiter indexes</param>
+            <returns>The number of non-zero length delimiters</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Learning.MatchRecordLearningExtensions.NumDisjointNonZLDs(Microsoft.ProgramSynthesis.Split.Text.Semantics.MatchRecord,System.Collections.Generic.HashSet{System.Int32})">
+            <summary>
+                Returns the number of disjoint non-zero length delimiters in this match record that occur in the given delimiter indexes set.
+            </summary>
+            <param name="relevantDelimiterIndexes">The set of relevant delimiter indexes</param>
+            <returns>The number of disjoint non-zero length delimiters</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Learning.MatchRecordLearningExtensions.NumZLDs(Microsoft.ProgramSynthesis.Split.Text.Semantics.MatchRecord,System.Collections.Generic.HashSet{System.Int32})">
+            <summary>
+                Returns the number of zero length delimiters in this match record that occur in the given delimiter indexes set.
+            </summary>
+            <param name="relevantDelimiterIndexes">The set of relevant delimiter indexes</param>
+            <returns>The number of zero length delimiters</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Learning.MatchRecordLearningExtensions.NumFields(Microsoft.ProgramSynthesis.Split.Text.Semantics.MatchRecord)">
+            <summary>
+                Returns the number of fields represented by this match record.
+                Fields are represented by the content between two consecutive zero-length delimiters.
+            </summary>
+            <returns>The number of fields</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Learning.MatchRecordLearningExtensions.TotalFieldsSize(Microsoft.ProgramSynthesis.Split.Text.Semantics.MatchRecord)">
+            <summary>
+                Returns the total size of fields represented by this match record.
+                Fields are represented by the content between two consecutive zero-length delimiters.
+            </summary>
+            <returns>The total size of fields</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Learning.MatchRecordLearningExtensions.IsNonZeroLengthSplit(Microsoft.ProgramSynthesis.Split.Text.Semantics.MatchRecord,System.Int32)">
+            <summary>
+                Indicates if the delimiter at the given index is a non-zero-length split.
+            </summary>
+            <param name="i">Index of delimiter</param>
+            <returns>True if delimiter is non-zero-length</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Learning.MatchRecordLearningExtensions.IsZeroLengthSplit(Microsoft.ProgramSynthesis.Split.Text.Semantics.MatchRecord,System.Int32)">
+            <summary>
+                Indicates if the delimiter at the given index is a zero-length split.
+            </summary>
+            <param name="i">Index of delimiter</param>
+            <returns>True if delimiter is zero-length</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Learning.MatchRecordLearningExtensions.IsDisjointNonZeroLengthSplit(Microsoft.ProgramSynthesis.Split.Text.Semantics.MatchRecord,System.Int32)">
+            <summary>
+                Indicates if the delimiter at the given index is a disjoint non-zero-length split.
+            </summary>
+            <param name="i">Index of delimiter</param>
+            <returns>True if delimiter is disjoint non-zero-length</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Learning.MatchRecordLearningExtensions.IsTrivialZeroLengthSplit(Microsoft.ProgramSynthesis.Split.Text.Semantics.MatchRecord,System.Int32,System.String,System.Collections.Generic.HashSet{System.Int32})">
+            <summary>
+                Indicates if the delimiter at the given index is a trivial zero-length split.
+            </summary>
+            <param name="i">Index of delimiter</param>
+            <returns>True if delimiter is a trivial zero-length</returns>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Split.Text.Learning.Witnesses.Options">
+            <summary>
+                Options used by the witness functions.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Split.Text.Learning.Witnesses.Options.LearnSimpleSingleDelimiterPrograms">
+            <summary>
+                Indicates that we only learn programs that use a single delimiter that is non-contextual (no surrounding regex
+                patterns)
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Split.Text.Learning.Witnesses.Options.LearnFixedWidth">
+            <summary>
+                Indicates that we only learn programs that split at fixed points assuming the data contains fields of fixed width
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Split.Text.Learning.Witnesses.Options.LearnSimpleDelimitersOrFixedWidth">
+            <summary>
+                Indicates that we only learn either simple delimiter or fixed-width programs
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Split.Text.Learning.Witnesses.Options.IncludeDelimiters">
+            <summary>
+                Indicates that delimiters should not be included in the output of the learned programs
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Split.Text.Learning.Witnesses.Options.ProvidedDelimiterStrings">
+            <summary>
+                The delimiter strings to be used in the learning
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Split.Text.Learning.Witnesses.Options.ProvidedQuotingConfigurations">
+            <summary>
+                The quoting configurations used in the learning
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Split.Text.Learning.Witnesses.Options.FillStrategy">
+            <summary>
+                The fill strategy (left to right, right to left, or all nulls) for inputs that do not produce conforming splits
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Split.Text.Learning.Witnesses.Options.SuggestionsMode">
+            <summary>
+                Indicates if the user only wants split suggestions (system volunteers split suggestion if splitting is appropriate). 
+                This is false by default to indicate that the user desires some splitting of the input.  
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Split.Text.Learning.Witnesses.LearnZeroLengthDelimiters">
+            <summary>
+                Indicates whether we include zero-length delimiters in the learning
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Learning.Witnesses.ConstructSplitMultiple(System.Collections.Generic.IEnumerable{Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.d})">
+            <summary>
+                Constructs a multiple delimiter expression from a list of delimiter expressions
+            </summary>
+            <param name="delimiterPrograms">The delimiter program nodes</param>
+            <returns>The multiple delimiter program node</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Learning.Witnesses.ConstructDelimitersList(System.Collections.Generic.IEnumerable{Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.d})">
+            <summary>
+                Constructs a delimiter list expression from a list of delimiter expressions
+            </summary>
+            <param name="delimiterPrograms">The delimiter program nodes</param>
+            <returns>The delimiter list program node</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Learning.Witnesses.ConstructExtPointsList(System.Collections.Generic.IEnumerable{Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.cndExtPoint})">
+            <summary>
+                Constructs an extraction point list expression from a list of extraction point expressions
+            </summary>
+            <param name="extPointPrograms">The extraction point program nodes</param>
+            <returns>The extraction points list program node</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Learning.Witnesses.LearnInconsistentDelimiterPrograms(System.String[])">
+            <summary>
+                Attempts to learn delimiters that occur inconsistently across different inputs.
+            </summary>
+            <param name="inputLines">The inputs</param>
+            <returns>A program for splitting by an inconsistent delimiter</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Learning.Witnesses.GetPositionExamples(System.Collections.Generic.Dictionary{System.Int32,System.Collections.Generic.Dictionary{System.String,System.String}})">
+            <summary>
+                Translates the given string examples into position examples. That is, for each input string,
+                instead of having the substring as an example (which may have multiple occurrences), this function computes
+                start and end positions of the substring in the input string.
+                TODO: theoretically this is a disjunction of possibilities, but currently we are favouring left to right in case of
+                multiple occurrences, and should generalize in future, and also handle position examples from user as first class
+                constraints
+            </summary>
+            <param name="stringExamples">Map from each split cell index to (input, substring of input) examples for that cell</param>
+            <returns>
+                Map from each split cell index to (input, (start position in input, end position in input)) examples for that
+                cell
+            </returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Learning.Witnesses.GetNegativePositionExamples(System.Collections.Generic.Dictionary{System.Int32,System.Collections.Generic.Dictionary{System.String,System.Nullable{Microsoft.ProgramSynthesis.Utils.Record{System.Int32,System.Int32}}}})">
+            <summary>
+                Obtains negative position examples based on positive examples given for other split cells. For instance,
+                if an example is given for cell i on input s, and no example is given for cell j on input s, then the example for
+                cell i
+                is a negative example for cell j on input s, because a valid splitting requires that i and j cannot overlap.
+            </summary>
+            <param name="positionExamples">Map from each split cell index to position examples for that cell on various inputs</param>
+            <returns>Map from each split cell index to (input, ranges of indexes where the output cannot overlap) </returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Learning.Witnesses.LearnExtractionSplitRule(Microsoft.ProgramSynthesis.Learning.SynthesisEngine,Microsoft.ProgramSynthesis.Rules.GrammarRule,Microsoft.ProgramSynthesis.Learning.LearningTask{Microsoft.ProgramSynthesis.Specifications.WithInputTopSpec},System.Threading.CancellationToken)">
+            <summary>
+                The learner for extraction-based split programs
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Learning.Witnesses.LearnExtractions(System.Collections.Generic.Dictionary{System.Int32,System.Collections.Generic.Dictionary{System.String,System.Nullable{Microsoft.ProgramSynthesis.Utils.Record{System.Int32,System.Int32}}}},System.Collections.Generic.Dictionary{System.Int32,System.Collections.Generic.Dictionary{System.String,Microsoft.ProgramSynthesis.Utils.Record{System.Int32,System.Int32}[]}},System.Threading.CancellationToken)">
+            <summary>
+                Given positive and negative examples for split cells (columns) on some inputs, determine for each split cell
+                a start delimiter position and an end delimiter position that satisfies the given examples.
+            </summary>
+            <param name="positionExamples">Map from each split cell index to position examples for that cell on various inputs</param>
+            <param name="negativePositionExamples">
+                Map from each split cell index to ranges where the output cannot overlap on
+                various inputs
+            </param>
+            <param name="cancel">The cancellation token</param>
+            <returns>
+                A map from each split cell index to a pair of start and end delimiter occurrence positions defining that cell
+                output
+            </returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Learning.Witnesses.GetDisjointColumnExtractions(System.Collections.Generic.List{Microsoft.ProgramSynthesis.Utils.Record{System.Int32,System.Int32}}[],System.Collections.Generic.KeyValuePair{System.Int32,Microsoft.ProgramSynthesis.Utils.Record{System.Collections.Generic.List{Microsoft.ProgramSynthesis.Split.Text.Learning.Witnesses.DelimiterPos},System.Collections.Generic.List{Microsoft.ProgramSynthesis.Split.Text.Learning.Witnesses.DelimiterPos}}}[],System.Threading.CancellationToken)">
+            <summary>
+                Given ranked lists of delimiter positions for each column in the splitting, find the best combination of delimiter
+                positions that do not
+                overlap with the given ranges (disjointPositions) or with each other on any input string (produce a disjoint
+                extraction across all inputs).
+            </summary>
+            <param name="disjointPositions">The ranges with which the resulting extractions should not overlap</param>
+            <param name="columnLists">The ranked list of start and end positions for each cell (column) in the splitting</param>
+            <param name="cancel">Cancellation token</param>
+            <returns>
+                Map from each split cell (column) index to a pair of start and end delimiter occurrence positions defining
+                that cell output
+            </returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Learning.Witnesses.GetColumnExtraction(System.Collections.Generic.List{Microsoft.ProgramSynthesis.Utils.Record{System.Int32,System.Int32}}[],System.Collections.Generic.List{Microsoft.ProgramSynthesis.Split.Text.Learning.Witnesses.DelimiterPos},System.Collections.Generic.List{Microsoft.ProgramSynthesis.Split.Text.Learning.Witnesses.DelimiterPos},System.Threading.CancellationToken)">
+            <summary>
+                Given ranked lists of delimiter positions for the start and end positions of a cell (column) in the splitting,
+                find the best combination of delimiter positions that do not overlap with the given ranges (disjointPositions)
+                or with each other on any input string (produce a disjoint extraction across all inputs).
+            </summary>
+            <param name="disjointPositions">The ranges with which the resulting extractions should not overlap</param>
+            <param name="startList">The ranked list of start positions for this cell (column) in the splitting</param>
+            <param name="endList">The ranked list of end positions for this cell (column) in the splitting</param>
+            <param name="cancel">The cancellation token</param>
+            <returns>Lazily evaluated ranked list of pairs of start and end delimiter occurrence positions defining the cell output</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Learning.Witnesses.GetSatisfyingDelimiterPositions(System.Boolean,System.Collections.Generic.Dictionary{System.String,System.Nullable{Microsoft.ProgramSynthesis.Utils.Record{System.Int32,System.Int32}}},System.Collections.Generic.Dictionary{System.String,Microsoft.ProgramSynthesis.Utils.Record{System.Int32,System.Int32}[]})">
+            <summary>
+                Get the ranked list of delimiter occurrence positions that satisfy the start or end point of the
+                given positive and negative postion examples for a split cell. The ranking prefers positions that use top ranked
+                delimiters (as previously learnt)
+                and those delimiters that have a higher frequency of consistent matches and a higher number of matches across all
+                inputs.
+            </summary>
+            <param name="isStart">
+                Indicates whether the delimiter position should satisfy the start or end point of the example
+                splits
+            </param>
+            <param name="positionExamples">
+                Map from each input string to the start and end position of the output for this split
+                cell on this input
+            </param>
+            <param name="negativePositionExamples">
+                Map from each input to ranges in the input where the output for this split cell
+                cannot overlap
+            </param>
+            <returns>A ranked list of delimiter positions satisfying the examples</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Learning.Witnesses.GetSatisfyingConditionalDelimiterPositions(System.Boolean,System.Collections.Generic.Dictionary{System.String,System.Nullable{Microsoft.ProgramSynthesis.Utils.Record{System.Int32,System.Int32}}})">
+            <summary>
+                Get the ranked list of conditional delimiter occurrence positions that satisfy the start or end point of the
+                given postion examples for a split cell. This is determined by first finding ranked satisfying delimiter positions
+                for each of the position examples, and using this to find sets of delimiter positions that together
+                satisfy all of the position examples.
+            </summary>
+            <param name="isStart">
+                Indicates whether the delimiter position should satisfy the start or end point of the example
+                splits
+            </param>
+            <param name="positionExamples">
+                Map from each input string to the start and end position of the output for this split
+                cell on this input
+            </param>
+            <returns>A ranked list of delimiter positions satisfying the examples</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Learning.Witnesses.GetSatisfyingDelimiterPos(Microsoft.ProgramSynthesis.Split.Text.Semantics.MatchRecord[],System.Boolean,System.Collections.Generic.Dictionary{System.String,System.Nullable{Microsoft.ProgramSynthesis.Utils.Record{System.Int32,System.Int32}}},System.Collections.Generic.Dictionary{System.String,Microsoft.ProgramSynthesis.Utils.Record{System.Int32,System.Int32}[]})">
+            <summary>
+                Checks if some occurrence of the delimiter satisfies the given positive and negative examples as either the start
+                or end point, and if so,
+                returns the satisfying delimiter position.
+            </summary>
+            <param name="delimiter">The delimiter occurrences across all input strings in this learning session</param>
+            <param name="isStartPosition">
+                Indicates whether the delimiter position should satisfy the start or end point of the
+                example splits
+            </param>
+            <param name="positionExamples">
+                Map from each input string to the start and end position of the output for this split
+                cell on this input
+            </param>
+            <param name="negativePositionExamples">
+                Map from each input to ranges in the input where the output for this split cell
+                cannot overlap
+            </param>
+            <returns>The satisfying delmiter position if one exists, or null otherwise</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Learning.Witnesses.GetFirstDisjointOccurrence(System.String,System.String,System.Collections.Generic.IEnumerable{Microsoft.ProgramSynthesis.Utils.Record{System.Int32,System.Int32}})">
+            <summary>
+                Gets the first occurrence of an example substring in a given input string that does not overlap with the given
+                disallowed ranges.
+                Preference is given to the first occurrence after all the disjoint ranges, otherwise the first disjoint occurrence
+                from the beginning of the string.
+            </summary>
+            <param name="input">The input string</param>
+            <param name="example">The substring example</param>
+            <param name="disallowedRanges">The ranges in the input where the substring occurrence should not overlap</param>
+            <returns>The satisfying delmiter position if one exists, or null otherwise</returns>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Split.Text.Learning.Witnesses.DelimiterPos">
+            <summary>
+                Class to hold the positions determined by a delimiter occurrence over all inputs in this learning session.
+                Each position is determined by (Delimiter, Index, IsStart), where Delimiter is the list of MatchRecords of a
+                delimiter over all
+                inputs, Index is the occurrence of the delimiter in the match record (left to right if positive, otherwise right to
+                left), and IsStart
+                indicates whether the position is the start of the delimiter occurrence or the end.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Split.Text.Semantics.MatchRecord">
+            <summary>
+                Holds all (non-overlapping) occurrences (start and end indexes) of a regular expression within a string.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Semantics.MatchRecord.DisjointUnion(Microsoft.ProgramSynthesis.Split.Text.Semantics.MatchRecord,Microsoft.ProgramSynthesis.Split.Text.Semantics.MatchRecord,System.Int32[]@)">
+            <summary>
+                Returns the union of two disjoint match records (no overlapping or consecutive matches)
+            </summary>
+            <param name="m1">The first match record</param>
+            <param name="m2">The second match record</param>
+            <param name="matchOrdering">
+                Describes the ordering of matches: whether they are from the first or second match record in the result record (0
+                for m1, 1 for m2)
+            </param>
+            <returns>The union of the match records if they are disjoint, and null otherwise</returns>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Split.Text.Semantics.QuotingConfiguration">
+            <summary>
+                Quoting configuration for splitting CSV files.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Semantics.QuotingConfiguration.#ctor(System.Nullable{System.Char},System.Boolean,System.Nullable{System.Char},Microsoft.ProgramSynthesis.Split.Text.Semantics.QuotingStyle)">
+            <summary>
+                Constructs a new configuration.
+            </summary>
+            <param name="quoteChar">Character used to quote fields/cells.</param>
+            <param name="doubleQuoteEscape">Whether to treat a double quote character inside a quoted region as a single quote.</param>
+            <param name="escapeChar">Character used for explicit escape (e.g., of delimiters, newlines).</param>
+            <param name="style">Quoting style (or semantics) to use (<see cref="T:Microsoft.ProgramSynthesis.Split.Text.Semantics.QuotingStyle" />).</param>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Split.Text.Semantics.QuotingConfiguration.QuoteChar">
+            <summary>
+                Character used to quote fields/cells.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Split.Text.Semantics.QuotingConfiguration.DoubleQuoteEscape">
+            <summary>
+                Whether to treat a double quote character inside a quoted region as a single quote.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Split.Text.Semantics.QuotingConfiguration.EscapeChar">
+            <summary>
+                Character used for explicit escape (e.g., of delimiters, newlines).
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Split.Text.Semantics.QuotingConfiguration.Style">
+            <summary>
+                Quoting style (or semantics) to use (<see cref="T:Microsoft.ProgramSynthesis.Split.Text.Semantics.QuotingStyle" />).
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Semantics.QuotingConfiguration.ToStandard">
+            <summary>
+                Converts configuration to a standard one.
+            </summary>
+            <returns>Copy of this configuration, except for qupting style being <see cref="F:Microsoft.ProgramSynthesis.Split.Text.Semantics.QuotingStyle.Standard" /></returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Semantics.QuotingConfiguration.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Semantics.QuotingConfiguration.Equals(Microsoft.ProgramSynthesis.Split.Text.Semantics.QuotingConfiguration)">
+            <summary>
+                Indicates whether this instance and another <see cref="T:Microsoft.ProgramSynthesis.Split.Text.Semantics.QuotingConfiguration" /> are equal.
+            </summary>
+            <param name="other">Other <see cref="T:Microsoft.ProgramSynthesis.Split.Text.Semantics.QuotingConfiguration" />.</param>
+            <returns>True if this instance equals to <see cref="!:other" />, and false otherwise.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Semantics.QuotingConfiguration.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Semantics.QuotingConfiguration.ToString">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Semantics.QuotingConfiguration.RenderHumanReadable">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Semantics.QuotingConfiguration.RenderXML">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Semantics.QuotingConfiguration.ParseXML(System.Xml.Linq.XElement)">
+            <summary>
+                Parses XML node to a <see cref="T:Microsoft.ProgramSynthesis.Split.Text.Semantics.QuotingConfiguration" />.
+            </summary>
+            <param name="node">XML node to parse.</param>
+            <returns>The resulting configuration.</returns>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Split.Text.Semantics.QuotingStyle">
+            <summary>
+                The semantics to use for quotes.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Split.Text.Semantics.QuotingStyle.Standard">
+            <summary>
+                CSV standard quoting that allows (at most single) quotes only at start/end of a field.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Split.Text.Semantics.QuotingStyle.Flexible">
+            <summary>
+                Allows for multiple quotes anywhere in a field.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Split.Text.Semantics.QuotingStyle.Adaptive">
+            <summary>
+                Dynamically uses combination of quote ('"'), backslash ('//') and double quote
+                quoting and escaping mechanisms.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Split.Text.Semantics.Semantics.DatePatternName">
+            <summary>
+                The name for the regex matching a date.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Split.Text.Semantics.Semantics.TimePatternName">
+            <summary>
+                The name for the regex matching time.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Split.Text.Semantics.Semantics.SimpleTimePatternName">
+            <summary>
+                The name for the regex matching time values not including subseconds.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Split.Text.Semantics.Semantics.IPAddressPatternName">
+            <summary>
+                The name for the regex matching an IP address.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Split.Text.Semantics.Semantics.EmailPatternName">
+            <summary>
+                The name for the regex matching an email.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Split.Text.Semantics.Semantics.MACPattern">
+            <summary>
+                The name for the regex matching a MAC address.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Split.Text.Semantics.Semantics.DecimalNumberPatternName">
+            <summary>
+                The name for the regex matching a decimal number.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Split.Text.Semantics.Semantics.PhrasePatternName">
+            <summary>
+                The name for the regex matching a phrase.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Split.Text.Semantics.Semantics.UpperCamelCasePatternName">
+            <summary>
+                The name for the regex matching upper camel case.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Split.Text.Semantics.Semantics.URLPatternName">
+            <summary>
+                The name for the regex matching a URL.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Split.Text.Semantics.Semantics.GUIDPatternName">
+            <summary>
+                The name for the regex matching a GUID.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Split.Text.Semantics.Semantics.TelelphonePatternName">
+            <summary>
+                The name for the regex matching a telephone number.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Split.Text.Semantics.Semantics.Tokens">
+            <summary>
+                The list of tokens to learn from.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Semantics.Semantics.Concat(Microsoft.ProgramSynthesis.Split.Text.Semantics.MatchRecord,Microsoft.ProgramSynthesis.Split.Text.Semantics.MatchRecord)">
+            <summary>
+                Returns all matches that correspond to any consecutive occurrence of a match in <paramref name="t" /> followed by a
+                match in <paramref name="r" />.
+            </summary>
+            <param name="t">The first match record</param>
+            <param name="r">The second match record</param>
+            <returns>The match record of concatenations</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Semantics.Semantics.LookBehind(Microsoft.ProgramSynthesis.Split.Text.Semantics.MatchRecord)">
+            <summary>
+                Returns the lookbehind matches for match record <paramref name="r" />, which are all empty matches at the end of
+                matches in <paramref name="r" />.
+            </summary>
+            <param name="r">The match record</param>
+            <returns>The lookbehind matches for <paramref name="r" /> </returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Semantics.Semantics.LookAhead(Microsoft.ProgramSynthesis.Split.Text.Semantics.MatchRecord)">
+            <summary>
+                Returns the lookahead matches for match record <paramref name="r" />, which are all empty matches at the start of
+                matches in <paramref name="r" />.
+            </summary>
+            <param name="r">The match record</param>
+            <returns>The lookahead matches for <paramref name="r" /> </returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Semantics.Semantics.LookAround(Microsoft.ProgramSynthesis.Split.Text.Semantics.MatchRecord,Microsoft.ProgramSynthesis.Split.Text.Semantics.MatchRecord,Microsoft.ProgramSynthesis.Split.Text.Semantics.MatchRecord)">
+            <summary>
+                Returns the matches in <paramref name="delimiterMatches" /> which occur in between the given lookbehind and
+                lookahead matches.
+            </summary>
+            <param name="r1">The lookbehind match record</param>
+            <param name="delimiterMatches">The delimiter match record</param>
+            <param name="r2">The lookahead match record</param>
+            <returns>The match record of the resulting matches</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Semantics.Semantics.FieldLookAroundEndPoints(Microsoft.ProgramSynthesis.Split.Text.Semantics.MatchRecord,Microsoft.ProgramSynthesis.Split.Text.Semantics.MatchRecord,Microsoft.ProgramSynthesis.Split.Text.Semantics.MatchRecord)">
+            <summary>
+                Returns the delimiting positions of field matches given by <paramref name="fieldMatches" /> which
+                occur in between the given lookbehind and lookahead matches.
+            </summary>
+            <param name="r1">The lookbehind match record</param>
+            <param name="fieldMatches">The match record of fields</param>
+            <param name="r2">The lookahead match record</param>
+            <returns>The match record of the resulting matches</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Semantics.Semantics.FieldEndPoints(Microsoft.ProgramSynthesis.Split.Text.Semantics.MatchRecord)">
+            <summary>
+                Returns the delimiting positions of field matches given by <paramref name="fieldMatches" />
+            </summary>
+            <param name="fieldMatches">The match record of fields</param>
+            <returns>The match record of the resulting matches</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Semantics.Semantics.GetMatchRecord(Microsoft.ProgramSynthesis.DslLibrary.StringRegion,System.Text.RegularExpressions.Regex)">
+            <summary>
+                Returns the match record of all occurrences of the given regex in the given string region.
+            </summary>
+            <param name="str">The string region</param>
+            <param name="regex">The regular expression</param>
+            <returns>The match record of the resulting matches</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Semantics.Semantics.GetMatchesForString(Microsoft.ProgramSynthesis.DslLibrary.StringRegion,System.String)">
+            <summary>
+                Gets the matches for the string <paramref name="s"/> in the <see cref="T:Microsoft.ProgramSynthesis.DslLibrary.StringRegion"/> <paramref name="str"/>.
+            </summary>
+            <remarks><paramref name="s"/> must have length > 0.</remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Semantics.Semantics.GetMatchRecordForString(Microsoft.ProgramSynthesis.DslLibrary.StringRegion,System.String)">
+            <summary>
+                Returns the match record of all occurrences of the given string in the given string region.
+            </summary>
+            <param name="str">The string region</param>
+            <param name="s">The string to search for in <paramref name="str"/>.</param>
+            <returns>The match record of the resulting matches</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Semantics.Semantics.GetMatchRecordForStringRegex(Microsoft.ProgramSynthesis.DslLibrary.StringRegion,System.String)">
+            <summary>
+                Returns the match record of all occurrences of the given regex in the given string region.
+            </summary>
+            <param name="str">The string region.</param>
+            <param name="regex">The regular expression string.</param>
+            <returns>The match record of the resulting matches.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Semantics.Semantics.SplitMultiple(Microsoft.ProgramSynthesis.Split.Text.Semantics.MatchRecord,Microsoft.ProgramSynthesis.Split.Text.Semantics.MatchRecord)">
+            <summary>
+                Combines an existing match record of delimiter matches <paramref name="splitting" /> with a new match record of
+                delimiter matches  <paramref name="d" />.
+            </summary>
+            <param name="splitting">The match record of all delimiters in the current splitting</param>
+            <param name="d">The delimiter match record</param>
+            <returns>The match record of the resulting matches</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Semantics.Semantics.DelimitersList(System.Collections.Generic.List{Microsoft.ProgramSynthesis.Split.Text.Semantics.MatchRecord},Microsoft.ProgramSynthesis.Split.Text.Semantics.MatchRecord)">
+            <summary>
+                Adds a new match record to a delimiters list
+            </summary>
+            <param name="delimitersList">The list of delimiters</param>
+            <param name="d">The delimiter to add</param>
+            <returns>The concatenation of the delimiter list with the new delimiter</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Semantics.Semantics.EmptyDelimitersList">
+            <summary>
+                Returns an empty delimiters list
+            </summary>
+            <returns>An empty MatchRecord list</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Semantics.Semantics.ExtPointsList(Microsoft.ProgramSynthesis.Utils.Record{System.Int32,System.Int32,System.Int32,System.Int32}[],System.Nullable{Microsoft.ProgramSynthesis.Utils.Record{System.Int32,System.Int32,System.Int32,System.Int32}})">
+            <summary>
+                Adds a new extraction point to an extraction points list
+            </summary>
+            <param name="extractionPoints">The list of extraction points</param>
+            <param name="cndExtPoint">The conditional extraction point to add</param>
+            <returns>The concatenation of the list with the new extraction point</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Semantics.Semantics.EmptyExtPointsList">
+            <summary>
+                Returns an empty extraction point list
+            </summary>
+            <returns>An empty extraction point list</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Semantics.Semantics.SpecialCharPattern(Microsoft.ProgramSynthesis.DslLibrary.StringRegion,System.String)">
+            <summary>
+                Checks if the input string satisfies the given special character pattern
+            </summary>
+            <param name="v">The input string region</param>
+            <param name="pattern">The pattern of special characters</param>
+            <returns>True if the input string satisfies the given pattern</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Semantics.Semantics.ConditionalExtract(System.Boolean,System.Nullable{Microsoft.ProgramSynthesis.Utils.Record{System.Int32,System.Int32,System.Int32,System.Int32}},System.Nullable{Microsoft.ProgramSynthesis.Utils.Record{System.Int32,System.Int32,System.Int32,System.Int32}})">
+            <summary>
+                Returns an extraction point based on whether a given predicate is satisfied
+            </summary>
+            <param name="pred">The predicate</param>
+            <param name="extPoint">The extraction point to return if pred is true</param>
+            <param name="cndExtPoint">The conditional extraction point to return if pred is false</param>
+            <returns>The extraction point conditional on the given predicate</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Semantics.Semantics.ExtractionSplit(Microsoft.ProgramSynthesis.DslLibrary.StringRegion,System.Collections.Generic.List{Microsoft.ProgramSynthesis.Split.Text.Semantics.MatchRecord},Microsoft.ProgramSynthesis.Utils.Record{System.Int32,System.Int32,System.Int32,System.Int32}[])">
+            <summary>
+                Returns the list of split cells given a set of delimiters and extraction points
+            </summary>
+            <param name="v">The input string region</param>
+            <param name="delimitersList">The match record of all delimiters in the current splitting</param>
+            <param name="extractionPoints">
+                The list of extraction points representing the delimiter index and end points for each
+                extraction
+            </param>
+            <returns>The match record of the resulting matches</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Semantics.Semantics.SplitRegion(Microsoft.ProgramSynthesis.DslLibrary.StringRegion,Microsoft.ProgramSynthesis.Split.Text.Semantics.MatchRecord,System.Int32[],System.Int32,System.Boolean,System.Boolean,System.Boolean,Microsoft.ProgramSynthesis.Split.Text.Semantics.FillStrategy)">
+            <summary>
+                Splits the given string region <paramref name="v" /> according to the delimiter matches in
+                <paramref name="splitMatches" />. The matches occurring in <paramref name="ignoreIndexes" /> are ignored when
+                performing the splitting. The total number of split cells produced from the matches should equal
+                <paramref name="numSplits" />, otherwise no splitting is performed and the whole string region is returned as the
+                first split cell and all remaining cells are empty.
+            </summary>
+            <param name="v">The input string region</param>
+            <param name="splitMatches">The delimiter match record</param>
+            <param name="ignoreIndexes">The match record of all delimiters in the current splitting</param>
+            <param name="numSplits">The number of split cells that are created in the result</param>
+            <param name="delimiterStart">Indicates whether the split starts with a delimiter</param>
+            <param name="delimiterEnd">Indicates whether the split ends with a delimiter</param>
+            <param name="includeDelimiters">Indicates if delimiter cells are included in the split</param>
+            <param name="fillStrategy">The fill strategy to use if greater/fewer splits than numSplits are used</param>
+            <returns>The array of split cells produced as the splitting</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Semantics.Semantics.RegexMatch(Microsoft.ProgramSynthesis.DslLibrary.StringRegion,Microsoft.ProgramSynthesis.DslLibrary.RegularExpression)">
+            <summary>
+                Returns the match record of all occurrences of the given regular expression in the given string region.
+            </summary>
+            <param name="v">The string region</param>
+            <param name="regex">The regular expression</param>
+            <returns>The match record of the resulting matches</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Semantics.Semantics.FieldMatch(Microsoft.ProgramSynthesis.DslLibrary.StringRegion,Microsoft.ProgramSynthesis.DslLibrary.RegularExpression)">
+            <summary>
+                Returns the match record of all occurrences of the given field regex in the given string region.
+            </summary>
+            <param name="v">The string region</param>
+            <param name="fregex">The regular expression pattern for the field</param>
+            <returns>The match record of the resulting matches</returns>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Split.Text.Semantics.FillStrategy.Null">
+            <summary>
+                Fill all split cells with null values
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Split.Text.Semantics.FillStrategy.LeftToRight">
+            <summary>
+                Fill all split cells with values from left to right, with nulls for missing values,
+                or concatenation of all values in the last column in case of overflow.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ProgramSynthesis.Split.Text.Semantics.FillStrategy.RightToLeft">
+            <summary>
+                Fill all split cells with values from right to left, with nulls for missing values,
+                or concatenation of all values in the first column in case of overflow.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ProgramSynthesis.Split.Text.Semantics.SplitCell">
+            <summary>
+                Class representing an element of the result of a splitting operation. Each <see cref="T:Microsoft.ProgramSynthesis.Split.Text.Semantics.SplitCell" /> has a value
+                which is a <see cref="T:Microsoft.ProgramSynthesis.DslLibrary.StringRegion" /> and a flag to indicate if the cell represents a delimiter.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Split.Text.Semantics.SplitCell.CellValue">
+            <summary>
+                The string region represented by this cell.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ProgramSynthesis.Split.Text.Semantics.SplitCell.IsDelimiter">
+            <summary>
+                Indicates if this cell represents a delimiter.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Semantics.SplitCell.Equals(Microsoft.ProgramSynthesis.Split.Text.Semantics.SplitCell)">
+            <summary>
+                Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <returns>
+                true if the current object is equal to the <paramref name="other" /> parameter; otherwise, false.
+            </returns>
+            <param name="other">An object to compare with this object.</param>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Semantics.SplitCell.Equals(System.Object)">
+            <summary>Determines whether the specified object is equal to the current object.</summary>
+            <returns>true if the specified object  is equal to the current object; otherwise, false.</returns>
+            <param name="obj">The object to compare with the current object. </param>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Semantics.SplitCell.GetHashCode">
+            <summary>Serves as the default hash function. </summary>
+            <returns>A hash code for the current object.</returns>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Build.GrammarBuilders.Nodes.NodeRules.ExtractionSplit(Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.v,Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.delimiterList,Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.extractionPoints)">
+            <summary> Build a typed program node correponding to the ExtractionSplit rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.ExtractionSplit, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.regionSplit.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Build.GrammarBuilders.Nodes.NodeRules.SplitRegion(Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.v,Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.splitMatches,Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.ignoreIndexes,Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.numSplits,Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.delimiterStart,Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.delimiterEnd,Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.includeDelimiters,Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.fillStrategy)">
+            <summary> Build a typed program node correponding to the SplitRegion rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.SplitRegion, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.regionSplit.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Build.GrammarBuilders.Nodes.NodeRules.SplitMultiple(Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.multipleMatches,Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.d)">
+            <summary> Build a typed program node correponding to the SplitMultiple rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.SplitMultiple, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.multipleMatches.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Build.GrammarBuilders.Nodes.NodeRules.DelimitersList(Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.delimiterList,Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.d)">
+            <summary> Build a typed program node correponding to the DelimitersList rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.DelimitersList, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.delimiterList.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Build.GrammarBuilders.Nodes.NodeRules.EmptyDelimitersList">
+            <summary> Build a typed program node correponding to the EmptyDelimitersList rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.EmptyDelimitersList, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.delimiterList.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Build.GrammarBuilders.Nodes.NodeRules.ExtPointsList(Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.extractionPoints,Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.cndExtPoint)">
+            <summary> Build a typed program node correponding to the ExtPointsList rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.ExtPointsList, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.extractionPoints.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Build.GrammarBuilders.Nodes.NodeRules.EmptyExtPointsList">
+            <summary> Build a typed program node correponding to the EmptyExtPointsList rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.EmptyExtPointsList, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.extractionPoints.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Build.GrammarBuilders.Nodes.NodeRules.ConditionalExtract(Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.pred,Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.extPoint,Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.cndExtPoint)">
+            <summary> Build a typed program node correponding to the ConditionalExtract rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.ConditionalExtract, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.cndExtPoint.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Build.GrammarBuilders.Nodes.NodeRules.SpecialCharPattern(Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.v,Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.pattern)">
+            <summary> Build a typed program node correponding to the SpecialCharPattern rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.SpecialCharPattern, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.pred.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Build.GrammarBuilders.Nodes.NodeRules.LookAround(Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.r,Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.c,Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.r)">
+            <summary> Build a typed program node correponding to the LookAround rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.LookAround, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.d.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Build.GrammarBuilders.Nodes.NodeRules.FieldEndPoints(Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.fieldMatch)">
+            <summary> Build a typed program node correponding to the FieldEndPoints rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.FieldEndPoints, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.d.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Build.GrammarBuilders.Nodes.NodeRules.FieldLookAroundEndPoints(Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.regexMatch,Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.fieldMatch,Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.regexMatch)">
+            <summary> Build a typed program node correponding to the FieldLookAroundEndPoints rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.FieldLookAroundEndPoints, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.d.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Build.GrammarBuilders.Nodes.NodeRules.ConstStr(Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.v,Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.s)">
+            <summary> Build a typed program node correponding to the ConstStr rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.ConstStr, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.c.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Build.GrammarBuilders.Nodes.NodeRules.ConstStrWithWhitespace(Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.v,Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.s)">
+            <summary> Build a typed program node correponding to the ConstStrWithWhitespace rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.ConstStrWithWhitespace, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.c.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Build.GrammarBuilders.Nodes.NodeRules.ConstAlphStr(Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.v,Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.a)">
+            <summary> Build a typed program node correponding to the ConstAlphStr rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.ConstAlphStr, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.c.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Build.GrammarBuilders.Nodes.NodeRules.ConstantDelimiterWithQuoting(Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.v,Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.s,Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.quotingConf)">
+            <summary> Build a typed program node correponding to the ConstantDelimiterWithQuoting rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.ConstantDelimiterWithQuoting, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.constantDelimiterMatches.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Build.GrammarBuilders.Nodes.NodeRules.ConstantDelimiter(Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.v,Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.s)">
+            <summary> Build a typed program node correponding to the ConstantDelimiter rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.ConstantDelimiter, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.constantDelimiterMatches.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Build.GrammarBuilders.Nodes.NodeRules.Empty(Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.v)">
+            <summary> Build a typed program node correponding to the Empty rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.Empty, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.r.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Build.GrammarBuilders.Nodes.NodeRules.Concat(Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.r,Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.regexMatch)">
+            <summary> Build a typed program node correponding to the Concat rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.Concat, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.r.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Build.GrammarBuilders.Nodes.NodeRules.RegexMatch(Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.v,Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.regex)">
+            <summary> Build a typed program node correponding to the RegexMatch rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.RegexMatch, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.regexMatch.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Build.GrammarBuilders.Nodes.NodeRules.FieldMatch(Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.v,Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.fregex)">
+            <summary> Build a typed program node correponding to the FieldMatch rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.FieldMatch, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.fieldMatch.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Build.GrammarBuilders.Nodes.NodeRules.FixedWidth(Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.v,Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.fieldStartPositions)">
+            <summary> Build a typed program node correponding to the FixedWidth rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.FixedWidth, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.fixedWidthMatches.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Build.GrammarBuilders.Nodes.NodeRules.FixedWidthDelimiters(Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.v,Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.delimiterPositions)">
+            <summary> Build a typed program node correponding to the FixedWidthDelimiters rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.FixedWidthDelimiters, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.fixedWidthMatches.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Build.GrammarBuilders.Nodes.NodeRules.GEN_Concat(Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.obj,Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.obj)">
+            <summary> Build a typed program node correponding to the GEN_Concat rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.GEN_Concat, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.gen_Concat.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Build.GrammarBuilders.Nodes.NodeRules.GEN_LookAround(Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.obj,Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.obj,Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.obj)">
+            <summary> Build a typed program node correponding to the GEN_LookAround rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.GEN_LookAround, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.gen_LookAround.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Build.GrammarBuilders.Nodes.NodeRules.GEN_FieldLookAroundEndPoints(Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.obj,Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.obj,Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.obj)">
+            <summary> Build a typed program node correponding to the GEN_FieldLookAroundEndPoints rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.GEN_FieldLookAroundEndPoints, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.gen_LookAroundField.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Build.GrammarBuilders.Nodes.NodeRules.Item2(Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.pair)">
+            <summary> Build a typed program node correponding to the Item2 rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.Item2, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes._LetB0.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Build.GrammarBuilders.Nodes.NodeRules.Append(Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.item1,Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.output)">
+            <summary> Build a typed program node correponding to the Append rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.Append, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes._LetB1.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Build.GrammarBuilders.Nodes.NodeRules.Split(Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.v,Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.delimiter)">
+            <summary> Build a typed program node correponding to the Split rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.Split, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes._LetB2.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Build.GrammarBuilders.Nodes.NodeRules.List(Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.v)">
+            <summary> Build a typed program node correponding to the List rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.List, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.output.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Build.GrammarBuilders.Nodes.NodeRules.Item1(Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.pair)">
+            <summary> Build a typed program node correponding to the Item1 rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.Item1, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.item1.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Build.GrammarBuilders.Nodes.NodeRules.InnerLetWitness(Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes._LetB0,Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes._LetB1)">
+            <summary> Build a typed program node correponding to the InnerLetWitness rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.InnerLetWitness, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes._LetB3.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Build.GrammarBuilders.Nodes.NodeRules.OuterLetWitness(Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes._LetB2,Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes._LetB3)">
+            <summary> Build a typed program node correponding to the OuterLetWitness rule.</summary>
+            <remarks>
+                The return type could be RuleNodeTypes.OuterLetWitness, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.output.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Build.GrammarBuilders.Nodes.NodeUnnamedConversionRules.splitMatches_multipleMatches(Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.multipleMatches)">
+            <summary> Build a typed program node correponding to the ~convert_splitMatches_multipleMatches rule.</summary>
+            <remarks>
+                The return type could be UnnamedConversionNodeTypes.splitMatches_multipleMatches, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.splitMatches.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Build.GrammarBuilders.Nodes.NodeUnnamedConversionRules.splitMatches_constantDelimiterMatches(Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.constantDelimiterMatches)">
+            <summary> Build a typed program node correponding to the ~convert_splitMatches_constantDelimiterMatches rule.</summary>
+            <remarks>
+                The return type could be UnnamedConversionNodeTypes.splitMatches_constantDelimiterMatches, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.splitMatches.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Build.GrammarBuilders.Nodes.NodeUnnamedConversionRules.splitMatches_fixedWidthMatches(Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.fixedWidthMatches)">
+            <summary> Build a typed program node correponding to the ~convert_splitMatches_fixedWidthMatches rule.</summary>
+            <remarks>
+                The return type could be UnnamedConversionNodeTypes.splitMatches_fixedWidthMatches, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.splitMatches.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Build.GrammarBuilders.Nodes.NodeUnnamedConversionRules.multipleMatches_d(Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.d)">
+            <summary> Build a typed program node correponding to the ~convert_multipleMatches_d rule.</summary>
+            <remarks>
+                The return type could be UnnamedConversionNodeTypes.multipleMatches_d, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.multipleMatches.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Build.GrammarBuilders.Nodes.NodeUnnamedConversionRules.cndExtPoint_extPoint(Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.extPoint)">
+            <summary> Build a typed program node correponding to the ~convert_cndExtPoint_extPoint rule.</summary>
+            <remarks>
+                The return type could be UnnamedConversionNodeTypes.cndExtPoint_extPoint, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.cndExtPoint.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ProgramSynthesis.Split.Text.Build.GrammarBuilders.Nodes.NodeUnnamedConversionRules.r_regexMatch(Microsoft.ProgramSynthesis.Split.Text.Build.NodeTypes.regexMatch)">
+            <summary> Build a typed program node correponding to the ~convert_r_regexMatch rule.</summary>
+            <remarks>
+                The return type could be UnnamedConversionNodeTypes.r_regexMatch, but it is useful in more cases to already
+                apply the implicit conversion to NodeTypes.r.
+            </remarks>
+        </member>
+    </members>
+</doc>
